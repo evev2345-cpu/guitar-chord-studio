@@ -1,0 +1,5 @@
+# Initial upload in progress
+.env
+.env.*
+!.env.example
+.venv*/
