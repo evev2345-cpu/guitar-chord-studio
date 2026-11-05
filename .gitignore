@@ -1,5 +1,69 @@
-# Initial upload in progress
+
+# Local API credentials
 .env
 .env.*
 !.env.example
+__pycache__/
+.venv-audio-separation/
+.venv-audio-model/
+.cache/
+
+# Local environments, caches, logs and user uploads
 .venv*/
+venv/
+.pytest_cache/
+*.py[cod]
+*.log
+/runs/
+/webapp/runs/
+/webapp/smoke*
+/webapp/validation.json
+
+# Downloaded external datasets / upstream demo checkouts
+/GuitarSet/
+/EGDB_repo/
+/IDMT_SMT_Chords/
+/sample video/
+/sample_images/
+
+# Downloaded model weights and media stay local
+*.task
+*.tflite
+*.pt
+*.pth
+*.onnx
+*.wav
+*.mp3
+*.flac
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.7z
+*.tar
+*.gz
+*.npz
+*.npy
+
+# Keep research reports and a small, explicitly selected set of diagnostics.
+# Raw data, per-frame results and API responses remain excluded.
+/dataset/**
+!/dataset/**/
+!/dataset/**/*.md
+!/dataset/regression/*.json
+!/dataset/audio_analysis/requirements.txt
+!/dataset/integration_review/runs/egdb_timbre_20261105_v1/*.png
+!/dataset/integration_review/runs/egdb_timbre_20261105_v1/summary.json
+!/dataset/integration_review/runs/egdb_timbre_20261105_v1/availability.json
+!/dataset/integration_review/runs/egdb_timbre_20261105_v1/levels.json
+!/dataset/integration_review/runs/egdb_timbre_20261105_v1/review.html
+!/dataset/hand_analysis/runs/low_string_stability_20261105_v1/before_after_original.png
+!/dataset/hand_analysis/runs/low_string_stability_20261105_v1/temporal_metrics.png
+!/dataset/hand_analysis/runs/low_string_stability_20261105_v1/summary.json
+
+# Never publish private key / credential files
+*.pem
+*.key
+credentials*.json
+service-account*.json

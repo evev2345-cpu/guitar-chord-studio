@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>🎸 Guitar Fretboard 4-Point Web Labeler</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #121316; color: #e1e3e8; height: 100vh; display: flex; flex-direction: column; overflow: hidden; user-select: none; }
+    header { background: #1a1c23; border-bottom: 1px solid #2d313d; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+    h1 { font-size: 17px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .badge { background: #2563eb; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 12px; }
+    
+    .status-steps { display: flex; gap: 10px; align-items: center; }
+    .step-pill { font-size: 12px; padding: 6px 12px; border-radius: 8px; background: #222530; border: 1px solid #333849; color: #8f95a5; transition: all 0.2s; }
+    .step-pill.active { background: #2563eb; color: #fff; border-color: #3b82f6; font-weight: 600; transform: scale(1.05); }
+    .step-pill.done { background: #10b981; color: #fff; border-color: #059669; }
+
+    main { flex: 1; display: flex; overflow: hidden; position: relative; }
+    
+    /* 사이드바 */
+    aside { width: 260px; background: #16181f; border-right: 1px solid #2d313d; display: flex; flex-direction: column; z-index: 5; }
+    .aside-header { padding: 12px 16px; font-size: 13px; font-weight: 600; border-bottom: 1px solid #2d313d; color: #94a3b8; }
+    .img-list { flex: 1; overflow-y: auto; padding: 8px; }
+    .img-item { padding: 10px 14px; border-radius: 8px; font-size: 13px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; transition: background 0.15s; }
+    .img-item:hover { background: #222532; }
+    .img-item.active { background: #2d3748; color: #60a5fa; font-weight: 600; }
+    .check { color: #10b981; font-weight: bold; }
+    
+    /* 캔버스 컨테이너 */
+    .canvas-container { flex: 1; background: #0c0d10; position: relative; overflow: hidden; cursor: crosshair; }
+    canvas { display: block; position: absolute; top: 0; left: 0; }
+
+    /* 플로팅 확대/축소 툴바 */
+    .zoom-toolbar {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(26, 28, 35, 0.9);
+      border: 1px solid #333849;
+      border-radius: 8px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .zoom-btn {
+      background: #2a2e3d;
+      color: #fff;
+      border: 1px solid #475069;
+      border-radius: 4px;
+      width: 28px;
+      height: 28px;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .zoom-btn:hover { background: #3b4258; }
+    .zoom-text { font-size: 12px; font-weight: 600; min-width: 45px; text-align: center; color: #60a5fa; }
+
+    /* 컨트롤 바 */
+    footer { background: #1a1c23; border-top: 1px solid #2d313d; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+    .btn-group { display: flex; gap: 8px; }
+    button { padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid transparent; transition: all 0.15s; }
+    .btn-secondary { background: #2a2e3d; color: #e2e8f0; border-color: #3f4559; }
+    .btn-secondary:hover { background: #373d52; }
+    .btn-primary { background: #2563eb; color: #fff; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-danger { background: #ef4444; color: #fff; }
+    .btn-danger:hover { background: #dc2626; }
+    .shortcut { opacity: 0.6; font-size: 11px; margin-left: 4px; }
+    .guide-tip { font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 15px; }
+    .guide-tip span kbd { background: #222530; padding: 2px 6px; border-radius: 4px; border: 1px solid #333849; color: #f1f5f9; font-size: 11px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎸 지판 4-Point 라벨러 <span class="badge" id="progress-badge">0 / 0</span></h1>
+    <div class="status-steps">
+      <div class="step-pill" id="step-0">1. 너트 상단 (6번줄)</div>
+      <div class="step-pill" id="step-1">2. 바디 상단 (6번줄)</div>
+      <div class="step-pill" id="step-2">3. 바디 하단 (1번줄)</div>
+      <div class="step-pill" id="step-3">4. 너트 하단 (1번줄)</div>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <div class="aside-header">사진 목록</div>
+      <div class="img-list" id="img-list"></div>
+    </aside>
+
+    <div class="canvas-container" id="container">
+      <div class="zoom-toolbar">
+        <button class="zoom-btn" onclick="zoomAction(-0.25)">−</button>
+        <span class="zoom-text" id="zoom-level">100%</span>
+        <button class="zoom-btn" onclick="zoomAction(0.25)">+</button>
+        <button class="zoom-btn" style="width: auto; padding: 0 8px; font-size: 11px;" onclick="resetZoom()">원래대로</button>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+  </main>
+
+  <footer>
+    <div class="guide-tip">
+      <span>🔍 <b>확대/축소:</b> <kbd>마우스 휠</kbd> 스크롤</span>
+      <span>🖐 <b>화면 이동:</b> <kbd>우클릭 드래그</kbd> 또는 <kbd>휠 드래그</kbd></span>
+      <span>🎯 <b>좌표 찍기:</b> <kbd>좌클릭</kbd></span>
+    </div>
+    <div class="btn-group">
+      <button class="btn-danger" onclick="resetPoints()">점 초기화 <span class="shortcut">(R)</span></button>
+      <button class="btn-secondary" onclick="prevImage()">이전 <span class="shortcut">(P)</span></button>
+      <button class="btn-secondary" onclick="nextImage()">다음 <span class="shortcut">(N)</span></button>
+      <button class="btn-primary" id="save-btn" onclick="saveAndNext()" disabled>저장 & 다음 <span class="shortcut">(Space)</span></button>
+    </div>
+  </footer>
+
+  <script>
+    let images = [];
+    let currentIndex = 0;
+    let points = []; // 원본 이미지 기준 [{x, y}]
+    let currentImgObj = null;
+
+    // 뷰포트 / 줌 / 팬 상태
+    let scale = 1.0;
+    let panX = 0;
+    let panY = 0;
+    let isPanning = false;
+    let startX = 0;
+    let startY = 0;
+
+    const colors = ["#3b82f6", "#10b981", "#eab308", "#ef4444"];
+    const container = document.getElementById('container');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // 캔버스 크기 리사이즈
+    function resizeCanvas() {
+      canvas.width = container.clientWidth;
+      canvas.height = container.clientHeight;
+      draw();
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    async function loadImages() {
+      const res = await fetch('/api/images');
+      images = await res.json();
+      renderSidebar();
+      if (images.length > 0) {
+        selectImage(0);
+      }
+    }
+
+    function renderSidebar() {
+      const list = document.getElementById('img-list');
+      list.innerHTML = '';
+      images.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = `img-item ${idx === currentIndex ? 'active' : ''}`;
+        div.innerHTML = `
+          <span>${item.filename}</span>
+          ${item.labeled ? '<span class="check">✓</span>' : ''}
+        `;
+        div.onclick = () => selectImage(idx);
+        list.appendChild(div);
+      });
+      document.getElementById('progress-badge').innerText = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    function selectImage(idx) {
+      currentIndex = idx;
+      renderSidebar();
+      points = [];
+      const item = images[idx];
+      
+      const img = new Image();
+      img.src = `/image/${encodeURIComponent(item.filename)}?t=${Date.now()}`;
+      img.onload = () => {
+        currentImgObj = img;
+        resetZoom(); // 새 사진 로드 시 화면에 맞게 자동 확대/축소 맞춤
+
+        // 기존 라벨 데이터가 있으면 복원
+        if (item.data && item.data.corners) {
+          points = item.data.corners.map(c => ({ x: c.x, y: c.y }));
+        }
+        draw();
+      };
+    }
+
+    // 화면에 사진이 꽉 차도록 초기화
+    function resetZoom() {
+      if (!currentImgObj) return;
+      canvas.width = container.clientWidth;
+      canvas.height = container.clientHeight;
+
+      const padding = 40;
+      const availW = canvas.width - padding;
+      const availH = canvas.height - padding;
+
+      const scaleW = availW / currentImgObj.naturalWidth;
+      const scaleH = availH / currentImgObj.naturalHeight;
+      scale = Math.min(scaleW, scaleH, 1.5);
+
+      panX = (canvas.width - currentImgObj.naturalWidth * scale) / 2;
+      panY = (canvas.height - currentImgObj.naturalHeight * scale) / 2;
+      updateZoomText();
+      draw();
+    }
+
+    function zoomAction(delta) {
+      const center = { x: canvas.width / 2, y: canvas.height / 2 };
+      zoomAt(center.x, center.y, delta);
+    }
+
+    function zoomAt(cx, cy, delta) {
+      const oldScale = scale;
+      let newScale = scale + delta;
+      newScale = Math.max(0.2, Math.min(6.0, newScale)); // 20% ~ 600% 확대
+
+      // 마우스 커서 위치를 중심으로 줌 인/아웃
+      panX = cx - (cx - panX) * (newScale / oldScale);
+      panY = cy - (cy - panY) * (newScale / oldScale);
+      scale = newScale;
+
+      updateZoomText();
+      draw();
+    }
+
+    function updateZoomText() {
+      document.getElementById('zoom-level').innerText = `${Math.round(scale * 100)}%`;
+    }
+
+    // 마우스 휠 줌 인/아웃
+    container.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const zoomFactor = e.deltaY < 0 ? 0.15 : -0.15;
+      zoomAt(mouseX, mouseY, zoomFactor * scale);
+    }, { passive: false });
+
+    // 마우스 드래그 (팬 / 이동) & 클릭 (좌표 입력)
+    container.addEventListener('mousedown', (e) => {
+      // 우클릭(button 2) 또는 휠클릭(button 1) 또는 Space 누른 상태 -> 팬(화면 이동)
+      if (e.button === 2 || e.button === 1 || e.shiftKey) {
+        isPanning = true;
+        startX = e.clientX - panX;
+        startY = e.clientY - panY;
+        container.style.cursor = 'grab';
+        e.preventDefault();
+      }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (isPanning) {
+        panX = e.clientX - startX;
+        panY = e.clientY - startY;
+        draw();
+      }
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (isPanning) {
+        isPanning = false;
+        container.style.cursor = 'crosshair';
+      }
+    });
+
+    // 우클릭 기본 메뉴 방지
+    container.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    // 좌클릭 -> 4개 점 입력
+    container.addEventListener('click', (e) => {
+      if (e.button !== 0 || isPanning || e.shiftKey) return;
+      if (points.length >= 4) return;
+      if (!currentImgObj) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
+
+      // 캔버스 화면 좌표 -> 원본 이미지 픽셀 좌표 역변환
+      const imgX = Math.round((clickX - panX) / scale);
+      const imgY = Math.round((clickY - panY) / scale);
+
+      if (imgX >= 0 && imgX <= currentImgObj.naturalWidth && imgY >= 0 && imgY <= currentImgObj.naturalHeight) {
+        points.push({ x: imgX, y: imgY });
+        draw();
+      }
+    });
+
+    function draw() {
+      if (!currentImgObj) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.save();
+      ctx.translate(panX, panY);
+      ctx.scale(scale, scale);
+
+      // 1. 이미지 그리기
+      ctx.drawImage(currentImgObj, 0, 0);
+
+      // 2. 4점 연결선 및 폴리곤
+      if (points.length > 1) {
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+        for (let i = 1; i < points.length; i++) {
+          ctx.lineTo(points[i].x, points[i].y);
+        }
+        if (points.length === 4) {
+          ctx.closePath();
+          ctx.fillStyle = "rgba(16, 185, 129, 0.3)";
+          ctx.fill();
+        }
+        ctx.strokeStyle = "#00ffff";
+        ctx.lineWidth = Math.max(2, 2.5 / scale);
+        ctx.stroke();
+      }
+
+      // 3. 점 마커 그리기
+      points.forEach((pt, i) => {
+        const radius = Math.max(5, 7 / scale);
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = colors[i];
+        ctx.fill();
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = Math.max(1.5, 2 / scale);
+        ctx.stroke();
+
+        ctx.font = `bold ${Math.max(12, 14 / scale)}px sans-serif`;
+        ctx.fillStyle = "#ffffff";
+        ctx.shadowColor = "#000000";
+        ctx.shadowBlur = 4;
+        ctx.fillText(i + 1, pt.x + radius + 4, pt.y + radius / 2);
+        ctx.shadowBlur = 0;
+      });
+
+      ctx.restore();
+
+      // 단계별 버튼 하이라이트
+      for (let i = 0; i < 4; i++) {
+        const pill = document.getElementById(`step-${i}`);
+        pill.classList.remove('active', 'done');
+        if (i < points.length) pill.classList.add('done');
+        else if (i === points.length) pill.classList.add('active');
+      }
+
+      document.getElementById('save-btn').disabled = (points.length !== 4);
+    }
+
+    function resetPoints() {
+      points = [];
+      draw();
+    }
+
+    function prevImage() {
+      if (currentIndex > 0) selectImage(currentIndex - 1);
+    }
+
+    function nextImage() {
+      if (currentIndex < images.length - 1) selectImage(currentIndex + 1);
+    }
+
+    async function saveAndNext() {
+      if (points.length !== 4) return;
+      const item = images[currentIndex];
+      const payload = {
+        image: item.filename,
+        width: currentImgObj.naturalWidth,
+        height: currentImgObj.naturalHeight,
+        corners: [
+          { name: "nut_top", x: points[0].x, y: points[0].y },
+          { name: "body_top", x: points[1].x, y: points[1].y },
+          { name: "body_bottom", x: points[2].x, y: points[2].y },
+          { name: "nut_bottom", x: points[3].x, y: points[3].y }
+        ]
+      };
+
+      await fetch('/api/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      item.labeled = true;
+      item.data = payload;
+      renderSidebar();
+
+      if (currentIndex < images.length - 1) {
+        selectImage(currentIndex + 1);
+      } else {
+        alert("🎉 모든 사진의 라벨링 저장이 완료되었습니다!");
+      }
+    }
+
+    // 키보드 단축키
+    window.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        if (points.length === 4) {
+          e.preventDefault();
+          saveAndNext();
+        }
+      } else if (e.key === 'r' || e.key === 'R') {
+        resetPoints();
+      } else if (e.key === 'p' || e.key === 'P') {
+        prevImage();
+      } else if (e.key === 'n' || e.key === 'N') {
+        nextImage();
+      }
+    });
+
+    resizeCanvas();
+    loadImages();
+  </script>
+</body>
+</html>
