@@ -431,13 +431,13 @@ class HandlerV2(BaseHTTPRequestHandler):
     def allowed(self):
         host = self.headers.get('Host', '')
         origin = self.headers.get('Origin')
-        if getattr(self.server, 'allow_public', False):
-            host_only = host.split(':')[0]
+        host_only = host.split(':')[0]
+        if getattr(self.server, 'allow_public', False) or host_only.endswith('.trycloudflare.com') or host_only.endswith('.loca.lt'):
             origin_host = urlsplit(origin).hostname if origin else None
             return bool(host_only) and (
                 origin is None
                 or origin_host == host_only
-                or (origin_host and (origin_host == 'huggingface.co' or origin_host.endswith('.hf.space')))
+                or (origin_host and (origin_host.endswith('.trycloudflare.com') or origin_host.endswith('.loca.lt') or origin_host == 'huggingface.co' or origin_host.endswith('.hf.space')))
             )
         expected = f'127.0.0.1:{self.server.server_port}'
         return host in (expected, f'localhost:{self.server.server_port}') and (
@@ -641,6 +641,7 @@ def main():
     parser.add_argument('--host', default='127.0.0.1')
     parser.add_argument('--port', type=int, default=8766)
     parser.add_argument('--open', action='store_true')
+    parser.add_argument('--public', action='store_true')
     args = parser.parse_args()
     seed_existing_runs()
     for file in RUNS.glob('*/job.json'):
@@ -658,7 +659,7 @@ def main():
         except (ValueError, KeyError):
             pass
     server = ThreadingHTTPServer((args.host, args.port), HandlerV2)
-    server.allow_public = args.host not in ('127.0.0.1', 'localhost')
+    server.allow_public = args.public or args.host not in ('127.0.0.1', 'localhost')
     url = f'http://{args.host}:{server.server_port}'
     print('Chord Studio v2 (Pre-deploy Verification):', url, flush=True)
     if args.open:

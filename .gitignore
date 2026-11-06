@@ -72,3 +72,5 @@ service-account*.json
 
 /scratch/
 scratch_crop.jpg
+
+/bin/
