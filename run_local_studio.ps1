@@ -22,7 +22,8 @@ if (-not (Test-Path $PythonExe)) {
 }
 
 Write-Host "[2/3] Chord Studio v2 고성능 AI 서버 시작 중..." -ForegroundColor Cyan
-$serverJob = Start-Process -FilePath $PythonExe -ArgumentList "chord_studio_v2/server_v2.py --port 8766 --host 0.0.0.0 --public" -PassThru -WindowStyle Hidden
+$serverScript = Join-Path $ScriptDir "chord_studio_v2\server_v2.py"
+$serverJob = Start-Process -FilePath $PythonExe -ArgumentList "`"$serverScript`" --port 8766 --host 0.0.0.0 --public" -WorkingDirectory $ScriptDir -PassThru -WindowStyle Hidden
 
 Start-Sleep -Seconds 2
 
