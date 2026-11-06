@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>🎸 Guitar Chord Studio | AI 실시간 기타 분석</title>
+  
+  <!-- Open Graph Meta Tags for KakaoTalk, Mule, DC Inside, Facebook -->
+  <meta property="og:title" content="🎸 Guitar Chord Studio">
+  <meta property="og:description" content="AI 기반 실시간 기타 코드 및 피킹/핑거링 주법 분석 스튜디오">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evev2345-cpu.github.io/guitar-chord-studio/">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Immediate HTTP-EQUIV Refresh -->
+  <meta http-equiv="refresh" content="0; url=https://berlin-implemented-programme-voters.trycloudflare.com">
+
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(26, 34, 52, 0.85);
+      --border: rgba(148, 163, 184, 0.15);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.35);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.15) 0px, transparent 50%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px var(--accent-glow);
+      backdrop-filter: blur(16px);
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon-container {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.2));
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 50%;
+    }
+
+    .guitar-icon {
+      font-size: 34px;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .spinner {
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      border: 2px solid transparent;
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.status {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    p.desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 13px 20px;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #0369a1, #1d4ed8);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: #64748b;
+    }
+  </style>
+
+  <script>
+    const TARGET_URL = "https://berlin-implemented-programme-voters.trycloudflare.com";
+
+    // Immediate redirection preserving any hash or query parameters
+    (function redirectToTarget() {
+      const search = window.location.search || "";
+      const hash = window.location.hash || "";
+      const destination = TARGET_URL + search + hash;
+      
+      // Update UI button href
+      window.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("directLink");
+        if (btn) btn.href = destination;
+      });
+
+      // Execute replace (does not clutter browser back button history)
+      window.location.replace(destination);
+    })();
+  </script>
+</head>
+<body>
+  <div class="card">
+    <div class="icon-container">
+      <div class="spinner"></div>
+      <span class="guitar-icon">🎸</span>
+    </div>
+
+    <h1>Guitar Chord Studio</h1>
+    <p class="status">AI 스튜디오 서버로 자동 연결 중...</p>
+    
+    <p class="desc">
+      고성능 로컬 AI(음원 분리, 화성 추론, 주법 인식)가<br>
+      실시간으로 가동되고 있는 메인 서버로 즉시 이동합니다.
+    </p>
+
+    <a id="directLink" href="https://berlin-implemented-programme-voters.trycloudflare.com" class="btn">
+      스튜디오 바로 접속하기 &rarr;
+    </a>
+
+    <div class="footer">
+      Powered by Demucs &bull; Basic Pitch &bull; Harmony Engine
+    </div>
+  </div>
+</body>
+</html>
