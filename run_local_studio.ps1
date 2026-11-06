@@ -50,22 +50,37 @@ for ($i = 0; $i -lt 12; $i++) {
     }
 }
 
+# Update GitHub Pages redirect if URL changed
+$pagesHtml = Join-Path $ScriptDir "deploy_pages\index.html"
+if ($cfUrl -ne "준비 중..." -and (Test-Path $pagesHtml)) {
+    $currentHtml = Get-Content $pagesHtml -Raw -Encoding UTF8
+    if ($currentHtml -notmatch [regex]::Escape($cfUrl)) {
+        Write-Host "GitHub Pages 리다이렉트 주소 업데이트 중..." -ForegroundColor Cyan
+        $newHtml = $currentHtml -replace "https://[a-zA-Z0-9-]+\.trycloudflare\.com", $cfUrl
+        Set-Content -Path $pagesHtml -Value $newHtml -Encoding UTF8
+        git -C (Join-Path $ScriptDir "deploy_pages") commit -am "Auto-update tunnel redirect: $cfUrl" | Out-Null
+        git -C (Join-Path $ScriptDir "deploy_pages") push origin gh-pages | Out-Null
+    }
+}
+
 Clear-Host
 Write-Host ""
 Write-Host "=======================================================================" -ForegroundColor Green
 Write-Host "             🎸 Guitar Chord Studio 로컬 서버 가동 완료!               " -ForegroundColor Green
 Write-Host "=======================================================================" -ForegroundColor Green
 Write-Host ""
-Write-Host " [★] 커뮤니티 공유용 고정 영문 주소:" -ForegroundColor Yellow
-Write-Host "      👉 https://guitarlab.loca.lt" -ForegroundColor Cyan
+Write-Host " [★] 커뮤니티 공유용 공식 영문 주소 (추천):" -ForegroundColor Yellow
+Write-Host "      👉 https://evev2345-cpu.github.io/guitar-chord-studio/" -ForegroundColor Cyan
 Write-Host ""
-Write-Host " [★] 초고속 다이렉트 주소 (보안 확인 없음):" -ForegroundColor Yellow
+Write-Host " [★] 실시간 Cloudflare 다이렉트 주소:" -ForegroundColor Yellow
 Write-Host "      👉 $cfUrl" -ForegroundColor Cyan
 Write-Host ""
 Write-Host " [★] 내 컴퓨터에서 접속:" -ForegroundColor Gray
 Write-Host "      👉 http://127.0.0.1:8766" -ForegroundColor Gray
 Write-Host ""
 Write-Host "=======================================================================" -ForegroundColor Green
+Write-Host " * 뮬, 디시 기타 갤러리, 카페에는 위 [공식 영문 주소]를 공유하시면 됩니다." -ForegroundColor White
+Write-Host " * 보안 경고나 IP 입력창 없이 즉시 접속되며, 도메인 차단 위험이 0%입니다." -ForegroundColor White
 Write-Host " * 모니터만 끄고 주무셔도 컴퓨터 본체가 켜져 있는 동안 계속 접속됩니다!" -ForegroundColor White
 Write-Host " * 방문자가 분석한 지판 4점 데이터는 'chord_studio_v2/fretboard_data/'에 자동 저장됩니다." -ForegroundColor White
 Write-Host " * 브라우저별 기록 격리가 적용되어 다른 사람은 내 분석 기록을 볼 수 없습니다." -ForegroundColor White
@@ -75,10 +90,5 @@ Write-Host ""
 
 Start-Process "http://127.0.0.1:8766"
 
-# Start localtunnel with subdomain if npx is available; otherwise keep alive with Cloudflare
-if (Get-Command npx -ErrorAction SilentlyContinue) {
-    npx --yes localtunnel --port 8766 --subdomain guitarlab
-} else {
-    Write-Host "Cloudflare 다이렉트 주소($cfUrl)로 정상 서비스 중입니다." -ForegroundColor Green
-    Wait-Process -Id $serverJob.Id
-}
+Write-Host "서버가 정상 서비스 중입니다. (종료하려면 이 창을 닫으세요)" -ForegroundColor Green
+Wait-Process -Id $serverJob.Id
