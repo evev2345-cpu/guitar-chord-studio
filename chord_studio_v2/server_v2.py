@@ -373,6 +373,36 @@ def run_user_calibration_job(job_id, time_s, corners, capo_candidate=0, total_fr
     profile_path.write_text(json.dumps(calibration, ensure_ascii=False, indent=2), encoding='utf-8')
     save_state(job_id, user_calibration=calibration)
 
+    # Automatically archive user 4-point calibration frame and coordinates for future AI training
+    try:
+        fret_dir = V2_ROOT / 'fretboard_data'
+        (fret_dir / 'frames').mkdir(parents=True, exist_ok=True)
+        (fret_dir / 'annotations').mkdir(parents=True, exist_ok=True)
+        ts = int(time.time())
+        item_name = f'fret_{ts}_{job_id[:8]}'
+        annot = {
+            'job_id': job_id,
+            'timestamp': ts,
+            'time_s': float(time_s),
+            'corners': corners,
+            'total_frets': int(total_frets),
+            'capo': int(capo_candidate),
+            'perspective_k': float(perspective_k),
+            'image_size': calibration.get('image_size'),
+            'reference_frame': calibration.get('reference_frame'),
+            'reference_pixel_sha256': calibration.get('reference_pixel_sha256'),
+        }
+        (fret_dir / 'annotations' / f'{item_name}.json').write_text(json.dumps(annot, ensure_ascii=False, indent=2), encoding='utf-8')
+        import cv2
+        cap = cv2.VideoCapture(str(video_path))
+        cap.set(cv2.CAP_PROP_POS_FRAMES, calibration.get('reference_frame', 0))
+        ok, frame = cap.read()
+        cap.release()
+        if ok and frame is not None:
+            cv2.imwrite(str(fret_dir / 'frames' / f'{item_name}.jpg'), frame, [int(cv2.IMWRITE_JPEG_QUALITY), 90])
+    except Exception:
+        pass
+
     def _worker():
         try:
             save_state(job_id, vision_status='calibrating', message='사용자 지정 지판으로 비전 추적 중')
@@ -501,8 +531,13 @@ class HandlerV2(BaseHTTPRequestHandler):
         if path in static_map:
             return self.file(STATIC / static_map[path])
         if path == '/api/jobs':
+            client_id = self.headers.get('X-Client-Id')
             with LOCK:
-                return self.json(list(JOBS.values()))
+                visible_jobs = [
+                    j for j in JOBS.values()
+                    if (client_id and j.get('client_id') == client_id) or j.get('is_demo') or j.get('demo')
+                ]
+                return self.json(visible_jobs)
         match = re.fullmatch(r'/api/jobs/([a-f0-9]{32})(/result|/vision)?', path)
         if match:
             with LOCK:
@@ -582,6 +617,7 @@ class HandlerV2(BaseHTTPRequestHandler):
             self.close_connection = True
             return self.json(dict(error='2GB 이하의 파일을 선택해 주세요.'), 413)
         params = parse_qs(url.query)
+        client_id = self.headers.get('X-Client-Id') or params.get('client_id', [None])[0]
         separate_guitar = params.get('separate', ['1'])[0] != '0'
         with LOCK:
             if sum(j['status'] in ('uploading', 'queued', 'running') for j in JOBS.values()) >= 4:
@@ -599,6 +635,8 @@ class HandlerV2(BaseHTTPRequestHandler):
                 progress=0,
                 message='업로드 중',
                 demo=demo,
+                is_demo=demo,
+                client_id=client_id,
                 separate_guitar=separate_guitar,
             )
         if not demo:

@@ -17,7 +17,8 @@ function label(c,shape=$('#notation')?.value==='shape'){
   const root=(c.root_pc-offset+12)%12,bass=Number.isInteger(c.bass_pc)?(c.bass_pc-offset+12)%12:null;
   return names[root]+base.slice(names[c.root_pc].length)+(bass!==null&&bass!==root?'/'+names[bass]:'');
 }
-async function api(url,options){const response=await fetch(url,options);const data=await response.json();if(!response.ok)throw Error(data.error||'요청에 실패했습니다.');return data;}
+let clientId='';try{clientId=localStorage.getItem('chord_studio_client_id')||'';if(!clientId){clientId='c_'+Math.random().toString(36).slice(2,10)+Date.now().toString(36);localStorage.setItem('chord_studio_client_id',clientId);}}catch(e){clientId='c_anon';}
+async function api(url,options={}){const opt={...options};opt.headers={...(opt.headers||{}),'X-Client-Id':clientId};const response=await fetch(url,opt);const data=await response.json();if(!response.ok)throw Error(data.error||'요청에 실패했습니다.');return data;}
 function notice(text=''){$('#notice').textContent=text;}
 function busy(value){loading=value;if($('#demo'))$('#demo').disabled=value;$('#file').disabled=value;}
 function identity(c){return c?`${c.root_pc}:${c.quality}:${c.bass_pc??c.root_pc}`:'none';}

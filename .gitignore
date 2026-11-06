@@ -77,3 +77,6 @@ scratch_crop.jpg
 
 # Keep docs and devlogs on local disk only (untracked on GitHub)
 /docs/
+
+# User-contributed fretboard calibration images and labels stay on server only
+/chord_studio_v2/fretboard_data/

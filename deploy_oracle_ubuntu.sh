@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Oracle Cloud Ubuntu (VM.Standard.E2.1.Micro 1GB RAM 및 Ampere 모두 지원) 자동 설치 스크립트
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PORT="${PORT:-8766}"
+PORT="${PORT:-80}"
 
 echo "[0/5] 메모리 확인 및 4GB 스왑(Swap) 메모리 자동 설정 (E2.1.Micro 1GB RAM OOM 방지)..."
 TOTAL_MEM_MB="$(awk '/MemTotal/ {print int($2/1024)}' /proc/meminfo)"
@@ -45,6 +45,7 @@ After=network.target
 Type=simple
 User=$USER
 WorkingDirectory=$APP_DIR
+AmbientCapabilities=CAP_NET_BIND_SERVICE
 Environment="OMP_NUM_THREADS=1"
 Environment="MKL_NUM_THREADS=1"
 Environment="OPENBLAS_NUM_THREADS=1"
@@ -63,9 +64,12 @@ sudo systemctl enable --now chord-studio.service
 sudo systemctl status chord-studio.service --no-pager
 
 PUBLIC_IP="$(curl -s ifconfig.me || hostname -I | awk '{print $1}')"
+if [ "$PORT" = "80" ]; then
+    ACCESS_URL="http://${PUBLIC_IP}"
+else
+    ACCESS_URL="http://${PUBLIC_IP}:${PORT}"
+fi
 echo ""
 echo "=========================================================="
-echo " 배포 완료! 접속 주소: http://${PUBLIC_IP}:${PORT}"
-echo " (주의: 오라클 클라우드 웹 콘솔의 '보안 목록(Security List)'에서도"
-echo "  TCP 포트 ${PORT} 수신 규칙이 열려 있어야 외부 접속이 가능합니다.)"
+echo " 배포 완료! 접속 주소: ${ACCESS_URL}"
 echo "=========================================================="
