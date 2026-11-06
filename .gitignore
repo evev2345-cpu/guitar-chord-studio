@@ -1,5 +1,7 @@
 
-# Local API credentials
+# Deploy worktree
+deploy_pages/
+
 .env
 .env.*
 !.env.example
