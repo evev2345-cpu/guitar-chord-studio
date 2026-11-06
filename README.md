@@ -1,3 +1,12 @@
+---
+title: Guitar Lab Chord Studio
+emoji: 🎸
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+---
+
 # Guitar fretboard pipeline
 
 소스·문서와 일부 검수 그림을 보관하는 개발 저장소입니다. 데이터셋·원본 미디어·모델·비밀키는 제외합니다. 새 PC에서의 실행 준비와 제외 범위는 [저장소 구성 안내](docs/REPOSITORY_SETUP.md)를 참고하세요.
