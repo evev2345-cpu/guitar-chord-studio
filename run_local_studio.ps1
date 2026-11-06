@@ -1,6 +1,14 @@
 # Guitar Chord Studio Local Launcher
 $ErrorActionPreference = "Continue"
 
+# Initialize fnm / Node.js / npx environment
+$fnmExe = "$env:LOCALAPPDATA\Microsoft\WinGet\Links\fnm.exe"
+if (Test-Path $fnmExe) {
+    & $fnmExe env --shell power-shell | Out-String | Invoke-Expression
+} elseif (Get-Command fnm -ErrorAction SilentlyContinue) {
+    & fnm env --shell power-shell | Out-String | Invoke-Expression
+}
+
 Write-Host "`n[1/3] 기존 서버 프로세스 정리 중..." -ForegroundColor Cyan
 Get-Process -Name "python" -ErrorAction SilentlyContinue | Where-Object { $_.Path -like "*GUITAR*" } | Stop-Process -Force -ErrorAction SilentlyContinue
 Get-Process -Name "cloudflared" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
@@ -51,7 +59,7 @@ Write-Host ""
 Write-Host " [★] 커뮤니티 공유용 고정 영문 주소:" -ForegroundColor Yellow
 Write-Host "      👉 https://guitarlab.loca.lt" -ForegroundColor Cyan
 Write-Host ""
-Write-Host " [★] 초고속 다이렉트 주소 (보안 경고 없음):" -ForegroundColor Yellow
+Write-Host " [★] 초고속 다이렉트 주소 (보안 확인 없음):" -ForegroundColor Yellow
 Write-Host "      👉 $cfUrl" -ForegroundColor Cyan
 Write-Host ""
 Write-Host " [★] 내 컴퓨터에서 접속:" -ForegroundColor Gray
@@ -61,11 +69,16 @@ Write-Host "====================================================================
 Write-Host " * 모니터만 끄고 주무셔도 컴퓨터 본체가 켜져 있는 동안 계속 접속됩니다!" -ForegroundColor White
 Write-Host " * 방문자가 분석한 지판 4점 데이터는 'chord_studio_v2/fretboard_data/'에 자동 저장됩니다." -ForegroundColor White
 Write-Host " * 브라우저별 기록 격리가 적용되어 다른 사람은 내 분석 기록을 볼 수 없습니다." -ForegroundColor White
-Write-Host " * 서버를 끄시려면 이 창을 닫으시거나 [스튜디오_종료.bat]을 실행하세요." -ForegroundColor Magenta
+Write-Host " * 서버를 끄시려면 이 창을 닫으시거나 [Chord_Studio_종료.bat]을 실행하세요." -ForegroundColor Magenta
 Write-Host "=======================================================================" -ForegroundColor Green
 Write-Host ""
 
 Start-Process "http://127.0.0.1:8766"
 
-# Start localtunnel with subdomain in foreground to keep script alive and maintain guitarlab.loca.lt
-npx --yes localtunnel --port 8766 --subdomain guitarlab
+# Start localtunnel with subdomain if npx is available; otherwise keep alive with Cloudflare
+if (Get-Command npx -ErrorAction SilentlyContinue) {
+    npx --yes localtunnel --port 8766 --subdomain guitarlab
+} else {
+    Write-Host "Cloudflare 다이렉트 주소($cfUrl)로 정상 서비스 중입니다." -ForegroundColor Green
+    Wait-Process -Id $serverJob.Id
+}
