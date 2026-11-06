@@ -1,14 +1,360 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chord Studio · Guitar Lab</title><link rel="stylesheet" href="/style.css"></head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chord Studio · Pro DAW &amp; Sheet Music Edition</title>
+<link rel="stylesheet" href="/style.css?v=3">
+</head>
 <body>
-<aside><a class="brand" href="/" aria-label="Chord Studio 홈"><span class="logo">♮</span> GUITAR LAB</a><div class="nav active">◉ <span>코드 분석</span></div><div class="nav muted">▤ <span>타브 제작</span><small>다음 단계</small></div><div class="aside-bottom"><span class="dot"></span> 로컬 분석 엔진<br><small>파일은 이 컴퓨터에서 처리됩니다.</small></div></aside>
-<main><header><div><span class="eyebrow">YOUR SOUND, IN CHORDS</span><h1>Chord Studio<span> / 코드 분석</span></h1></div><span class="pill">오디오 분석 · 비전 미연결</span></header>
-<section id="intro"><div><h2>연주를 듣고,<br>코드의 흐름을 따라가세요.</h2><p>오디오나 영상을 올리면 기존 분석기가 코드 후보를 찾습니다.<br>재생하면서 확인하고, 애매한 순간은 후보를 함께 비교하세요.</p></div><div class="sound-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></section>
-<section class="upload" id="drop"><div class="upload-icon">↥</div><div><h3>분석할 연주 파일을 가져오세요</h3><p id="file-name">오디오·영상 / 최대 150MB · 5분</p><small>기타 분리음을 넣으면 기존 검수 조건과 가까워집니다.</small></div><div class="upload-actions"><label class="button primary" for="file">파일 선택</label><input id="file" type="file" accept="audio/*,video/*" hidden><button id="demo">샘플 들어보기 ↗</button></div></section>
-<div id="notice" role="status" aria-live="polite"></div><section id="progress" hidden><div class="progress-title"><strong id="progress-message">분석 대기 중</strong><span id="percent">0%</span></div><progress id="bar" max="100" value="0"></progress><small>분석이 끝나면 재생 화면이 열립니다. 긴 파일은 시간이 걸릴 수 있어요.</small></section>
-<section id="workspace" hidden><div class="section-head"><div><span class="eyebrow">PLAY & EXPLORE</span><h2 id="track-name">분석 결과</h2></div><a id="download" class="button" download="chords.json">JSON 내보내기 ↓</a></div>
-<div class="analysis-grid"><div class="player-card"><div class="stage"><video id="player" controls preload="metadata" playsinline></video><div id="audio-art" aria-hidden="true"><span>♬</span><p>GUITAR SESSION</p></div><div class="overlay"><small id="overlay-caption">현재 코드 후보</small><strong id="overlay-chord">—</strong><span id="overlay-sub">재생해서 확인하세요</span></div></div><div class="player-footer"><span id="clock">00:00 / 00:00</span><span>사전 분석 · 재생 시간 동기화</span></div></div>
-<div class="detail-card"><span class="eyebrow">CHORD INSPECTOR</span><div class="settings"><label>표기 기준<select id="notation"><option value="concert">실음</option><option value="shape">카포 기준 운지</option></select></label><label>카포<input type="number" id="capo" min="0" max="12" value="1"></label><label>분석 시간창<select id="window"><option value="0.2">0.2초</option><option value="0.4">0.4초</option></select></label></div><div class="current"><small id="state">현재 후보</small><h2 id="chord">—</h2><p id="other-name">음 근거를 확인하는 중</p></div><div class="candidate-head">함께 확인할 후보 <span>순위 점수 · 확률 아님</span></div><div id="candidates"></div><div class="next"><small>다음 표시 후보</small><strong id="next">—</strong></div></div></div>
-<div class="timeline-card"><div class="section-head"><h3>코드 타임라인</h3><span>구간을 눌러 이동하세요</span></div><div id="timeline"></div><div class="timeline-scale"><span>00:00</span><span id="end-time"></span></div></div><p class="footnote">동점은 함께 표시합니다. 코드와 구성음은 잠정 추정이며, 현·프렛·누름 여부는 이 화면에서 판정하지 않습니다.</p></section>
-<section class="history"><div class="section-head"><h3>최근 분석</h3><button id="refresh" class="text-button">새로고침 ↻</button></div><div id="history">아직 분석한 파일이 없습니다.</div></section><footer>GUITAR LAB <span>Python analyzer → Web app → Chrome extension</span></footer></main><script src="/app.js"></script></body></html>
+<aside id="sidebar">
+  <div class="aside-header">
+    <a class="brand" href="/" aria-label="Chord Studio 홈">
+      <span class="logo">♮</span>
+      <span class="brand-text">GUITAR LAB</span>
+    </a>
+  </div>
+  <div class="nav active" title="코드 스튜디오">
+    <span class="nav-icon">◉</span>
+    <span class="nav-text">코드 스튜디오</span>
+  </div>
+  <div class="aside-collapse-row">
+    <button type="button" id="sidebar-toggle" class="sidebar-toggle-btn" title="사이드바 접기" aria-label="사이드바 접기">
+      <span class="toggle-icon">◀</span>
+      <span class="toggle-label">사이드바 접기</span>
+    </button>
+  </div>
+</aside>
+<main>
+  <header class="app-header">
+    <div class="app-title-group">
+      <h1>Chord Studio<span> / Pro Studio · 듀얼 뷰(지판 &amp; 악보) 에디션</span></h1>
+    </div>
+    <span class="pill" id="mode-pill">전체 음원 분리 + 듀얼 뷰 스튜디오</span>
+  </header>
+
+  <section id="intro" class="hero-intro">
+    <div class="hero-text-wrap">
+      <div class="hero-badges">
+        <span class="hero-badge">✨ AI 6-Stem 기타 분리</span>
+        <span class="hero-badge">🎼 실시간 마디 리드 시트</span>
+        <span class="hero-badge">🎸 5프렛 스마트 2D 지판</span>
+      </div>
+      <h2>
+        전체 음원에서 기타를 분리하고,<br>
+        <span class="hero-highlight">지판과 악보로 완벽한 코드</span>를 완성하세요.
+      </h2>
+      <p>
+        원곡 전체 음원과 분리된 기타 트랙을 16박자 비트 격자에 맞춰 정교하게 분석합니다.<br>
+        2D 기타 지판 다이어그램과 실시간 마디 리드 시트 악보를 넘나들며 코드를 확인하고 교정하세요.
+      </p>
+    </div>
+    <div class="sound-art" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </section>
+
+  <section class="upload" id="drop">
+    <div class="upload-icon">↥</div>
+    <div class="upload-center">
+      <div class="upload-head-row">
+        <h3>분석할 연주 파일(오디오 · 영상)을 가져오세요</h3>
+        <div class="format-pills">
+          <span class="f-pill">MP4</span>
+          <span class="f-pill">WAV</span>
+          <span class="f-pill">MOV</span>
+          <span class="f-pill">MP3</span>
+          <span class="f-pill">FLAC</span>
+        </div>
+      </div>
+      <p id="file-name">파일을 드래그하여 놓거나 우측 버튼으로 선택하세요 · 최대 2GB · 영상 길이 제한 없음</p>
+      <label class="inline-check" title="전체 음원에서 기타 트랙을 분리하여 분석 정확도를 높입니다">
+        <input type="checkbox" id="separate-toggle" checked>
+        전체 음원 AI 기타 트랙 분리 적용 후 분석 (권장)
+      </label>
+    </div>
+    <div class="upload-actions">
+      <label class="button primary upload-main-btn" for="file">
+        <span>파일 선택</span> ↥
+      </label>
+      <input id="file" type="file" accept="audio/*,video/*" hidden>
+    </div>
+  </section>
+
+  <div id="notice" role="status" aria-live="polite"></div>
+
+  <section id="progress" hidden>
+    <div class="progress-title"><strong id="progress-message">분석 대기 중</strong><span id="percent">0%</span></div>
+    <progress id="bar" max="100" value="0"></progress>
+    <small>전체 음원 분리 및 16박자 코드 분석이 끝나면 스튜디오 화면이 열립니다.</small>
+  </section>
+
+  <section id="workspace" hidden>
+    <!-- 1. Top Transport & Controls Bar -->
+    <div class="transport-bar">
+      <div class="transport-meta">
+        <span class="eyebrow-mini">PLAYING</span>
+        <h2 id="track-name" class="track-title" title="분석 결과">분석 결과</h2>
+        <div class="transport-time-group">
+          <span id="clock" class="transport-clock">00:00 / 00:00</span>
+          <span id="beat-position" class="transport-beat">1마디 · 1박 · 1칸</span>
+        </div>
+      </div>
+
+      <div class="transport-controls">
+        <div class="t-pill-group">
+          <label class="t-pill" title="표기 기준">
+            <span class="t-label">표기</span>
+            <select id="notation" class="t-select">
+              <option value="shape">운지(카포)</option>
+              <option value="concert">실음(콘서트)</option>
+            </select>
+          </label>
+          <label class="t-pill" title="카포 위치 (0~12)">
+            <span class="t-label">카포</span>
+            <input type="number" id="capo" class="t-input-num" min="0" max="12" value="0">
+          </label>
+          <label class="t-pill" title="분석 시간창">
+            <span class="t-label">시간창</span>
+            <select id="window" class="t-select">
+              <option value="0.2">0.2초</option>
+              <option value="0.4">0.4초</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="t-pill-group">
+          <label class="t-pill" title="16박자 템포 BPM">
+            <span class="t-label">BPM</span>
+            <input type="number" id="bpm" class="t-input-num bpm-input" min="40" max="240" step="0.5" value="120">
+            <button type="button" id="bpm-auto" class="t-mini-btn" title="자동 계산된 BPM 복원">자동</button>
+          </label>
+          <label class="t-pill offset-pill" title="첫 박 시작점 (16분음표 미세 조절)">
+            <span class="t-label">첫박 오프셋</span>
+            <button type="button" id="offset-minus" class="t-mini-btn">-1칸</button>
+            <input type="number" id="beat-offset" class="t-input-num offset-input" min="-5" max="120" step="0.01" value="0.00">
+            <button type="button" id="offset-plus" class="t-mini-btn">+1칸</button>
+            <button type="button" id="offset-auto" class="t-mini-btn">자동</button>
+          </label>
+        </div>
+      </div>
+
+      <div class="transport-actions">
+        <button type="button" id="audio-source-btn" class="button t-btn" hidden>기타 분리 트랙 듣기 ♬</button>
+        <button type="button" id="start-calibrate" class="button t-btn">지판 직접 지정 (4점) ⌖</button>
+        <button type="button" id="back-home-btn" class="button t-btn outline" title="새 파일 업로드 및 메인 홈으로 돌아가기">새 파일 / 홈 ⌂</button>
+      </div>
+    </div>
+
+    <!-- Hidden advanced switches (maintained for contract logic) -->
+    <div id="advanced-toggles" hidden>
+      <input type="checkbox" id="beat-grid" checked>
+      <input type="checkbox" id="context" checked>
+      <input type="checkbox" id="onset" checked>
+    </div>
+
+    <!-- Calibration Bar -->
+    <div id="calibrate-bar" class="calibrate-bar" hidden>
+      <div class="calibrate-steps">
+        <strong id="calibrate-prompt">① 너트 위쪽(6번줄 시작점)을 영상 위에서 클릭하세요</strong>
+        <small id="calibrate-help">순서: ① 너트 위(6번줄) → ② 지판 끝 위(6번줄) → ③ 지판 끝 아래(1번줄) → ④ 너트 아래(1번줄) · 4점 배치 후 점들과 [12F] 핸들을 드래그하여 미세조정 가능</small>
+      </div>
+      <div class="calibrate-actions">
+        <label style="font-size:11px;color:#c0d2eb;display:inline-flex;align-items:center;margin-right:6px">
+          프렛 수:
+          <select id="total-frets" style="padding:4px 6px;margin:0 4px;background:#151c28;color:#f0f6fc;border:1px solid #32435b;border-radius:4px">
+            <option value="12">12 프렛</option>
+            <option value="15">15 프렛</option>
+            <option value="18">18 프렛</option>
+            <option value="19">19 프렛</option>
+            <option value="20" selected>20 프렛</option>
+            <option value="21">21 프렛</option>
+            <option value="22">22 프렛</option>
+            <option value="24">24 프렛</option>
+          </select>
+        </label>
+        <label style="font-size:11px;color:#c0d2eb;display:inline-flex;align-items:center;margin-right:6px">
+          프렛 투영 왜곡(k):
+          <input type="range" id="fret-perspective" min="-60" max="60" value="0" step="1" style="width:70px;margin:0 4px">
+          <span id="fret-persp-val" style="font-size:11px;color:#8ba3c7;display:inline-block;width:34px;text-align:right">0.00</span>
+        </label>
+        <button type="button" id="reset-calibrate" class="mini-button">다시 찍기</button>
+        <button type="button" id="apply-calibrate" class="mini-button primary" disabled>이 지판으로 비전 분석 실행</button>
+        <button type="button" id="cancel-calibrate" class="mini-button">취소</button>
+      </div>
+    </div>
+
+    <!-- 2. Dual Studio Workspace Grid -->
+    <div class="studio-main-grid">
+      <!-- Left Column: Video Viewport -->
+      <div class="player-card viewport-card">
+        <div class="video-wrapper stage">
+          <video id="player" controls preload="metadata" playsinline></video>
+          <canvas id="vision-canvas" class="vision-canvas"></canvas>
+          <div id="audio-art" aria-hidden="true"><span>♬</span><p>SEPARATED GUITAR SESSION</p></div>
+          
+          <!-- Ultra-Sleek Floating Pill Badge (no huge blocking box) -->
+          <div class="overlay-glass-pill" id="overlay-pill">
+            <small id="overlay-caption">현재 코드 후보</small>
+            <strong id="overlay-chord">—</strong>
+            <span id="overlay-sub">재생해서 확인하세요</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Dual Mode Viewport (Fretboard & Sheet Music Switcher) -->
+      <div class="detail-card dual-view-card">
+        <!-- Dual Mode Viewport Switcher Tabs -->
+        <div class="view-switch-nav">
+          <button type="button" id="tab-inspector" class="switch-tab active" title="지판 운지 및 세부 코드 분석">
+            <span class="tab-icon">🎸</span>
+            <span class="tab-title">지판 운지 &amp; 분석</span>
+          </button>
+          <button type="button" id="tab-sheet" class="switch-tab" title="실시간 마디 리드 시트 악보 동기화">
+            <span class="tab-icon">🎼</span>
+            <span class="tab-title">마디 리드 시트 악보</span>
+            <span class="tab-sync-badge">SYNC</span>
+          </button>
+        </div>
+
+        <!-- TAB 1: Fretboard Voicing & Chord Inspector -->
+        <div id="panel-inspector" class="tab-panel active">
+          <!-- Unified Chord Hero & 5-Fret Voicing Card (Horizontal Layout) -->
+          <div class="chord-fretboard-combo-card">
+            <!-- Left: Chord Hero Info -->
+            <div class="combo-hero-side">
+              <div class="hero-top-row">
+                <small id="state" class="hero-state">현재 코드 후보</small>
+                <div id="bass-hypothesis" class="bass-badge"></div>
+              </div>
+              <h2 id="chord">—</h2>
+              <p id="other-name">음 근거를 확인하는 중</p>
+            </div>
+
+            <!-- Right: 5-Fret Guitar Voicing Diagram -->
+            <div class="combo-diagram-side">
+              <div class="card-mini-head">
+                <strong>5프렛 기타 운지 다이어그램</strong>
+                <small id="fretboard-voicing-info">6현 표준 튜닝 (E A D G B E)</small>
+              </div>
+              <div class="fretboard-svg-wrap">
+                <svg id="chord-fretboard-svg" viewBox="0 0 350 114" class="chord-svg"></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Chord Segment Editor -->
+          <div id="chord-editor" class="chord-editor-modern">
+            <div class="editor-head">
+              <strong>선택 구간 코드 직접 수정</strong>
+              <small id="edit-target-range">00:00 ~ 00:00</small>
+            </div>
+            <div class="editor-controls-modern">
+              <select id="edit-root" title="근음 선택">
+                <option value="0">C</option><option value="1">C#</option><option value="2">D</option><option value="3">D#</option>
+                <option value="4">E</option><option value="5">F</option><option value="6">F#</option><option value="7">G</option>
+                <option value="8">G#</option><option value="9">A</option><option value="10">A#</option><option value="11">B</option>
+              </select>
+              <select id="edit-quality" title="코드 종류">
+                <option value="major">Major (기본)</option>
+                <option value="minor">m (단조)</option>
+                <option value="m7">m7</option>
+                <option value="7">7</option>
+                <option value="maj7">maj7</option>
+                <option value="sus4">sus4</option>
+                <option value="sus2">sus2</option>
+                <option value="add9">add9</option>
+                <option value="6">6</option>
+                <option value="m6">m6</option>
+                <option value="m7b5">m7b5</option>
+                <option value="dim">dim</option>
+                <option value="aug">aug</option>
+              </select>
+              <select id="edit-bass" title="분수코드 베이스음">
+                <option value="">/ 베이스 없음</option>
+                <option value="0">/ C</option><option value="1">/ C#</option><option value="2">/ D</option><option value="3">/ D#</option>
+                <option value="4">/ E</option><option value="5">/ F</option><option value="6">/ F#</option><option value="7">/ G</option>
+                <option value="8">/ G#</option><option value="9">/ A</option><option value="10">/ A#</option><option value="11">/ B</option>
+              </select>
+              <button type="button" id="apply-edit-btn" class="mini-button primary">구간 적용</button>
+            </div>
+          </div>
+
+          <!-- Alternative Candidates Chips -->
+          <details id="candidates-panel" class="candidates-collapsible" open>
+            <summary class="candidate-head">
+              <span class="candidate-summary-title">함께 확인할 후보 (클릭 시 즉시 적용)</span>
+              <span>원클릭 교체</span>
+            </summary>
+            <div id="candidates" class="candidates-modern-grid"></div>
+          </details>
+
+          <!-- Vision & Skeleton Toggles -->
+          <div class="view-toggles-row">
+            <label class="context-toggle"><input type="checkbox" id="skeleton" checked> 손·가상 지판 격자</label>
+            <label class="context-toggle"><input type="checkbox" id="vision" checked disabled> 사용자 지판 비전 가점</label>
+          </div>
+        </div>
+
+        <!-- TAB 2: Realtime Lead Sheet / Chord Chart -->
+        <div id="panel-sheet" class="tab-panel" hidden>
+          <div class="sheet-top-meta">
+            <div>
+              <strong>실시간 마디 리드 시트 악보</strong>
+              <small>마디를 클릭하면 해당 위치로 즉시 이동하며 편집할 수 있습니다.</small>
+            </div>
+            <div class="sheet-badges">
+              <span class="badge-mini">4/4 리듬 슬래시</span>
+              <span class="badge-mini highlight">16박자 동기화</span>
+            </div>
+          </div>
+          <div id="lead-sheet-scroll" class="lead-sheet-scroll">
+            <div id="lead-sheet-grid" class="lead-sheet-grid">
+              <!-- Measures render here dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Bottom Dock: Full-Width DAW 16-Beat Timeline -->
+    <div class="timeline-card daw-timeline-card">
+      <div class="section-head daw-dock-head">
+        <div class="timeline-head-info">
+          <h3>코드 타임라인 · 마디/박자 눈금</h3>
+          <span id="timeline-grid-info">굵은 선: 1마디(16칸) · 점선: 1박(4칸) · 구간 클릭 후 위쪽에서 코드 수정 가능</span>
+        </div>
+        <div class="next-preview-box">
+          <small>다음 표시 후보</small>
+          <strong id="next">—</strong>
+        </div>
+      </div>
+      <div id="timeline-scroll" class="timeline-scroll">
+        <div id="timeline-track" class="timeline-track">
+          <div id="beat-ruler" class="beat-ruler"></div>
+          <div id="timeline"></div>
+          <div id="timeline-playhead" class="timeline-playhead"></div>
+        </div>
+      </div>
+      <div class="timeline-scale"><span>00:00</span><span id="end-time"></span></div>
+    </div>
+  </section>
+
+  <section class="history">
+    <div class="section-head history-head">
+      <div class="history-title-group">
+        <h3>분석 보관함</h3>
+        <span id="history-count" class="history-count-pill">최근 분석 기록</span>
+      </div>
+      <div class="history-actions">
+        <button id="refresh" class="history-refresh-btn" title="보관함 새로고침">새로고침 ↻</button>
+      </div>
+    </div>
+    <div id="history">아직 분석한 파일이 없습니다.</div>
+  </section>
+
+  <footer>GUITAR LAB CHORD STUDIO <span>Pro DAW Edition · Dual View Fretboard &amp; Lead Sheet Sync</span></footer>
+</main>
+<script src="/app.js?v=3"></script>
+</body>
+</html>

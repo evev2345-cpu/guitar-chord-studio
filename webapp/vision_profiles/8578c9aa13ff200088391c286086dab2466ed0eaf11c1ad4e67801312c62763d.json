@@ -1,0 +1,143 @@
+{
+  "reference_frame": 1920,
+  "reference_pixel_sha256": "b4e7f85efa3f13be18ca8ee00594733cd306ff0a2e96b5ccb0dede6214f8295b",
+  "image_size": [
+    1280,
+    720
+  ],
+  "corners": [
+    [
+      1040,
+      208
+    ],
+    [
+      400,
+      210
+    ],
+    [
+      400,
+      290
+    ],
+    [
+      1040,
+      267
+    ]
+  ],
+  "texture_polygon": [
+    [
+      410,
+      217
+    ],
+    [
+      810,
+      217
+    ],
+    [
+      810,
+      273
+    ],
+    [
+      410,
+      281
+    ]
+  ],
+  "frets": [
+    {
+      "number": 0,
+      "endpoints": [
+        [
+          1040,
+          208
+        ],
+        [
+          1040,
+          267
+        ]
+      ]
+    },
+    {
+      "number": 1,
+      "endpoints": [
+        [
+          984,
+          209
+        ],
+        [
+          984,
+          272
+        ]
+      ]
+    },
+    {
+      "number": 2,
+      "endpoints": [
+        [
+          936,
+          210
+        ],
+        [
+          936,
+          275
+        ]
+      ]
+    },
+    {
+      "number": 3,
+      "endpoints": [
+        [
+          888,
+          211
+        ],
+        [
+          889,
+          277
+        ]
+      ]
+    },
+    {
+      "number": 4,
+      "endpoints": [
+        [
+          845,
+          211
+        ],
+        [
+          846,
+          280
+        ]
+      ]
+    },
+    {
+      "number": 5,
+      "endpoints": [
+        [
+          804,
+          212
+        ],
+        [
+          805,
+          282
+        ]
+      ]
+    },
+    {
+      "number": 6,
+      "endpoints": [
+        [
+          767,
+          212
+        ],
+        [
+          768,
+          284
+        ]
+      ]
+    }
+  ],
+  "capo_candidate": 1,
+  "geometry_status": "agent_manual_provisional",
+  "physical_strings_verified": false,
+  "tuning": "assumed_standard",
+  "source": "Mela frame80 visual approximation; no audio or chord/TAB labels",
+  "fps": 24
+}

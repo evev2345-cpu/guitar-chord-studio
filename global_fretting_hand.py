@@ -22,17 +22,26 @@ def score_hand(hand,image_shape,corners=None,previous=None):
     up=float((1-direction[1]/max(np.linalg.norm(direction),1e-9))/2)
     cues={'upward':up};weights={}
     if corners is not None:
-        a,b,thickness=board_segment(corners);axis=b-a
+        c=np.asarray(corners,float);nut=(c[0]+c[3])/2;body=(c[1]+c[2])/2
+        length=np.linalg.norm(body-nut);neck_axis=(body-nut)/max(length,1e-6)
         q=p[[5,9,13,17,8,12,16,20]]
+        center=np.median(q,axis=0);delta=center-nut
+        along=float(delta@neck_axis);across=float(delta@np.array([-neck_axis[1],neck_axis[0]]))
+        # Hard strumming veto: playable fretboard ends at body.
+        # Hands at or past 1.08*length are over the soundhole/pickups/bridge (picking hand).
+        # Hands past -0.30*length are off the headstock into empty space.
+        if along > 1.08 * length or along < -0.30 * length:
+            cues['nut_prior'] = 0.0
+            cues['board_proximity'] = 0.0
+            cues['strumming_veto'] = 0.0
+            return dict(score=0.0,base_score=0.0,direction_bonus=0.0,
+                        cues=cues,weights=dict(weights,upward_bonus=.15),
+                        strumming_veto=True,scoring_version='nut_prior_hand_groups_v4',calibrated_probability=False)
+        a,b,thickness=board_segment(corners);axis=b-a
         t=np.clip((q-a)@axis/(axis@axis),0,1)
         distance=np.linalg.norm(q-(a+t[:,None]*axis),axis=1)
         cues['board_proximity']=float(np.exp(-.5*(np.median(distance)/(thickness*1.5))**2))
         weights['board_proximity']=.5
-        c=np.asarray(corners,float);nut=(c[0]+c[3])/2;body=(c[1]+c[2])/2
-        length=np.linalg.norm(body-nut);neck_axis=(body-nut)/length
-        center=np.median(q,axis=0);delta=center-nut
-        along=float(delta@neck_axis);across=float(delta@np.array([-neck_axis[1],neck_axis[0]]))
-        # Broad anisotropic nut prior: still supports body-side/high-fret positions.
         cues['nut_prior']=float(np.exp(-.5*((along/(.85*length))**2+(across/(1.8*thickness))**2)))
         weights['nut_prior']=.35
     if previous is not None:

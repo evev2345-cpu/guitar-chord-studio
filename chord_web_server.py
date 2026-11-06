@@ -13,11 +13,24 @@ import time
 from urllib.parse import parse_qs, urlsplit
 import uuid
 import webbrowser
+import hashlib
+import sys
+import wave
 from chord_web_analysis import ROOT, write_result
+
+def _resolve_model_python():
+    for candidate in (
+        ROOT / '.venv-audio-model' / 'Scripts' / 'python.exe',
+        ROOT / '.venv-audio-model' / 'bin' / 'python',
+    ):
+        if candidate.exists():
+            return candidate
+    return Path(sys.executable)
+
 
 STATIC = ROOT / 'webapp' / 'static'
 RUNS = ROOT / 'webapp' / 'runs'
-MODEL_PYTHON = ROOT / '.venv-audio-model' / 'Scripts' / 'python.exe'
+MODEL_PYTHON = _resolve_model_python()
 MAX_BYTES = 150 * 1024 * 1024
 MAX_SECONDS = 300
 POOL = ThreadPoolExecutor(max_workers=1)
@@ -58,14 +71,17 @@ def analyze(job_id, demo=False):
             probe = subprocess.run(['ffprobe', '-v', 'error', '-show_format', '-show_streams', '-of', 'json', str(source)],
                                    capture_output=True, check=True, timeout=30)
             info = json.loads(probe.stdout)
-            duration = float(info['format']['duration'])
-            if not 0.5 <= duration <= MAX_SECONDS:
+            reported=info.get('format',{}).get('duration')
+            duration=float(reported) if reported not in (None,'N/A') else None
+            if duration is not None and not 0.5 <= duration <= MAX_SECONDS:
                 raise ValueError('첫 버전은 0.5초~5분 파일을 지원합니다. 짧은 구간으로 잘라주세요.')
             if not any(s['codec_type'] == 'audio' for s in info['streams']):
                 raise ValueError('오디오 트랙이 없는 파일입니다.')
             save_state(job_id, progress=20, message='오디오 준비 중')
             run(['ffmpeg', '-v', 'error', '-nostdin', '-n', '-i', source, '-map', '0:a:0', '-vn',
-                 '-ac', '1', '-ar', '22050', '-c:a', 'pcm_s16le', directory / 'audio.wav'], log)
+                 '-t',str(MAX_SECONDS+1),'-ac', '1', '-ar', '22050', '-c:a', 'pcm_s16le', directory / 'audio.wav'], log)
+            with wave.open(str(directory/'audio.wav'),'rb') as audio:duration=audio.getnframes()/audio.getframerate()
+            if not .5<=duration<=MAX_SECONDS:raise ValueError('지원하는 길이는0.5초~5분입니다.')
             if any(s['codec_type'] == 'video' and not s.get('disposition', {}).get('attached_pic') for s in info['streams']):
                 save_state(job_id, progress=30, message='브라우저 재생용 영상 준비 중')
                 run(['ffmpeg', '-v', 'error', '-nostdin', '-n', '-i', source, '-map', '0:v:0', '-map', '0:a:0',
@@ -75,14 +91,35 @@ def analyze(job_id, demo=False):
             else:
                 shutil.copyfile(directory / 'audio.wav', directory / 'media.wav')
                 media = 'media.wav'
-            (directory / 'tasks.json').write_text(json.dumps([dict(id='upload', audio=str(directory / 'audio.wav'))]), encoding='utf-8')
+            analysis_audio=directory/'audio.wav'
+            if JOBS[job_id].get('processing')=='guitar':
+                if not (ROOT/'.venv-audio-separation/Scripts/python.exe').exists():raise ValueError('기타 분리 환경이 없습니다. 원음 모드를 사용해 주세요.')
+                save_state(job_id,progress=35,message='기타 추정음 분리 중 · CPU에서 시간이 걸릴 수 있습니다')
+                run([sys.executable,ROOT/'run_local_separation.py','--input',analysis_audio,'--model','htdemucs_6s','--stem','guitar','--output',directory/'separation'],log)
+                analysis_audio=directory/'separation/htdemucs_6s/audio/guitar.wav'
+                if not analysis_audio.exists():raise ValueError('기타 분리 결과가 생성되지 않았습니다.')
+            (directory / 'tasks.json').write_text(json.dumps([dict(id='upload', audio=str(analysis_audio))]), encoding='utf-8')
             save_state(job_id, progress=45, message='기존 오디오 모델로 음 후보 분석 중')
             run([MODEL_PYTHON, ROOT / 'basic_pitch_worker.py', '--tasks', directory / 'tasks.json',
                  '--output', directory / 'prediction', '--modes', 'raw'], log)
             save_state(job_id, progress=85, message='코드 후보와 시간축 생성 중')
         write_result(directory, duration)
+        extra={}
+        if media=='media.mp4':
+            profile=ROOT/'webapp/vision_profiles'/(hashlib.sha256((directory/'input.bin').read_bytes()).hexdigest()+'.json')
+            extra['vision_status']='source_geometry_needed'
+            if profile.exists():
+                try:
+                    save_state(job_id,progress=92,message='전체 화면 손·지판 비전 분석 중')
+                    run([sys.executable,ROOT/'web_vision_worker.py','--video',directory/'media.mp4','--calibration',profile,'--output',directory/'vision_run'],log)
+                    from attach_web_vision import attach
+                    attach(directory,directory/'vision_run')
+                    extra.update(vision_url=f'/api/jobs/{job_id}/vision',vision_status='experimental_location_only')
+                except Exception as error:
+                    with log.open('a',encoding='utf-8') as f:f.write('\nVision fallback: '+repr(error))
+                    extra['vision_status']='unavailable_audio_preserved'
         save_state(job_id, status='complete', progress=100, message='분석 완료', duration_s=duration,
-                   media_url=f'/media/{job_id}/{media}', result_url=f'/api/jobs/{job_id}/result')
+                   media_url=f'/media/{job_id}/{media}', result_url=f'/api/jobs/{job_id}/result',**extra)
     except Exception as exc:
         message = str(exc) if isinstance(exc, ValueError) else '분석에 실패했습니다. 파일 형식과 서버의 analysis.log를 확인해 주세요.'
         with log.open('a', encoding='utf-8') as f:
@@ -110,9 +147,17 @@ def range_bounds(value, size):
 
 class Handler(BaseHTTPRequestHandler):
     def allowed(self):
-        expected = f'127.0.0.1:{self.server.server_port}'
         host = self.headers.get('Host', '')
         origin = self.headers.get('Origin')
+        if getattr(self.server, 'allow_public', False):
+            host_only = host.split(':')[0]
+            origin_host = urlsplit(origin).hostname if origin else None
+            return bool(host_only) and (
+                origin is None
+                or origin_host == host_only
+                or (origin_host and (origin_host == 'huggingface.co' or origin_host.endswith('.hf.space')))
+            )
+        expected = f'127.0.0.1:{self.server.server_port}'
         return host in (expected, f'localhost:{self.server.server_port}') and (origin is None or origin == 'http://' + host)
 
     def json(self, data, status=200):
@@ -164,7 +209,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/jobs':
             with LOCK:
                 return self.json(list(JOBS.values()))
-        match = re.fullmatch(r'/api/jobs/([a-f0-9]{32})(/result)?', path)
+        match = re.fullmatch(r'/api/jobs/([a-f0-9]{32})(/result|/vision)?', path)
         if match:
             with LOCK:
                 job = JOBS.get(match[1])
@@ -174,17 +219,17 @@ class Handler(BaseHTTPRequestHandler):
                     return self.json(dict(job))
                 if job['status'] != 'complete':
                     return self.json(dict(error='분석이 아직 완료되지 않았습니다.'), 409)
-            return self.file(RUNS / match[1] / 'result.json')
+            return self.file(RUNS / match[1] / ('vision_overlay.json' if match[2]=='/vision' else 'result.json'))
         match = re.fullmatch(r'/media/([a-f0-9]{32})/(media\.(?:wav|mp4))', path)
         if match:
             return self.file(RUNS / match[1] / match[2])
         return self.json(dict(error='경로를 찾을 수 없습니다.'), 404)
 
     def do_POST(self):
+        url = urlsplit(self.path)
         if not self.allowed():
             self.close_connection = True
             return self.json(dict(error='허용되지 않은 요청입니다.'), 403)
-        url = urlsplit(self.path)
         if url.path not in ('/api/jobs', '/api/demo'):
             self.close_connection = True
             return self.json(dict(error='경로를 찾을 수 없습니다.'), 404)
@@ -227,6 +272,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument('--host', default='127.0.0.1')
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--open', action='store_true')
     args = parser.parse_args()
@@ -239,8 +285,9 @@ def main():
             JOBS[job['id']] = job
         except (ValueError, KeyError):
             pass
-    server = ThreadingHTTPServer(('127.0.0.1', args.port), Handler)
-    url = f'http://127.0.0.1:{server.server_port}'
+    server = ThreadingHTTPServer((args.host, args.port), Handler)
+    server.allow_public = args.host not in ('127.0.0.1', 'localhost')
+    url = f'http://{args.host}:{server.server_port}'
     print('Chord Studio:', url, flush=True)
     if args.open:
         webbrowser.open(url)

@@ -70,6 +70,15 @@ class HTTPTests(unittest.TestCase):
         with self.assertRaises(HTTPError) as caught:
             urlopen(Request(self.url + '/api/demo', data=b'', headers={'Origin': 'https://unrelated.example'}))
         self.assertEqual(caught.exception.code, 403)
+        self.http.allow_public = True
+        try:
+            with urlopen(self.url) as response:
+                self.assertEqual(response.status, 200)
+            with self.assertRaises(HTTPError) as caught:
+                urlopen(Request(self.url + '/api/demo', data=b'', headers={'Origin': 'https://unrelated.example'}))
+            self.assertEqual(caught.exception.code, 403)
+        finally:
+            self.http.allow_public = False
 
     def test_unknown_path_and_invalid_upload(self):
         for suffix in ['/media/../../README.md', '/api/jobs/'+'0'*32]:

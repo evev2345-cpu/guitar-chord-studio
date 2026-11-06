@@ -16,6 +16,7 @@ venv/
 *.log
 /runs/
 /webapp/runs/
+/chord_studio_v2/runs/
 /webapp/smoke*
 /webapp/validation.json
 
@@ -32,6 +33,7 @@ venv/
 *.pt
 *.pth
 *.onnx
+!/chrome_extension_standalone/model/nmp.onnx
 *.wav
 *.mp3
 *.flac
@@ -67,3 +69,6 @@ venv/
 *.key
 credentials*.json
 service-account*.json
+
+/scratch/
+scratch_crop.jpg

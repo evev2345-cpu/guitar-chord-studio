@@ -4,6 +4,8 @@
 
 ## Chord Studio 로컬 웹앱
 
+Chrome 오디오 확장0.1.0은 [chrome_extension 사용법](chrome_extension/README.md)을 참고하세요. 탭 소리를 짧게 녹음해 로컬 서버에서 원음/기타 분리 분석 후 YouTube 위에 표시합니다. 실제 Chrome 캡처·오버레이 실행 검수는 아직 남아 있습니다.
+
 `python chord_web_server.py --open`으로 실행하고 [로컬 웹앱](http://127.0.0.1:8765)을 엽니다. 파일 업로드·기존 오디오 모델 분석·재생 동기화 코드 후보·동점 표시·카포 전환·시간축 탐색·JSON 내보내기를 제공합니다. [사용법과 현재 범위](webapp/README.md)를 참고하세요. 타브와 크롬 확장은 다음 단계입니다.
 
 보고서는 [사진 첨부 규칙](docs/REPORTING_GUIDELINES.md)에 따라 원본과 분석 비교 사진을 함께 기록합니다. [확대 손 신뢰도·가장자리 현 최신 보고서](docs/ROBUST_CANDIDATES_2026-11-03.md)를 참고하세요.
@@ -257,3 +259,8 @@ python -m unittest test_string_detector test_fret_geometry test_baze_client -v
 Review deliverables: `dataset/string_review/report.md`, `resolution_comparison.jpg`, per-frame `*_high_raw.png`, `*_high.json`, `manual_string_references.json`, and `failure_photo.json`. Manual references are agent visual approximations on four clearly visible lines per frame, pending independent user review. They are not six-string ground truth. This sample's 800x150 warp upsamples native board dimensions; measured resampling differences are within manual-reference uncertainty.
 
 Fret labeler: explicit number input, deletion preserving identities, JSON import and gap-aware cell labels. Run `python fret_labeler.py`, load `dataset/fret_labels/user_fret_example.json`. The partial numbering audit and preserved original are under `dataset/label_audit/`. No chord-name classification is implemented in this string module; existing unrelated chord experiments were left untouched.
+
+
+실시간 영상 오버레이 확장: [LIVE 설치 안내](chrome_extension_live/README.md) · [검증 기록](docs/CHROME_LIVE_2026-11-06.md)
+
+**서버 없는 독립형 확장**: [Standalone 설치 안내](chrome_extension_standalone/README.md) · [실제 모델 비교와 원본 사진](docs/CHROME_STANDALONE_2026-11-06.md). 모델이 확장에 포함되어 Python 서버와 연결키 없이 실행합니다.
