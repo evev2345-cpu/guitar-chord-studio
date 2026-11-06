@@ -18,7 +18,7 @@ RUN useradd -m -u 1000 user
 WORKDIR /app
 
 COPY requirements-deploy.txt /app/
-RUN pip install --no-cache-dir -r requirements-deploy.txt
+RUN pip install --no-cache-dir -r requirements-deploy.txt && pip install --no-cache-dir --no-deps basic-pitch==0.4.0
 
 COPY --chown=user:user engine /app/engine
 COPY --chown=user:user chord_studio_v2 /app/chord_studio_v2

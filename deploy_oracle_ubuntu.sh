@@ -29,6 +29,7 @@ if [ ! -d "$APP_DIR/.venv-audio-model" ]; then
 fi
 "$APP_DIR/.venv-audio-model/bin/pip" install --upgrade pip
 "$APP_DIR/.venv-audio-model/bin/pip" install -r "$APP_DIR/requirements-deploy.txt"
+"$APP_DIR/.venv-audio-model/bin/pip" install --no-deps basic-pitch==0.4.0
 
 echo "[3/5] 오라클 클라우드 Ubuntu 내부 방화벽(iptables) 포트 ${PORT} 개방 중..."
 sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport "${PORT}" -j ACCEPT || true
