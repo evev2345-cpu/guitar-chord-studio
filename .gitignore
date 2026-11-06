@@ -74,3 +74,6 @@ service-account*.json
 scratch_crop.jpg
 
 /bin/
+
+# Keep docs and devlogs on local disk only (untracked on GitHub)
+/docs/
