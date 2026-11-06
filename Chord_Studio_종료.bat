@@ -1,7 +1,7 @@
 @echo off
 title Guitar Chord Studio Shutdown
 chcp 65001 >nul
-cd /d "%~dp0"
+cd /d "e:\GUITAR"
 echo [Chord Studio 서버 종료 중...]
 taskkill /F /IM cloudflared.exe >nul 2>&1
 for /f "tokens=5" %%a in ('netstat -aon ^| findstr :8766') do (
