@@ -1,0 +1,56 @@
+{
+  "status": "completed",
+  "targets": [
+    {
+      "path": "C:\\Users\\evev2\\Documents\\antigravity\\GUITAR\\__pycache__",
+      "files": 69,
+      "logical_bytes": 553674,
+      "reason": "regenerable installer/Python cache or temporary console summary",
+      "status": "removed"
+    },
+    {
+      "path": "C:\\Users\\evev2\\Documents\\antigravity\\GUITAR\\.cache\\audio-install",
+      "files": 16807,
+      "logical_bytes": 586754647,
+      "reason": "regenerable installer/Python cache or temporary console summary",
+      "status": "removed"
+    },
+    {
+      "path": "C:\\Users\\evev2\\Documents\\antigravity\\GUITAR\\dataset\\integration_review\\last_run_summary.txt",
+      "files": 1,
+      "logical_bytes": 35524,
+      "reason": "regenerable installer/Python cache or temporary console summary",
+      "status": "removed"
+    },
+    {
+      "path": "C:\\Users\\evev2\\Documents\\antigravity\\GUITAR\\dataset\\integration_review\\last_robust_review.txt",
+      "files": 1,
+      "logical_bytes": 9928,
+      "reason": "regenerable installer/Python cache or temporary console summary",
+      "status": "removed"
+    },
+    {
+      "path": "C:\\Users\\evev2\\Documents\\antigravity\\GUITAR\\dataset\\integration_review\\last_failure_diagnosis.txt",
+      "files": 1,
+      "logical_bytes": 8782,
+      "reason": "regenerable installer/Python cache or temporary console summary",
+      "status": "removed"
+    }
+  ],
+  "preserved": [
+    "source code",
+    "data and model weights",
+    "audio separation environment and model cache",
+    "all versioned run results",
+    "manual review records",
+    "reports and execution/training logs"
+  ],
+  "date": "2026-11-04",
+  "timezone": "Asia/Seoul",
+  "logical_bytes_in_prepared_inventory": 587362555,
+  "actual_disk_reclaimed_bytes": null,
+  "notes": [
+    "Prior attempt did not execute because automatic review was unavailable; current user-authorized retry completed.",
+    "Model cache and isolated runtime preserved; physical space differs from logical size due to hardlinks."
+  ]
+}
