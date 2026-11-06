@@ -4,7 +4,9 @@ Only replace bracketed A-B-A glitches when A is also a close current candidate.
 Never use visual references. Original predictions are retained alongside display.
 """
 import copy
-from chord_display_stabilizer import identity
+
+def identity(c):
+    return (c['root_pc'], c['quality']) if c else None
 
 CONFIG=dict(spike_max_frames=2,extension_spike_max_frames=3,dropout_max_frames=2,alternative_score_gap=.08,tie_tolerance=1e-10,mode='offline_bracketed_cleanup')
 

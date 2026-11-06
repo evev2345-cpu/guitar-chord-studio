@@ -1,8 +1,8 @@
-"""Web-facing adapter for the existing offline audio pipeline, without labels."""
+"""Web-facing adapter for the offline audio pipeline, without labels."""
 import json
 from pathlib import Path
 import numpy as np
-from render_audio_video_review import predictions
+from harmony_engine import NAMES, SUFFIX, TEMPLATES, rank_saliences, pooled_chroma
 from chord_display_cleanup import stabilize
 from harmonic_context import enrich, key_hypotheses, bass_track, CONFIG
 from chord_presentation import prepare, CONFIG as PRESENTATION_CONFIG
@@ -10,6 +10,37 @@ from onset_transition import add_layer
 from beat_grid import estimate_tempo_and_phase
 
 ROOT = Path(__file__).resolve().parent
+
+
+def predictions(grid, frames, queries, width):
+    valid = (queries - width / 2 >= grid[0]) & (queries + width / 2 <= grid[-1])
+    sal = np.zeros((len(queries), 12))
+    if np.any(valid):
+        sal[valid] = pooled_chroma(grid, frames, queries[valid], width)
+    scores, order, usable = rank_saliences(sal)
+    rows = []
+    for i in range(len(queries)):
+        top = (
+            [
+                dict(
+                    TEMPLATES[j],
+                    score=float(scores[i, j]),
+                    capo1_shape=NAMES[(TEMPLATES[j]['root_pc'] - 1) % 12] + SUFFIX.get(TEMPLATES[j]['quality'], TEMPLATES[j]['quality']),
+                )
+                for j in order[i, :3]
+            ]
+            if usable[i]
+            else []
+        )
+        ties = int(np.isclose(scores[i], scores[i, order[i, 0]], atol=1e-10, rtol=0).sum()) if usable[i] else 0
+        rows.append(
+            dict(
+                top3=top,
+                tied_top1_count=ties,
+                status='audio_edge_no_full_window' if not valid[i] else 'provisional' if usable[i] else 'insufficient_note_evidence',
+            )
+        )
+    return rows
 
 
 def make_timeline(prediction, duration, full_mix_prediction=None):

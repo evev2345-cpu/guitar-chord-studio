@@ -5,9 +5,7 @@ Raw coverage scores and raw top-three predictions are never overwritten.
 """
 import copy
 import numpy as np
-from guitarset_benchmark import TEMPLATES, rank_saliences
-from temporal_audio_pool import pooled_chroma
-from harmony_engine import NAMES, SUFFIX
+from harmony_engine import NAMES, SUFFIX, TEMPLATES, rank_saliences, pooled_chroma
 
 CONFIG = dict(key_bonus_max=.02, progression_bonus_max=.025, bass_bonus_max=.05,
               maximum_raw_gap=.06, minimum_decision_margin=.025,

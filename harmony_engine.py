@@ -4,6 +4,7 @@ import copy
 import json
 import math
 from pathlib import Path
+import numpy as np
 
 NAMES = ('C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B')
 STANDARD = [40, 45, 50, 55, 59, 64]
@@ -16,6 +17,59 @@ QUALITIES = {
     'dim7': (0, 3, 6, 9), 'add9': (0, 2, 4, 7),
 }
 SUFFIX = {'major': '', 'minor': 'm', 'diminished': 'dim', 'augmented': 'aug'}
+
+TEMPLATES = sorted([dict(root_pc=root, quality=quality, pcs=sorted({(root + i) % 12 for i in intervals}),
+                         symbol=NAMES[root] + SUFFIX.get(quality, quality))
+                     for root in range(12) for quality, intervals in QUALITIES.items()],
+                    key=lambda c: (c['root_pc'], c['quality']))
+
+
+def rank_saliences(saliences):
+    sal = np.asarray(saliences, float)
+    total = sum(sal[:, i] for i in range(12))
+    active = (sal > 0) & (sal >= 0.1 * sal.max(axis=1)[:, None])
+    usable = (total > 0) & (active.sum(axis=1) >= 3)
+    scores = np.full((len(sal), len(TEMPLATES)), -np.inf)
+    for j, template in enumerate(TEMPLATES):
+        target = {(template['root_pc'] + i) % 12 for i in QUALITIES[template['quality']]}
+        coverage = sum(sal[:, i] for i in target) / np.maximum(total, 1e-300)
+        missing = sum(~active[:, i] for i in target)
+        scores[usable, j] = (coverage - 0.15 * missing / len(target))[usable]
+    order = np.argsort(-scores, axis=1, kind='stable')
+    return scores, order, usable
+
+
+def probabilities_to_chroma(probabilities, threshold=0.3):
+    p = np.asarray(probabilities, float)
+    weights = np.where(p >= threshold, p, 0.0)
+    sal = np.zeros((len(p), 12))
+    for i, midi in enumerate(range(38, 89)):
+        sal[:, midi % 12] += weights[:, i]
+    return sal / np.maximum(sal.sum(axis=1, keepdims=True), 1e-12)
+
+
+def pooled_chroma(frame_times, note_frames, query_times, width=0.0, method='max'):
+    grid = np.asarray(frame_times, float)
+    values = np.asarray(note_frames, float)
+    query = np.asarray(query_times, float)
+    rows = []
+    for t in query:
+        if width == 0:
+            i = int(np.argmin(abs(grid - t)))
+            row = values[i, 17:68]
+        else:
+            if t - width / 2 < grid[0] or t + width / 2 > grid[-1]:
+                continue
+            a = np.searchsorted(grid, t - width / 2, side='left')
+            b = np.searchsorted(grid, t + width / 2, side='left')
+            if a >= b:
+                row = np.zeros(51)
+            else:
+                row = getattr(np, method)(values[a:b, 17:68], axis=0)
+        rows.append(row)
+    if not rows:
+        return np.zeros((0, 12))
+    return probabilities_to_chroma(np.array(rows).reshape(-1, 51), 0.3)
 
 
 def integer(value, name, low=0, high=127):
