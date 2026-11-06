@@ -18,7 +18,10 @@ from virtual_string_grid import build_grid
 from hand_cell_distribution import sample_projected,integrate_points
 from low_string_root_prior import low_string_support,FINGER_WEIGHTS,TUNING
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
+MODEL_PATH = ROOT / 'models' / 'hand_landmarker.task'
+if not MODEL_PATH.exists():
+    MODEL_PATH = Path(__file__).resolve().parent / 'hand_landmarker.task'
 
 
 def project(points,matrix):
@@ -104,7 +107,7 @@ def run(video,calibration,out,start=0,end=None):
     x0=max(0,int(c_min[0]-pad_x));x1=min(w_img,int(c_max[0]+pad_x))
     y0=max(0,int(c_min[1]-pad_y));y1=min(h_img,int(c_max[1]+pad_y))
     crop_transform=np.array([[1.,0.,-x0],[0.,1.,-y0],[0.,0.,1.]])
-    options=vision.HandLandmarkerOptions(base_options=python.BaseOptions(model_asset_path=str(ROOT/'hand_landmarker.task')),running_mode=vision.RunningMode.VIDEO,num_hands=2)
+    options=vision.HandLandmarkerOptions(base_options=python.BaseOptions(model_asset_path=str(MODEL_PATH)),running_mode=vision.RunningMode.VIDEO,num_hands=2)
     previous=None;stable=0;overlay=[];counts={};last_index=min(count,round(end*fps)) if end is not None else count
     with vision.HandLandmarker.create_from_options(options) as detector,(out/'observations.jsonl').open('w',encoding='utf-8') as dest:
         for index in range(round(start*fps),last_index):
@@ -145,7 +148,7 @@ def run(video,calibration,out,start=0,end=None):
     cap.release()
     (out/'overlay.json').write_text(json.dumps(overlay),encoding='utf-8')
     (out/'manifest.json').write_text(json.dumps(dict(source_id=source_id,fps=fps,status_counts=counts,calibration=calibration,
-        model_sha256=hashlib.sha256((ROOT/'hand_landmarker.task').read_bytes()).hexdigest(),mode='fretboard_roi_VIDEO',crop_roi=[x0,y0,x1,y1],anatomy_verified=False,geometry_verified=False,contact='unknown',audio_used_to_select_hand=False),indent=2),encoding='utf-8')
+        model_sha256=hashlib.sha256(MODEL_PATH.read_bytes()).hexdigest(),mode='fretboard_roi_VIDEO',crop_roi=[x0,y0,x1,y1],anatomy_verified=False,geometry_verified=False,contact='unknown',audio_used_to_select_hand=False),indent=2),encoding='utf-8')
     print('Vision completed',counts,flush=True)
 
 

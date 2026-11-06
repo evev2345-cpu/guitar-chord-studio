@@ -26,8 +26,11 @@ import wave
 import webbrowser
 
 ROOT = Path(__file__).resolve().parent.parent
+ENGINE_DIR = ROOT / 'engine'
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+if str(ENGINE_DIR) not in sys.path:
+    sys.path.insert(0, str(ENGINE_DIR))
 
 from chord_web_analysis import write_result
 from harmony_engine import NAMES, QUALITIES, SUFFIX
@@ -296,7 +299,7 @@ def analyze(job_id, demo=False, separate_guitar=True):
                     run_cmd(
                         [
                             SEPARATION_PYTHON,
-                            ROOT / 'run_local_separation.py',
+                            ENGINE_DIR / 'run_local_separation.py',
                             '--input', analysis_audio,
                             '--model', 'htdemucs_6s',
                             '--stem', 'guitar',
@@ -327,7 +330,7 @@ def analyze(job_id, demo=False, separate_guitar=True):
             run_cmd(
                 [
                     MODEL_PYTHON,
-                    ROOT / 'basic_pitch_worker.py',
+                    ENGINE_DIR / 'basic_pitch_worker.py',
                     '--tasks', directory / 'tasks.json',
                     '--output', directory / 'prediction',
                     '--modes', 'raw',
@@ -377,7 +380,7 @@ def run_user_calibration_job(job_id, time_s, corners, capo_candidate=0, total_fr
             run_cmd(
                 [
                     sys.executable,
-                    ROOT / 'web_vision_worker.py',
+                    ENGINE_DIR / 'web_vision_worker.py',
                     '--video', video_path,
                     '--calibration', profile_path,
                     '--output', vision_dir,

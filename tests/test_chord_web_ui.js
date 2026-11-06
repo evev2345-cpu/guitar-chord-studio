@@ -3,7 +3,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const elements=new Map();
 function element(key){if(!elements.has(key))elements.set(key,{value:key==='#capo'?'1':key==='#notation'?'shape':'0.2',textContent:'',classList:{add(){},remove(){},toggle(){}},addEventListener(){},replaceChildren(){},append(){}});return elements.get(key);}
 const context=vm.createContext({document:{querySelector:element,createElement:()=>element('new')},fetch:async()=>({ok:true,json:async()=>[]}),setTimeout,requestAnimationFrame:()=>{}});
-vm.runInContext(fs.readFileSync('webapp/static/app.js','utf8'),context);
+vm.runInContext(fs.readFileSync('chord_studio_v2/static/app.js','utf8'),context);
 const evaluate=code=>vm.runInContext(code,context);
 assert.equal(evaluate("label({root_pc:0,symbol:'C6',quality:'6'})"),'B6');
 assert.equal(evaluate("label({root_pc:9,symbol:'Am7',quality:'m7'})"),'G#m7');

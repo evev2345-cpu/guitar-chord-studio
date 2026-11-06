@@ -48,6 +48,7 @@ WorkingDirectory=$APP_DIR
 Environment="OMP_NUM_THREADS=1"
 Environment="MKL_NUM_THREADS=1"
 Environment="OPENBLAS_NUM_THREADS=1"
+Environment="PYTHONPATH=$APP_DIR:$APP_DIR/engine"
 ExecStart=$APP_DIR/.venv-audio-model/bin/python $APP_DIR/chord_studio_v2/server_v2.py --host 0.0.0.0 --port $PORT
 Restart=always
 RestartSec=3
