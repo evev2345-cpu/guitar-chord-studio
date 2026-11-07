@@ -360,6 +360,100 @@ progress::-webkit-progress-value{background:var(--mint)}
 }
 .t-mini-btn:hover{background:var(--mint);color:#0d2621;border-color:var(--mint)}
 
+/* Vision Status Indicator Pill */
+.vision-indicator-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #141b26;
+  border: 1px solid #28374d;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9cb1cc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+.vision-indicator-pill:hover {
+  border-color: #4c688c;
+  background: #192333;
+}
+
+.vision-indicator-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #52667d;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* State: Idle / Ready for calibration */
+.vision-indicator-pill.state-idle {
+  color: #8da4c4;
+  border-color: #2b3b52;
+}
+.vision-indicator-pill.state-idle .vision-indicator-dot {
+  background: #5a708c;
+}
+.vision-indicator-pill.state-idle:hover {
+  border-color: var(--mint);
+  color: var(--mint);
+}
+.vision-indicator-pill.state-idle:hover .vision-indicator-dot {
+  background: var(--mint);
+  box-shadow: 0 0 6px var(--mint);
+}
+
+/* State: Calibrating / In progress (Pulse Animation) */
+.vision-indicator-pill.state-calibrating {
+  background: rgba(245, 189, 102, 0.12);
+  border-color: rgba(245, 189, 102, 0.55);
+  color: #f7ca7d;
+}
+.vision-indicator-pill.state-calibrating .vision-indicator-dot {
+  background: #f5bd66;
+  box-shadow: 0 0 8px #f5bd66;
+  animation: vision-indicator-pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes vision-indicator-pulse {
+  0% { transform: scale(0.85); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #f5bd66; }
+  100% { transform: scale(0.85); opacity: 0.5; }
+}
+
+/* State: Active (Calibrated & Hand Tracking running) */
+.vision-indicator-pill.state-active {
+  background: rgba(57, 217, 138, 0.12);
+  border-color: rgba(57, 217, 138, 0.45);
+  color: #7af6d7;
+}
+.vision-indicator-pill.state-active .vision-indicator-dot {
+  background: #39d98a;
+  box-shadow: 0 0 8px rgba(57, 217, 138, 0.75);
+}
+
+/* State: Saved / Fallback */
+.vision-indicator-pill.state-saved {
+  background: rgba(80, 140, 210, 0.12);
+  border-color: rgba(80, 140, 210, 0.4);
+  color: #a4cafc;
+}
+.vision-indicator-pill.state-saved .vision-indicator-dot {
+  background: #508cd2;
+}
+
+/* State: Audio-only (no video) */
+.vision-indicator-pill.state-disabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
 .transport-actions{
   display:flex;
   gap:10px;

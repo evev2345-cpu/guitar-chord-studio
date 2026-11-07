@@ -429,14 +429,22 @@ def run_user_calibration_job(job_id, time_s, corners, capo_candidate=0, total_fr
 
     def _worker():
         try:
-            save_state(job_id, vision_status='calibrating', message='사용자 지정 지판으로 비전 추적 중')
+            save_state(job_id, vision_status='calibrating', vision_progress=0, message='지판 비전 추적 준비 중...')
             vision_dir = directory / f'vision_user_{int(time.time())}'
             try:
                 from web_vision_worker import run as run_vision
                 with log.open('a', encoding='utf-8') as f:
                     f.write('\n[In-process Vision tracking started]\n')
                 cal_data = json.loads(profile_path.read_text(encoding='utf-8'))
-                run_vision(video_path, cal_data, vision_dir)
+                def _prog(cur, total, cur_t, total_t):
+                    pct = int(cur / total * 100) if total > 0 else 0
+                    save_state(
+                        job_id,
+                        vision_status='calibrating',
+                        vision_progress=pct,
+                        message=f'지판 비전 분석 중 ({pct}% · {round(cur_t, 1)}s/{round(total_t, 1)}s)'
+                    )
+                run_vision(video_path, cal_data, vision_dir, progress_callback=_prog)
                 with log.open('a', encoding='utf-8') as f:
                     f.write('[In-process Vision tracking completed]\n')
             except Exception as vis_err:
@@ -464,6 +472,7 @@ def run_user_calibration_job(job_id, time_s, corners, capo_candidate=0, total_fr
                 message='사용자 지판 비전 반영 완료',
                 vision_url=f'/api/jobs/{job_id}/vision',
                 vision_status='user_calibrated_active',
+                vision_progress=100,
             )
         except Exception as err:
             with log.open('a', encoding='utf-8') as f:

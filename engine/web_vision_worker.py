@@ -85,7 +85,7 @@ def hand_evidence(grid,hand):
                 total_support=float(pcs.sum()),contact='unknown',anatomical_validity='unknown',score_type='uncalibrated_location_support')
 
 
-def run(video,calibration,out,start=0,end=None):
+def run(video, calibration, out, start=0, end=None, progress_callback=None):
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
     if (out/'observations.jsonl').exists():raise FileExistsError('Vision observations already exist; preserve original run')
     cap=cv2.VideoCapture(str(video));fps=cap.get(cv2.CAP_PROP_FPS);count=int(cap.get(cv2.CAP_PROP_FRAME_COUNT));source_id=hashlib.sha256(Path(video).read_bytes()).hexdigest()
@@ -109,8 +109,14 @@ def run(video,calibration,out,start=0,end=None):
     crop_transform=np.array([[1.,0.,-x0],[0.,1.,-y0],[0.,0.,1.]])
     options=vision.HandLandmarkerOptions(base_options=python.BaseOptions(model_asset_path=str(MODEL_PATH)),running_mode=vision.RunningMode.VIDEO,num_hands=2)
     previous=None;stable=0;overlay=[];counts={};last_index=min(count,round(end*fps)) if end is not None else count
+    total_frames = max(1, last_index - round(start * fps))
     with vision.HandLandmarker.create_from_options(options) as detector,(out/'observations.jsonl').open('w',encoding='utf-8') as dest:
         for index in range(round(start*fps),last_index):
+            if progress_callback and (index % 30 == 0 or index == last_index - 1):
+                try:
+                    progress_callback(index - round(start * fps), total_frames, index / fps, count / fps)
+                except Exception:
+                    pass
             ok,image=cap.read()
             if not ok:raise ValueError('Decode failed at frame '+str(index))
             pts=index/fps;alignment,matrix=tracker.track(image)

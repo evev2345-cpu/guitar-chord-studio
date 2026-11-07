@@ -1136,13 +1136,60 @@ if($('#reset-calibrate'))$('#reset-calibrate').onclick=()=>{
   drawVision(player.currentTime);
 };
 if($('#cancel-calibrate'))$('#cancel-calibrate').onclick=()=>setCalibrating(false);
+
+function updateVisionIndicator(job = currentJob) {
+  const ind = $('#vision-indicator');
+  const label = $('#vision-indicator-label');
+  if (!ind || !label) return;
+
+  if (!job || !job.media_url || job.media_url.endsWith('.wav')) {
+    ind.className = 'vision-indicator-pill state-disabled';
+    label.textContent = '오디오 전용 (비전 없음)';
+    ind.title = '오디오 전용 파일에서는 지판 비전 추적이 지원되지 않습니다.';
+    return;
+  }
+
+  const vStatus = job.vision_status;
+  if (vStatus === 'calibrating') {
+    ind.className = 'vision-indicator-pill state-calibrating';
+    const pct = job.vision_progress !== undefined ? `(${job.vision_progress}%)` : '';
+    label.textContent = `⏳ 지판 비전 분석 중 ${pct}`.trim();
+    ind.title = job.message || '백그라운드에서 전체 영상 지판·손 비전 추적 중입니다.';
+  } else if (vStatus === 'user_calibrated_active' || (result && result.vision_connected)) {
+    ind.className = 'vision-indicator-pill state-active';
+    label.textContent = '✓ 지판 비전 활성';
+    ind.title = '사용자 지정 지판 및 손가락 골격 추적이 적용되어 영상에 표시 중입니다. (클릭하여 재지정 가능)';
+  } else if (vStatus === 'calibration_saved_audio_preserved') {
+    ind.className = 'vision-indicator-pill state-saved';
+    label.textContent = 'ℹ 지판 좌표 저장됨';
+    ind.title = '지판 4점 좌표가 저장되었습니다. (클릭하여 재지정 가능)';
+  } else {
+    ind.className = 'vision-indicator-pill state-idle';
+    label.textContent = '⌖ 지판 비전: 대기';
+    ind.title = '클릭하거나 우측 [지판 직접 지정] 버튼을 눌러 영상 위 지판을 지정하면 비전 분석이 시작됩니다.';
+  }
+}
+
+if ($('#vision-indicator')) {
+  $('#vision-indicator').onclick = () => {
+    if (!currentJob || currentJob.media_url?.endsWith('.wav')) return;
+    if (currentJob.vision_status === 'calibrating') {
+      notice(currentJob.message || '현재 백그라운드에서 지판 비전 추적이 진행 중입니다.');
+      return;
+    }
+    if ($('#start-calibrate')) $('#start-calibrate').click();
+  };
+}
+
 async function watchCalibration(jobId){
   try{
     const job=await api(`/api/jobs/${jobId}`);
     if(!currentJob||currentJob.id!==jobId)return;
+    currentJob=job;
+    updateVisionIndicator(job);
     if(job.vision_status==='calibrating'){
-      notice('백그라운드에서 전체 영상 프레임(손·지판) 비전 추적 중입니다... (재생·코드 편집 계속 가능)');
-      setTimeout(()=>watchCalibration(jobId),2500);
+      notice(job.message || '백그라운드에서 전체 영상 프레임(손·지판) 비전 추적 중입니다... (재생·코드 편집 계속 가능)');
+      setTimeout(()=>watchCalibration(jobId),1500);
       return;
     }
     if(job.vision_status==='user_calibrated_active'&&job.vision_url){
@@ -1151,11 +1198,13 @@ async function watchCalibration(jobId){
       visionOverlay=await api(job.vision_url);
       $('#vision').disabled=!result.vision_connected;
       $('#mode-pill').textContent='오디오 + 사용자 지판 비전 연결됨';
-      notice('사용자 지정 지판 비전 추적이 완료되어 전체 영상에 반영되었습니다.');
+      updateVisionIndicator(job);
+      notice('✓ 사용자 지정 지판 비전 추적이 완료되어 전체 영상에 반영되었습니다.');
       rebuild();
       return;
     }
     if(job.vision_status==='calibration_saved_audio_preserved'){
+      updateVisionIndicator(job);
       notice(job.message||'지판 좌표 저장 완료');
     }
   }catch(e){}
@@ -1166,6 +1215,9 @@ if($('#apply-calibrate'))$('#apply-calibrate').onclick=async()=>{
   userCalibratedCorners=calibPoints.map(p=>[...p]);
   const refTime=player.currentTime;
   setCalibrating(false);
+  currentJob.vision_status='calibrating';
+  currentJob.vision_progress=0;
+  updateVisionIndicator(currentJob);
   notice('지판 4점 좌표 및 프렛 간격을 저장하고 비전 추적을 요청했습니다...');
   try{
     const capVal=Number($('#capo').value);
@@ -1183,7 +1235,7 @@ if($('#apply-calibrate'))$('#apply-calibrate').onclick=async()=>{
     });
     notice('지판 4점 격자가 적용되었습니다. 백그라운드에서 전체 프레임 비전 추적을 시작합니다.');
     drawVision(player.currentTime);
-    setTimeout(()=>watchCalibration(currentJob.id),2000);
+    setTimeout(()=>watchCalibration(currentJob.id),1500);
   }catch(e){
     notice(e.message);
   }
@@ -1242,6 +1294,7 @@ async function openJob(job){
   if(job.vision_url){try{visionOverlay=await api(job.vision_url);}catch(e){notice('비전 오버레이 로드 생략');}}
   $('.stage')?.classList.toggle('audio',job.media_url.endsWith('.wav'));$('#track-name').textContent=job.name;
   if($('#download'))$('#download').href=job.result_url;$('#end-time').textContent=clock(data.duration_s);
+  updateVisionIndicator(job);
   $('#workspace').hidden=false;
   $('#intro').hidden=true;
   if($('#drop'))$('#drop').hidden=true;
