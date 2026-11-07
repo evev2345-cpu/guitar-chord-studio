@@ -74,6 +74,15 @@ JOBS = {}
 
 def save_state(job_id, **fields):
     with LOCK:
+        if job_id not in JOBS:
+            job_file = RUNS / job_id / 'job.json'
+            if job_file.exists():
+                try:
+                    JOBS[job_id] = json.loads(job_file.read_text(encoding='utf-8'))
+                except Exception:
+                    JOBS[job_id] = {'id': job_id}
+            else:
+                JOBS[job_id] = {'id': job_id}
         JOBS[job_id].update(fields)
         (RUNS / job_id / 'job.json').write_text(
             json.dumps(JOBS[job_id], ensure_ascii=False), encoding='utf-8'

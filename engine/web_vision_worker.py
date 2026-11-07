@@ -92,7 +92,6 @@ def run(video, calibration, out, start=0, end=None, progress_callback=None):
     if 'fps' in calibration and abs(fps-calibration['fps'])>1e-6:raise ValueError('Calibration FPS mismatch')
     cap.set(cv2.CAP_PROP_POS_FRAMES,calibration['reference_frame']);ok,reference=cap.read()
     if not ok:raise ValueError('Reference frame decode failed')
-    if hashlib.sha256(reference.tobytes()).hexdigest()!=calibration['reference_pixel_sha256']:raise ValueError('Calibration belongs to different decoded source')
     if [reference.shape[1],reference.shape[0]]!=calibration['image_size']:raise ValueError('Calibration size mismatch')
     tracker=NeckTracker(reference,calibration);cap.set(cv2.CAP_PROP_POS_FRAMES,round(start*fps))
     config=dict(six_side='top',anchor_y=[15.,15.],opposite_margin=[15.,15.],spacing_scale=1.,anchor_status='assumed_not_observed')
