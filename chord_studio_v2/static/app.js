@@ -1379,11 +1379,34 @@ async function loadHistory(){
       title.textContent=cleanTitle;
       title.title=job.name;
 
-      const statusPill=document.createElement('span');
-      statusPill.className=`status-pill status-${job.status}`;
-      statusPill.textContent=job.status==='complete'?'✓ 완료':job.status==='error'?'⚠ 실패':'⏳ 진행 중';
+      const audioPill=document.createElement('span');
+      audioPill.className=`status-pill status-${job.status}`;
+      audioPill.textContent=job.status==='complete'?'✓ 음성 완료':job.status==='error'?'⚠ 음성 실패':'⏳ 음성 분석 중';
 
-      titleRow.append(title,statusPill);
+      const visionPill=document.createElement('span');
+      if(!isVideo){
+        visionPill.className='status-pill status-vision-audio-only';
+        visionPill.textContent='오디오 전용';
+        visionPill.title='오디오 전용 파일 (비전 미지원)';
+      }else if(job.vision_status==='user_calibrated_active'||job.vision_url){
+        visionPill.className='status-pill status-vision-active';
+        visionPill.textContent='✓ 비전 완료';
+        visionPill.title='사용자 지판 및 손 비전 추적 완료';
+      }else if(job.vision_status==='calibrating'){
+        visionPill.className='status-pill status-vision-calibrating';
+        visionPill.textContent='⏳ 비전 분석 중';
+        visionPill.title='백그라운드에서 지판 및 손 비전 추적 중';
+      }else if(job.vision_status==='calibration_saved_audio_preserved'){
+        visionPill.className='status-pill status-vision-saved';
+        visionPill.textContent='ℹ 비전 좌표 저장됨';
+        visionPill.title='지판 4점 좌표 저장됨';
+      }else{
+        visionPill.className='status-pill status-vision-idle';
+        visionPill.textContent='⌖ 비전 대기';
+        visionPill.title='지판 미지정 (스튜디오에서 4점 지정 시 비전 분석 시작)';
+      }
+
+      titleRow.append(title,audioPill,visionPill);
 
       const metaRow=document.createElement('div');
       metaRow.className='history-meta-row';
