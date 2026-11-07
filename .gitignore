@@ -1,6 +1,8 @@
 
-# Deploy worktree
-deploy_pages/
+# PyInstaller Build artifacts
+build/
+dist/
+GuitarChordStudio.spec
 
 .env
 .env.*
