@@ -45,8 +45,15 @@ def main():
     manifest_path = output / 'separation_manifest.json'
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
     started = time.perf_counter()
+    win_flags = {}
+    if sys.platform == 'win32':
+        win_flags['creationflags'] = getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)
+        si = subprocess.STARTUPINFO()
+        si.dwFlags |= getattr(subprocess, 'STARTF_USESHOWWINDOW', 1)
+        si.wShowWindow = 0
+        win_flags['startupinfo'] = si
     with (output / 'execution.log').open('w', encoding='utf-8') as log:
-        result = subprocess.run(command, env=env, stdout=log, stderr=subprocess.STDOUT)
+        result = subprocess.run(command, env=env, stdout=log, stderr=subprocess.STDOUT, **win_flags)
     manifest.update(returncode=result.returncode, elapsed_s=time.perf_counter()-started,
                     status='completed' if result.returncode == 0 else 'failed')
     manifest['outputs'] = [str(p.relative_to(output)) for p in output.rglob('*.wav')]

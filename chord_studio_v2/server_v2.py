@@ -80,6 +80,17 @@ def save_state(job_id, **fields):
         )
 
 
+def _win_subprocess_kwargs():
+    kwargs = {}
+    if sys.platform == 'win32':
+        kwargs['creationflags'] = getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)
+        si = subprocess.STARTUPINFO()
+        si.dwFlags |= getattr(subprocess, 'STARTF_USESHOWWINDOW', 1)
+        si.wShowWindow = 0  # SW_HIDE
+        kwargs['startupinfo'] = si
+    return kwargs
+
+
 def run_cmd(command, log):
     with log.open('ab') as out:
         subprocess.run(
@@ -89,7 +100,7 @@ def run_cmd(command, log):
             stderr=out,
             check=True,
             timeout=1800,
-            creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0),
+            **_win_subprocess_kwargs(),
         )
 
 
@@ -256,6 +267,7 @@ def analyze(job_id, demo=False, separate_guitar=True):
                 capture_output=True,
                 check=True,
                 timeout=30,
+                **_win_subprocess_kwargs(),
             )
             info = json.loads(probe.stdout)
             reported = info.get('format', {}).get('duration')
