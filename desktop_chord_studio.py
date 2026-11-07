@@ -81,4 +81,15 @@ def main():
 
 
 if __name__ == "__main__":
+    import multiprocessing
+    multiprocessing.freeze_support()
+
+    if len(sys.argv) > 1 and sys.argv[1].endswith(".py"):
+        script_file = Path(sys.argv[1])
+        if script_file.exists():
+            import runpy
+            sys.argv = sys.argv[1:]
+            runpy.run_path(str(script_file), run_name="__main__")
+            sys.exit(0)
+
     main()

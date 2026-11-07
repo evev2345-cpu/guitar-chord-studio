@@ -52,14 +52,17 @@ def _resolve_python(venv_name):
     ):
         if candidate.exists():
             return candidate
-    return Path(sys.executable)
+    if sys.executable and Path(sys.executable).name.lower().startswith('python'):
+        return Path(sys.executable)
+    return None
 
 
 MODEL_PYTHON = _resolve_python('.venv-audio-model')
 SEPARATION_PYTHON = _resolve_python('.venv-audio-separation')
 HAS_SEPARATION_ENV = (
-    (ROOT / '.venv-audio-separation' / 'Scripts' / 'python.exe').exists()
-    or (ROOT / '.venv-audio-separation' / 'bin' / 'python').exists()
+    SEPARATION_PYTHON is not None
+    and Path(SEPARATION_PYTHON).exists()
+    and Path(SEPARATION_PYTHON).name.lower().startswith('python')
 )
 
 MAX_BYTES = 2048 * 1024 * 1024  # 2GB
@@ -331,16 +334,33 @@ def analyze(job_id, demo=False, separate_guitar=True):
                 tasks.append(dict(id='full_mix', audio=str(directory / 'audio.wav')))
             (directory / 'tasks.json').write_text(json.dumps(tasks), encoding='utf-8')
             save_state(job_id, progress=55, message='Basic Pitch 오디오 모델로 음 후보 분석 중')
-            run_cmd(
-                [
-                    MODEL_PYTHON,
-                    ENGINE_DIR / 'basic_pitch_worker.py',
-                    '--tasks', directory / 'tasks.json',
-                    '--output', directory / 'prediction',
-                    '--modes', 'raw',
-                ],
-                log,
-            )
+            try:
+                from basic_pitch_worker import run_basic_pitch_tasks
+                with log.open('a', encoding='utf-8') as f:
+                    f.write('\n[In-process Basic Pitch analysis started]\n')
+                run_basic_pitch_tasks(
+                    directory / 'tasks.json',
+                    directory / 'prediction',
+                    modes=['raw'],
+                )
+                with log.open('a', encoding='utf-8') as f:
+                    f.write('[In-process Basic Pitch analysis completed]\n')
+            except Exception as bp_err:
+                with log.open('a', encoding='utf-8') as f:
+                    f.write(f'\n[In-process Basic Pitch failed: {bp_err!r}], trying fallback...\n')
+                if MODEL_PYTHON and Path(MODEL_PYTHON).exists() and Path(MODEL_PYTHON).name.lower().startswith('python'):
+                    run_cmd(
+                        [
+                            MODEL_PYTHON,
+                            ENGINE_DIR / 'basic_pitch_worker.py',
+                            '--tasks', directory / 'tasks.json',
+                            '--output', directory / 'prediction',
+                            '--modes', 'raw',
+                        ],
+                        log,
+                    )
+                else:
+                    raise bp_err
             save_state(job_id, progress=85, message='16박자 격자 및 코드 진행 정돈 중')
 
         write_result(directory, duration)
@@ -411,16 +431,30 @@ def run_user_calibration_job(job_id, time_s, corners, capo_candidate=0, total_fr
         try:
             save_state(job_id, vision_status='calibrating', message='사용자 지정 지판으로 비전 추적 중')
             vision_dir = directory / f'vision_user_{int(time.time())}'
-            run_cmd(
-                [
-                    sys.executable,
-                    ENGINE_DIR / 'web_vision_worker.py',
-                    '--video', video_path,
-                    '--calibration', profile_path,
-                    '--output', vision_dir,
-                ],
-                log,
-            )
+            try:
+                from web_vision_worker import run as run_vision
+                with log.open('a', encoding='utf-8') as f:
+                    f.write('\n[In-process Vision tracking started]\n')
+                cal_data = json.loads(profile_path.read_text(encoding='utf-8'))
+                run_vision(video_path, cal_data, vision_dir)
+                with log.open('a', encoding='utf-8') as f:
+                    f.write('[In-process Vision tracking completed]\n')
+            except Exception as vis_err:
+                with log.open('a', encoding='utf-8') as f:
+                    f.write(f'\n[In-process Vision tracking failed: {vis_err!r}], trying fallback...\n')
+                if sys.executable and Path(sys.executable).name.lower().startswith('python'):
+                    run_cmd(
+                        [
+                            sys.executable,
+                            ENGINE_DIR / 'web_vision_worker.py',
+                            '--video', video_path,
+                            '--calibration', profile_path,
+                            '--output', vision_dir,
+                        ],
+                        log,
+                    )
+                else:
+                    raise vis_err
             from attach_web_vision import attach
             attach(directory, vision_dir)
             save_state(
