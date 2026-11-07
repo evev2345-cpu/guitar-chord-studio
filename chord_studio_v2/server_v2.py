@@ -601,17 +601,25 @@ class HandlerV2(BaseHTTPRequestHandler):
         if path in static_map:
             return self.file(STATIC / static_map[path])
         if path == '/api/jobs':
-            client_id = self.headers.get('X-Client-Id')
             with LOCK:
-                visible_jobs = [
-                    j for j in JOBS.values()
-                    if (client_id and j.get('client_id') == client_id) or j.get('is_demo') or j.get('demo')
-                ]
+                for job_dir in RUNS.iterdir():
+                    if job_dir.is_dir() and job_dir.name not in JOBS and (job_dir / 'job.json').exists():
+                        try:
+                            JOBS[job_dir.name] = json.loads((job_dir / 'job.json').read_text(encoding='utf-8'))
+                        except Exception:
+                            pass
+                visible_jobs = list(JOBS.values())
                 return self.json(visible_jobs)
         match = re.fullmatch(r'/api/jobs/([a-f0-9]{32})(/result|/vision)?', path)
         if match:
+            job_id = match[1]
             with LOCK:
-                job = JOBS.get(match[1])
+                if job_id not in JOBS and (RUNS / job_id / 'job.json').exists():
+                    try:
+                        JOBS[job_id] = json.loads((RUNS / job_id / 'job.json').read_text(encoding='utf-8'))
+                    except Exception:
+                        pass
+                job = JOBS.get(job_id)
                 if job is None:
                     return self.json(dict(error='분석을 찾을 수 없습니다.'), 404)
                 if not match[2]:
@@ -619,7 +627,7 @@ class HandlerV2(BaseHTTPRequestHandler):
                 if job['status'] != 'complete':
                     return self.json(dict(error='분석이 아직 완료되지 않았습니다.'), 409)
             return self.file(
-                RUNS / match[1] / ('vision_overlay.json' if match[2] == '/vision' else 'result.json')
+                RUNS / job_id / ('vision_overlay.json' if match[2] == '/vision' else 'result.json')
             )
         match = re.fullmatch(r'/media/([a-f0-9]{32})/((?:media|guitar)\.(?:wav|mp4))', path)
         if match:
@@ -636,6 +644,11 @@ class HandlerV2(BaseHTTPRequestHandler):
         if edit_match:
             job_id = edit_match.group(1)
             with LOCK:
+                if job_id not in JOBS and (RUNS / job_id / 'job.json').exists():
+                    try:
+                        JOBS[job_id] = json.loads((RUNS / job_id / 'job.json').read_text(encoding='utf-8'))
+                    except Exception:
+                        pass
                 if job_id not in JOBS:
                     return self.json(dict(error='분석을 찾을 수 없습니다.'), 404)
             try:
@@ -658,6 +671,11 @@ class HandlerV2(BaseHTTPRequestHandler):
         if cal_match:
             job_id = cal_match.group(1)
             with LOCK:
+                if job_id not in JOBS and (RUNS / job_id / 'job.json').exists():
+                    try:
+                        JOBS[job_id] = json.loads((RUNS / job_id / 'job.json').read_text(encoding='utf-8'))
+                    except Exception:
+                        pass
                 if job_id not in JOBS:
                     return self.json(dict(error='분석을 찾을 수 없습니다.'), 404)
             try:
@@ -732,19 +750,25 @@ def seed_existing_runs():
     """Copy completed runs from v1 (`webapp/runs`) into `chord_studio_v2/runs` on first launch so v2 can be verified immediately without touching v1."""
     RUNS.mkdir(parents=True, exist_ok=True)
     v1_runs = ROOT / 'webapp' / 'runs'
-    if not v1_runs.exists():
-        return
-    for src_dir in v1_runs.iterdir():
-        if not src_dir.is_dir() or not (src_dir / 'job.json').exists() or not (src_dir / 'result.json').exists():
-            continue
-        dst_dir = RUNS / src_dir.name
-        if dst_dir.exists():
-            continue
-        dst_dir.mkdir(parents=True, exist_ok=True)
-        for fname in ('job.json', 'result.json', 'vision_overlay.json', 'media.wav', 'media.mp4', 'guitar.wav'):
-            sfile = src_dir / fname
-            if sfile.exists():
-                shutil.copy2(sfile, dst_dir / fname)
+    if v1_runs.exists():
+        for src_dir in v1_runs.iterdir():
+            if not src_dir.is_dir() or not (src_dir / 'job.json').exists() or not (src_dir / 'result.json').exists():
+                continue
+            dst_dir = RUNS / src_dir.name
+            if dst_dir.exists():
+                continue
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            for fname in ('job.json', 'result.json', 'vision_overlay.json', 'media.wav', 'media.mp4', 'guitar.wav'):
+                sfile = src_dir / fname
+                if sfile.exists():
+                    shutil.copy2(sfile, dst_dir / fname)
+    with LOCK:
+        for job_dir in RUNS.iterdir():
+            if job_dir.is_dir() and (job_dir / 'job.json').exists():
+                try:
+                    JOBS[job_dir.name] = json.loads((job_dir / 'job.json').read_text(encoding='utf-8'))
+                except Exception:
+                    pass
 
 
 def main():
