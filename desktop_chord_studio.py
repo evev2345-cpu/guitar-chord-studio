@@ -1,97 +1,83 @@
-"""Chord Studio Pro - Native Desktop Application with Polished Dual-View UI."""
+"""Chord Studio Pro - Native Windows Desktop Application.
+
+Uses Microsoft Edge WebView2 (pywebview) for full native H.264/MP4/AAC hardware decoding,
+lightweight memory usage, and 100% faithful rendering of the Dual-View UI.
+"""
 
 import os
 import sys
+import threading
 import time
-import subprocess
 from pathlib import Path
 from urllib.request import urlopen
 
 ROOT_DIR = Path(__file__).resolve().parent
-PYTHON_EXE = ROOT_DIR / ".venv-audio-model" / "Scripts" / "python.exe"
-if not PYTHON_EXE.exists():
-    PYTHON_EXE = Path(sys.executable)
+ENGINE_DIR = ROOT_DIR / "engine"
+CHORD_V2_DIR = ROOT_DIR / "chord_studio_v2"
+BIN_DIR = ROOT_DIR / "bin"
+
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(ENGINE_DIR) not in sys.path:
+    sys.path.insert(0, str(ENGINE_DIR))
+if str(CHORD_V2_DIR) not in sys.path:
+    sys.path.insert(0, str(CHORD_V2_DIR))
+
+if BIN_DIR.exists():
+    os.environ["PATH"] = str(BIN_DIR) + os.pathsep + os.environ.get("PATH", "")
 
 PORT = 8766
 URL = f"http://127.0.0.1:{PORT}"
 
-server_process = None
 
-
-def is_server_running():
+def is_server_ready():
     try:
-        with urlopen(f"{URL}/", timeout=1.0) as res:
+        with urlopen(f"{URL}/", timeout=0.8) as res:
             return res.status == 200
     except Exception:
         return False
 
 
-def start_server_if_needed():
-    global server_process
-    if is_server_running():
+def run_embedded_server():
+    """Runs server_v2 inside this process in a daemon thread."""
+    try:
+        import server_v2
+
+        server_v2.seed_existing_runs()
+        server = server_v2.ThreadingHTTPServer(("127.0.0.1", PORT), server_v2.HandlerV2)
+        server.allow_public = False
+        server.serve_forever()
+    except Exception as e:
+        print(f"Embedded server notice: {e}", flush=True)
+
+
+def ensure_server():
+    if is_server_ready():
         return
+    t = threading.Thread(target=run_embedded_server, daemon=True)
+    t.start()
 
-    server_script = ROOT_DIR / "chord_studio_v2" / "server_v2.py"
-    server_process = subprocess.Popen(
-        [
-            str(PYTHON_EXE),
-            str(server_script),
-            "--port", str(PORT),
-            "--host", "127.0.0.1",
-        ],
-        cwd=str(ROOT_DIR),
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-        creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
-    )
-
-    # Wait up to 5 seconds for server to be ready
-    for _ in range(10):
+    for _ in range(12):
         time.sleep(0.5)
-        if is_server_running():
+        if is_server_ready():
             break
 
 
 def main():
-    # High-DPI scaling
-    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
-    os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "1"
+    ensure_server()
 
-    # Start backend server
-    start_server_if_needed()
+    import webview
 
-    from PySide6.QtCore import Qt, QUrl
-    from PySide6.QtGui import QIcon
-    from PySide6.QtWidgets import QApplication, QMainWindow
-    from PySide6.QtWebEngineWidgets import QWebEngineView
-
-    app = QApplication(sys.argv)
-    app.setApplicationName("Chord Studio Pro")
-    app.setOrganizationName("GuitarLab")
-
-    window = QMainWindow()
-    window.setWindowTitle("🎸 Chord Studio Pro - 듀얼 뷰(지판 & 악보) 데스크톱")
-    window.resize(1340, 840)
-    window.setMinimumSize(1024, 680)
-
-    # Dark background for the window frame
-    window.setStyleSheet("QMainWindow { background-color: #0b0f19; }")
-
-    view = QWebEngineView(window)
-    view.load(QUrl(URL))
-    window.setCentralWidget(view)
-
-    # Clean shutdown of server when desktop window closes
-    def on_close(event):
-        global server_process
-        if server_process and server_process.poll() is None:
-            server_process.terminate()
-        event.accept()
-
-    window.closeEvent = on_close
-
-    window.show()
-    sys.exit(app.exec())
+    window = webview.create_window(
+        title="🎸 Chord Studio Pro - 듀얼 뷰(지판 & 악보) 데스크톱 에디션",
+        url=URL,
+        width=1340,
+        height=840,
+        min_size=(1024, 680),
+        background_color="#0b0f19",
+    )
+    # Starts the native Windows WebView2 window with full hardware H.264/MP4 video codec support
+    webview.start(debug=False)
 
 
 if __name__ == "__main__":
