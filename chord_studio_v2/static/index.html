@@ -8,27 +8,14 @@
 <link rel="stylesheet" href="/style.css?v=3">
 </head>
 <body>
-<aside id="sidebar">
-  <div class="aside-header">
-    <a class="brand" href="/" aria-label="Chord Studio 홈">
-      <span class="logo">♮</span>
-      <span class="brand-text">GUITAR LAB</span>
-    </a>
-  </div>
-  <div class="nav active" title="코드 스튜디오">
-    <span class="nav-icon">◉</span>
-    <span class="nav-text">코드 스튜디오</span>
-  </div>
-  <div class="aside-collapse-row">
-    <button type="button" id="sidebar-toggle" class="sidebar-toggle-btn" title="사이드바 접기" aria-label="사이드바 접기">
-      <span class="toggle-icon">◀</span>
-      <span class="toggle-label">사이드바 접기</span>
-    </button>
-  </div>
-</aside>
 <main>
   <header class="app-header">
-    <div class="app-title-group">
+    <div class="app-title-group" style="display: flex; align-items: center; gap: 14px;">
+      <a class="brand" href="/" aria-label="Chord Studio 홈" style="text-decoration: none;">
+        <span class="logo">♮</span>
+        <span class="brand-text">GUITAR LAB</span>
+      </a>
+      <span style="color: var(--muted); font-size: 18px; font-weight: 300;">|</span>
       <h1>Chord Studio<span> / Pro Studio · 듀얼 뷰(지판 &amp; 악보) 에디션</span></h1>
     </div>
     <span class="pill" id="mode-pill">전체 음원 분리 + 듀얼 뷰 스튜디오</span>

@@ -42,49 +42,17 @@ button:disabled{opacity:.4;cursor:not-allowed}
 .primary{background:var(--mint)!important;color:#0d2621!important;border-color:var(--mint)!important;font-weight:700}
 .primary:hover{background:#8bf0d4!important}
 
-/* Collapsible Left Sidebar */
+/* Sidebar Removed for Fullscreen DAW Workspace */
 aside{
-  position:fixed;
-  inset:0 auto 0 0;
-  width:230px;
-  padding:24px 16px;
-  background:#111722;
-  border-right:1px solid var(--panel-border);
-  transition:width 0.22s cubic-bezier(0.2,0,0,1),padding 0.22s cubic-bezier(0.2,0,0,1);
-  z-index:90;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
+  display:none !important;
 }
-.aside-header{margin-bottom:24px;min-height:36px}
-.brand{color:white;text-decoration:none;font-size:15px;font-weight:750;letter-spacing:2px;display:flex;gap:10px;align-items:center;white-space:nowrap}
-.logo{background:var(--mint);color:#112b29;border-radius:9px;padding:3px 11px;font-size:24px;flex-shrink:0}
-.brand-text{white-space:nowrap}
-.nav{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:8px;margin:4px 0 8px;white-space:nowrap;overflow:hidden}
-.nav.active{background:#20372f;color:var(--mint);font-weight:600}
-.nav-icon{flex-shrink:0}
-.nav-text{white-space:nowrap}
-.aside-collapse-row{margin-top:4px}
-.sidebar-toggle-btn{width:100%;background:#16202e;border:1px solid #2a384b;color:var(--muted);padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:11px}
-.sidebar-toggle-btn:hover{color:var(--mint);border-color:var(--mint);background:#1f2d3f}
-.toggle-icon{font-size:11px;flex-shrink:0;transition:transform 0.22s}
-.toggle-label{white-space:nowrap}
-
-/* Collapsed Sidebar */
-body.sidebar-collapsed aside{width:58px;padding:24px 8px}
-body.sidebar-collapsed .brand{justify-content:center}
-body.sidebar-collapsed .brand-text,body.sidebar-collapsed .nav-text,body.sidebar-collapsed .toggle-label{display:none}
-body.sidebar-collapsed .aside-header{margin-bottom:18px}
-body.sidebar-collapsed .nav{justify-content:center;padding:12px 0}
-body.sidebar-collapsed .sidebar-toggle-btn{width:38px;height:38px;padding:0;margin:0 auto;justify-content:center}
-body.sidebar-collapsed .toggle-icon{transform:rotate(180deg)}
-body.sidebar-collapsed main{margin-left:58px}
 
 main{
-  margin-left:230px;
-  max-width:1680px;
-  padding:24px 32px;
-  transition:margin-left 0.22s cubic-bezier(0.2,0,0,1);
+  margin-left:0 !important;
+  max-width:100% !important;
+  width:100% !important;
+  box-sizing:border-box;
+  padding:16px 28px;
 }
 
 /* App Header */
