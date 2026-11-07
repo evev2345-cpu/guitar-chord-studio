@@ -13,6 +13,7 @@ import hashlib
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import mimetypes
+import os
 from pathlib import Path
 import re
 import shutil
@@ -26,6 +27,9 @@ import wave
 import webbrowser
 
 ROOT = Path(__file__).resolve().parent.parent
+BIN_DIR = ROOT / 'bin'
+if BIN_DIR.exists():
+    os.environ['PATH'] = str(BIN_DIR) + os.pathsep + os.environ.get('PATH', '')
 ENGINE_DIR = ROOT / 'engine'
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -524,6 +528,8 @@ class HandlerV2(BaseHTTPRequestHandler):
             '/': 'index.html',
             '/app.js': 'app.js',
             '/style.css': 'style.css',
+            '/favicon.ico': 'favicon.ico',
+            '/icon.png': 'icon.png',
             '/legacy': 'index_legacy.html',
             '/app_legacy.js': 'app_legacy.js',
             '/style_legacy.css': 'style_legacy.css',
