@@ -1,9 +1,0 @@
-services:
-  chord-studio:
-    build: .
-    container_name: chord-studio
-    restart: unless-stopped
-    ports:
-      - "8766:7860"
-    volumes:
-      - ./chord_studio_v2/runs:/app/chord_studio_v2/runs

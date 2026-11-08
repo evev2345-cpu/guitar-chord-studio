@@ -1,15 +1,6 @@
----
-title: Guitar Chord Studio v2.0
-emoji: 🎸
-colorFrom: green
-colorTo: blue
-sdk: docker
-app_port: 7860
----
-
 <div align="center">
 
-<img src="app_icon_256.png" width="120" alt="Guitar Chord Studio Logo" />
+<img src="app_icon.png" width="120" alt="Guitar Chord Studio Logo" />
 
 # Guitar Chord Studio v2.0 🎸
 
@@ -76,10 +67,10 @@ GUITAR/
 ├── 🎸 desktop_chord_studio.py # 네이티브 데스크톱 실행 진입점 (PyWebView + Edge WebView2)
 ├── 📦 GuitarChordStudio.spec  # PyInstaller 405MB 무설치 패키징 명세서
 ├── 🖼️ chord_studio_pipeline_white.png # 시스템 전체 작동 파이프라인 인포그래픽
-├── 📄 00_프로젝트_개발일지_및_전체문서_총괄_마스터.md # 5일간의 전체 개발일지 및 80여 편 문서 총괄 색인
-├── 🎨 app_icon.*              # 1024x1024 초고해상도 벡터 투명 아이콘 에셋
+├── 🎨 app_icon.png            # 1024x1024 초고해상도 벡터 투명 아이콘 에셋
+├── 🎨 app_icon.ico            # Windows 실행 파일 바이너리 아이콘
 ├── chord_studio_v2/           # 모던 Chord Studio v2 애플리케이션
-│   ├── server_v2.py           # 고속 비동기 API 서버 (포트 8766 / 7860)
+│   ├── server_v2.py           # 고속 비동기 API 서버 (포트 8766)
 │   ├── static/                # 모던 스튜디오 UI (index.html, app.js, style.css)
 │   └── runs/                  # 영구 분석 보관함 디렉토리 (곡별 job, result, media 보존)
 ├── engine/                    # 핵심 분석 & 인퍼런스 엔진 (19개 모듈)
@@ -99,8 +90,8 @@ GUITAR/
 │   └── hand_landmarker.task   # MediaPipe 손가락 21개 관절 랜드마크 모델
 ├── dataset/                   # 검증 및 튜토리얼 벤치마크 데이터
 ├── tests/                     # 326개 전체 유닛 테스트 및 계약 테스트 모음
-├── Dockerfile                 # 클라우드/Hugging Face Spaces 배포 Dockerfile
-└── docker-compose.yml         # 원클릭 컨테이너 배포 설정
+├── requirements-deploy.txt    # 배포 및 개발용 의존성 패키지 목록
+└── LICENSE                    # MIT 라이선스
 ```
 
 ---
@@ -132,20 +123,6 @@ python -m unittest discover tests
 # 프론트엔드 계약 검증 테스트
 node tests/test_chord_web_ui.js
 ```
-
----
-
-## 📚 개발일지 및 연구 문서 (Devlogs & Technical Index)
-
-프로젝트 진행 과정(11/3 ~ 11/7)에서 작성된 모든 연구 일지, 벤치마크 성적표, 설계 스키마는 [00_프로젝트_개발일지_및_전체문서_총괄_마스터.md](00_프로젝트_개발일지_및_전체문서_총괄_마스터.md)에서 확인하실 수 있습니다:
-
-| 일자 | 주요 마일스톤 및 기술적 해결 내역 | 관련 문서 |
-| :--- | :--- | :--- |
-| **2026-11-03** | 가상 현 격자 수식 정의, MediaPipe 손 좌표계 텍스처 정합, 음향-비전 융합 스키마 수립 | `DEVLOG_2026-11-03.md` |
-| **2026-11-04** | 손 해부학적 유효성(Anatomical Validity) 제약식, 검지 바레 코드 스켈레톤 인식 개선 | `WORK_START_2026-11-04.md` |
-| **2026-11-05** | Basic Pitch ONNX 로컬 격리 연동, GuitarSet 180곡 벤치마크, 앰프 음색 영향 평가, 웹앱 1차 릴리즈 | `DEVLOG_2026-11-05_END_OF_DAY.md` |
-| **2026-11-06** | 크롬 확장 제거 및 스튜디오 일원화, Look-Ahead v2 도입(코드 깜빡임 -36.7%), 326개 단위 테스트 완료 | `DEVLOG_2026-11-06.md` |
-| **2026-11-07** | 데스크톱 단독 앱 패키징, MediaPipe C++ DLL 결함 해결, 비전 인디케이터 및 405MB 무설치 배포본 빌드 | `DEVLOG_2026-11-07_FINAL_RELEASE.md` |
 
 ---
 

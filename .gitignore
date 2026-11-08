@@ -85,6 +85,10 @@ scratch_crop.jpg
 /deploy_pages/
 /ChordStudio_전체_개발문서_모음/
 *.docx
+00_프로젝트_*
+generate_*.py
+build_*.py
+chord_studio_pipeline.png
 
 # User-contributed fretboard calibration images and labels stay on server only
 /chord_studio_v2/fretboard_data/
