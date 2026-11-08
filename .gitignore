@@ -88,3 +88,11 @@ scratch_crop.jpg
 
 # User-contributed fretboard calibration images and labels stay on server only
 /chord_studio_v2/fretboard_data/
+
+# Portfolio generation & scratch artifacts
+SK_AIGEN_*
+portfolio_*
+docx_preview_*
+word_export*
+generate_portfolio*
+generate_md_portfolio*
