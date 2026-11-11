@@ -1,0 +1,20 @@
+[
+  {
+    "stage": "pilot",
+    "error": "NameError: SHORTHANDS missing from copied legacy reference adapter",
+    "action": "copied unchanged SHORTHANDS constant from legacy source; preserved failed pilot record; repeated inference with a fresh output directory",
+    "production_changed": false
+  },
+  {
+    "stage": "partial aggregation",
+    "error": "TypeError: duplicate quality keyword for label and metric count",
+    "action": "renamed CSV label column reference_quality; inference not rerun",
+    "production_changed": false
+  },
+  {
+    "stage": "environment inventory",
+    "error": "PackageNotFoundError for optional torchaudio metadata",
+    "action": "recorded not installed; current sf/convert_audio/apply_model worker does not call torchaudio; no package added",
+    "production_changed": false
+  }
+]

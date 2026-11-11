@@ -2,7 +2,6 @@
 # PyInstaller Build artifacts
 build/
 dist/
-GuitarChordStudio.spec
 
 .env
 .env.*
@@ -100,3 +99,7 @@ docx_preview_*
 word_export*
 generate_portfolio*
 generate_md_portfolio*
+
+*.safetensors
+/evaluation/current_20261111/STATUS.md
+!/evaluation/published_20261112/all_predictions.csv.gz

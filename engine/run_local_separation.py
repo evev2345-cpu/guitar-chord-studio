@@ -1,64 +1,53 @@
-"""Run the installed Demucs in its isolated environment, using cached weights."""
+"""Resolve the isolated development or bundled portable Demucs worker."""
 import argparse
-import hashlib
-import json
 import os
 from pathlib import Path
 import subprocess
-import time
+import sys
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def bundled_worker():
+    return Path(sys.executable).resolve().parent / 'workers/GuitarSeparator/GuitarSeparator.exe'
+
+
+def separation_command(audio, output, model='htdemucs_6s', stem='guitar'):
+    args = ['--input', str(Path(audio).resolve()), '--output', str(Path(output).resolve()),
+            '--model', model, '--stem', stem]
+    if getattr(sys, 'frozen', False):
+        worker = bundled_worker()
+        if not worker.is_file():
+            raise ValueError('기타 분리 실행기가 없습니다. workers 폴더를 포함한 배포본 전체를 압축 해제해 주세요.')
+        return [str(worker), *args]
+    interpreter = ROOT / '.venv-audio-separation/Scripts/python.exe'
+    if not interpreter.is_file():
+        interpreter = ROOT / '.venv-audio-separation/bin/python'
+    if not interpreter.is_file():
+        raise ValueError('프로젝트 루트의 .venv-audio-separation 환경을 찾을 수 없습니다.')
+    return [str(interpreter), str(ROOT / 'engine/separation_worker.py'), *args]
+
+
+def worker_environment():
+    env = os.environ.copy()
+    env.update(HF_HUB_OFFLINE='1', HF_HUB_DISABLE_TELEMETRY='1',
+               OMP_NUM_THREADS='4', MKL_NUM_THREADS='4', PYINSTALLER_RESET_ENVIRONMENT='1')
+    for key in list(env):
+        if key.startswith('_PYI_') or key in ('PYTHONHOME', 'PYTHONPATH'):
+            env.pop(key, None)
+    return env
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input', type=Path, required=True)
-    parser.add_argument('--model',choices=['htdemucs','htdemucs_6s'],default='htdemucs')
-    parser.add_argument('--stem',choices=['vocals','guitar'],default='vocals')
-    parser.add_argument('--output', type=Path, required=True,
-                        help='New directory; existing results are never overwritten')
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--model', choices=['htdemucs_6s'], default='htdemucs_6s')
+    parser.add_argument('--stem', choices=['guitar'], default='guitar')
     args = parser.parse_args()
-    if args.stem=='guitar' and args.model!='htdemucs_6s':parser.error('Guitar output requires six-source model')
-    audio = args.input.resolve(strict=True)
-    output = args.output.resolve()
-    if output.exists():
-        parser.error('Choose a new output directory')
-    interpreter = ROOT / '.venv-audio-separation/Scripts/python.exe'
-    if not interpreter.is_file():
-        parser.error('Project separation environment is missing')
-    env = os.environ.copy()
-    env.update(HF_HOME=str(ROOT / '.cache/audio-models/huggingface'),
-               TORCH_HOME=str(ROOT / '.cache/audio-models/torch'),
-               HF_HUB_OFFLINE='1', HF_HUB_DISABLE_TELEMETRY='1',
-               OMP_NUM_THREADS='4', MKL_NUM_THREADS='4')
-    command = [str(interpreter), '-m', 'demucs', '-n', args.model,
-               '--two-stems', args.stem, '--float32', '--clip-mode', 'none',
-               '--shifts', '0', '--segment', '7', '-d', 'cpu', '-j', '0',
-               '-o', str(output), str(audio)]
-    output.mkdir(parents=True)
-    manifest = dict(input=str(audio), input_sha256=hashlib.sha256(audio.read_bytes()).hexdigest(),
-                    command=command, model=args.model, requested_stem=args.stem,device='cpu',
-                    network='offline_cached_weights', status='running',
-                    limitations=['Source stems are model estimates, not verified isolated instruments',
-                                 'separation quality and audiovisual timing require review',
-                                 'shifts=0 is a quick reproducible baseline'])
-    manifest_path = output / 'separation_manifest.json'
-    manifest_path.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
-    started = time.perf_counter()
-    win_flags = {}
-    if sys.platform == 'win32':
-        win_flags['creationflags'] = getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)
-        si = subprocess.STARTUPINFO()
-        si.dwFlags |= getattr(subprocess, 'STARTF_USESHOWWINDOW', 1)
-        si.wShowWindow = 0
-        win_flags['startupinfo'] = si
-    with (output / 'execution.log').open('w', encoding='utf-8') as log:
-        result = subprocess.run(command, env=env, stdout=log, stderr=subprocess.STDOUT, **win_flags)
-    manifest.update(returncode=result.returncode, elapsed_s=time.perf_counter()-started,
-                    status='completed' if result.returncode == 0 else 'failed')
-    manifest['outputs'] = [str(p.relative_to(output)) for p in output.rglob('*.wav')]
-    manifest_path.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
-    print(json.dumps(manifest, indent=2))
+    flags = dict(creationflags=subprocess.CREATE_NO_WINDOW) if sys.platform == 'win32' else {}
+    result = subprocess.run(separation_command(args.input, args.output, args.model, args.stem),
+                            env=worker_environment(), **flags)
     raise SystemExit(result.returncode)
 
 

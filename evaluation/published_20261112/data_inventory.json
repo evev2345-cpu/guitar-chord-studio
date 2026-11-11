@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "00_BN1-129-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.32439909297052,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_BN1-147-Gb_comp",
+    "dataset": "guitarset",
+    "duration_s": 19.585600907029477,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 19,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_BN2-131-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.30639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_BN2-166-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 23.13,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 23,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_BN3-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_BN3-154-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 24.93199546485261,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Funk1-114-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.258390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Funk1-97-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.688390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 30,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Funk2-108-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.54839002267574,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Funk2-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Funk3-112-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.284399092970524,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 34,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Funk3-98-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Jazz1-130-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Jazz1-200-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 14.4,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 14,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Jazz2-110-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.90319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Jazz2-187-F#_comp",
+    "dataset": "guitarset",
+    "duration_s": 20.531995464852606,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 20,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Jazz3-137-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.023197278911564,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 28,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Jazz3-150-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.6,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Rock1-130-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Rock1-90-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Rock2-142-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 27.041609977324264,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 27,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Rock2-85-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.173197278911566,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 45,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Rock3-117-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.81639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 33,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_Rock3-148-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.94079365079365,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 26,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_SS1-100-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.8,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_SS1-68-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 42.34639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 42,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_SS2-107-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.88639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 36,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_SS2-88-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 43.62920634920635,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 44,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_SS3-84-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.70759637188208,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 46,
+    "known_timing_issue": false
+  },
+  {
+    "id": "00_SS3-98-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_BN1-129-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.32439909297052,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_BN1-147-Gb_comp",
+    "dataset": "guitarset",
+    "duration_s": 19.585600907029477,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 19,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_BN2-131-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.30639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_BN2-166-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 23.13,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 23,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_BN3-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_BN3-154-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 24.93199546485261,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Funk1-114-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.258390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Funk1-97-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.688390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 30,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Funk2-108-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.54839002267574,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Funk2-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Funk3-112-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.284399092970524,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 34,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Funk3-98-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Jazz1-130-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Jazz1-200-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 14.4,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 14,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Jazz2-110-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.90319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Jazz2-187-F#_comp",
+    "dataset": "guitarset",
+    "duration_s": 20.531995464852606,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 20,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Jazz3-137-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.023197278911564,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 28,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Jazz3-150-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.6,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Rock1-130-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Rock1-90-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Rock2-142-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 27.041609977324264,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 27,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Rock2-85-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.173197278911566,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 45,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Rock3-117-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.81639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 33,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_Rock3-148-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.94079365079365,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 26,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_SS1-100-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.8,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_SS1-68-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 42.34639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 42,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_SS2-107-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.88639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 36,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_SS2-88-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 43.62920634920635,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 44,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_SS3-84-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.70759637188208,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 46,
+    "known_timing_issue": false
+  },
+  {
+    "id": "01_SS3-98-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_BN1-129-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.32439909297052,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_BN1-147-Gb_comp",
+    "dataset": "guitarset",
+    "duration_s": 19.585600907029477,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 19,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_BN2-131-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.30639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_BN2-166-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 23.13,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 23,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_BN3-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_BN3-154-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 24.93199546485261,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Funk1-114-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.258390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Funk1-97-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.688390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 30,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Funk2-108-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.54839002267574,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Funk2-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Funk3-112-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.284399092970524,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 34,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Funk3-98-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Jazz1-130-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Jazz1-200-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 14.4,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 14,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Jazz2-110-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.90319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Jazz2-187-F#_comp",
+    "dataset": "guitarset",
+    "duration_s": 20.531995464852606,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 20,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Jazz3-137-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.023197278911564,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 28,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Jazz3-150-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.6,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Rock1-130-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Rock1-90-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Rock2-142-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 27.041609977324264,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 27,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Rock2-85-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.173197278911566,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 45,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Rock3-117-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.81639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 33,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_Rock3-148-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.94079365079365,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 26,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_SS1-100-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.8,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_SS1-68-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 42.34639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 42,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_SS2-107-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.88639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 36,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_SS2-88-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 43.62920634920635,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 44,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_SS3-84-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.70759637188208,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 46,
+    "known_timing_issue": false
+  },
+  {
+    "id": "02_SS3-98-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_BN1-129-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.32439909297052,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_BN1-147-Gb_comp",
+    "dataset": "guitarset",
+    "duration_s": 19.585600907029477,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 19,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_BN2-131-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.30639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_BN2-166-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 23.13,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 23,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_BN3-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_BN3-154-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 24.93199546485261,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Funk1-114-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.258390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Funk1-97-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.688390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 30,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Funk2-108-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.54839002267574,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Funk2-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Funk3-112-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.284399092970524,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 34,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Funk3-98-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Jazz1-130-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Jazz1-200-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 14.4,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 14,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Jazz2-110-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.90319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Jazz2-187-F#_comp",
+    "dataset": "guitarset",
+    "duration_s": 20.531995464852606,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 20,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Jazz3-137-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.023197278911564,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 28,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Jazz3-150-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.6,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Rock1-130-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Rock1-90-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Rock2-142-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 27.041609977324264,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 27,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Rock2-85-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.173197278911566,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 45,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Rock3-117-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.81639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 33,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_Rock3-148-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.94079365079365,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 26,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_SS1-100-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.8,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_SS1-68-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 42.34639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 42,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_SS2-107-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.88639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 36,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_SS2-88-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 43.62920634920635,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 44,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_SS3-84-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.70759637188208,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 46,
+    "known_timing_issue": false
+  },
+  {
+    "id": "03_SS3-98-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_BN1-129-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.32439909297052,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_BN1-147-Gb_comp",
+    "dataset": "guitarset",
+    "duration_s": 19.585600907029477,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 19,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_BN2-131-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.30639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_BN2-166-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 23.13,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 23,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_BN3-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_BN3-154-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 24.93199546485261,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": true
+  },
+  {
+    "id": "04_Funk1-114-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.258390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Funk1-97-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.688390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 30,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Funk2-108-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.54839002267574,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Funk2-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Funk3-112-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.284399092970524,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 34,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Funk3-98-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Jazz1-130-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Jazz1-200-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 14.4,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 14,
+    "known_timing_issue": true
+  },
+  {
+    "id": "04_Jazz2-110-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.90319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Jazz2-187-F#_comp",
+    "dataset": "guitarset",
+    "duration_s": 20.531995464852606,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 20,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Jazz3-137-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.023197278911564,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 28,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Jazz3-150-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.6,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Rock1-130-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Rock1-90-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Rock2-142-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 27.041609977324264,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 27,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Rock2-85-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.173197278911566,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 45,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Rock3-117-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.81639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 33,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_Rock3-148-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.94079365079365,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 26,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_SS1-100-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.8,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_SS1-68-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 42.34639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 42,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_SS2-107-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.88639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 36,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_SS2-88-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 43.62920634920635,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 44,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_SS3-84-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.70759637188208,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 46,
+    "known_timing_issue": false
+  },
+  {
+    "id": "04_SS3-98-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_BN1-129-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.32439909297052,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_BN1-147-Gb_comp",
+    "dataset": "guitarset",
+    "duration_s": 19.585600907029477,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 19,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_BN2-131-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.30639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_BN2-166-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 23.13,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 23,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_BN3-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_BN3-154-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 24.93199546485261,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Funk1-114-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.258390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Funk1-97-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 29.688390022675737,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 30,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Funk2-108-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.54839002267574,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Funk2-119-G_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.26319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Funk3-112-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.284399092970524,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 34,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Funk3-98-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Jazz1-130-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Jazz1-200-B_comp",
+    "dataset": "guitarset",
+    "duration_s": 14.4,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 14,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Jazz2-110-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 34.90319727891156,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 35,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Jazz2-187-F#_comp",
+    "dataset": "guitarset",
+    "duration_s": 20.531995464852606,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 20,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Jazz3-137-Eb_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.023197278911564,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 28,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Jazz3-150-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.6,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 25,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Rock1-130-A_comp",
+    "dataset": "guitarset",
+    "duration_s": 22.14721088435374,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 22,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Rock1-90-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 32,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Rock2-142-D_comp",
+    "dataset": "guitarset",
+    "duration_s": 27.041609977324264,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 27,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Rock2-85-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.173197278911566,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 45,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Rock3-117-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 32.81639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 33,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_Rock3-148-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 25.94079365079365,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 26,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_SS1-100-C#_comp",
+    "dataset": "guitarset",
+    "duration_s": 28.8,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 29,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_SS1-68-E_comp",
+    "dataset": "guitarset",
+    "duration_s": 42.34639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 42,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_SS2-107-Ab_comp",
+    "dataset": "guitarset",
+    "duration_s": 35.88639455782313,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 36,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_SS2-88-F_comp",
+    "dataset": "guitarset",
+    "duration_s": 43.62920634920635,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 44,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_SS3-84-Bb_comp",
+    "dataset": "guitarset",
+    "duration_s": 45.70759637188208,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 46,
+    "known_timing_issue": false
+  },
+  {
+    "id": "05_SS3-98-C_comp",
+    "dataset": "guitarset",
+    "duration_s": 39.17879818594104,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 39,
+    "known_timing_issue": false
+  },
+  {
+    "id": "ableton_live_guitar_Campfire",
+    "dataset": "idmt",
+    "duration_s": 546.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 273,
+    "known_timing_issue": false
+  },
+  {
+    "id": "ableton_live_guitar_Guitar_Open",
+    "dataset": "idmt",
+    "duration_s": 546.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 273,
+    "known_timing_issue": false
+  },
+  {
+    "id": "ableton_live_guitar_Nylon_Concerto_Guitar",
+    "dataset": "idmt",
+    "duration_s": 546.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 273,
+    "known_timing_issue": false
+  },
+  {
+    "id": "garageband_guitar_Acoustic_Guitar",
+    "dataset": "idmt",
+    "duration_s": 546.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 273,
+    "known_timing_issue": false
+  },
+  {
+    "id": "garageband_guitar_Classic_Clean",
+    "dataset": "idmt",
+    "duration_s": 546.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 273,
+    "known_timing_issue": false
+  },
+  {
+    "id": "garageband_guitar_Hard_Rock",
+    "dataset": "idmt",
+    "duration_s": 546.0,
+    "rate": 44100,
+    "dtype": "int16",
+    "channels": 1,
+    "query_count": 273,
+    "known_timing_issue": false
+  }
+]

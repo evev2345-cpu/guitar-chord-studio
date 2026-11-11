@@ -1,0 +1,41 @@
+{
+  "mode": "github",
+  "id": "00_BN2-166-Ab_comp",
+  "dataset": "guitarset",
+  "layer": "performed",
+  "time_s": 2.891566265060241,
+  "before": "F#:7/1",
+  "after": "B:maj7/5",
+  "stable_intervals": true,
+  "representable": true,
+  "detected": {
+    "A": false,
+    "B": false,
+    "U_context": true,
+    "B_frame": true
+  },
+  "B_lost_A": false,
+  "lookahead_loss": false,
+  "grid_loss": true,
+  "end_s": 4.337349397590361,
+  "target": [
+    11,
+    [
+      3,
+      6,
+      10,
+      11
+    ]
+  ],
+  "new_present": {
+    "A": false,
+    "B": false,
+    "U_context": true,
+    "B_frame": true
+  },
+  "early_B": false,
+  "confirmed_lookahead_interval_omission": false,
+  "confirmed_grid_interval_omission": true,
+  "B_absent_entire_interval": true,
+  "B_delayed_only": false
+}

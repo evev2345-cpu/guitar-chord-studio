@@ -2,7 +2,7 @@
 
 Features:
 1. Completely isolated from v1 (`chord_studio_v2/runs`, default port 8766).
-2. Full-song guitar stem separation (`htdemucs_6s`) enabled by default on upload (with graceful fallback).
+2. Full-song guitar stem separation (`htdemucs_6s`), with verified output and explicit failure.
 3. Interactive chord segment editing (`POST /api/jobs/<id>/edit`) persisted to `result.json`.
 4. User-driven 4-point fretboard calibration (`POST /api/jobs/<id>/calibrate`) without external APIs.
 """
@@ -38,6 +38,7 @@ if str(ENGINE_DIR) not in sys.path:
 
 from chord_web_analysis import write_result
 from harmony_engine import NAMES, QUALITIES, SUFFIX
+from run_local_separation import separation_command, worker_environment
 
 V2_ROOT = Path(__file__).resolve().parent
 STATIC = V2_ROOT / 'static'
@@ -58,12 +59,6 @@ def _resolve_python(venv_name):
 
 
 MODEL_PYTHON = _resolve_python('.venv-audio-model')
-SEPARATION_PYTHON = _resolve_python('.venv-audio-separation')
-HAS_SEPARATION_ENV = (
-    SEPARATION_PYTHON is not None
-    and Path(SEPARATION_PYTHON).exists()
-    and Path(SEPARATION_PYTHON).name.lower().startswith('python')
-)
 
 MAX_BYTES = 2048 * 1024 * 1024  # 2GB
 MAX_SECONDS = None  # 길이 제한 없음
@@ -100,11 +95,12 @@ def _win_subprocess_kwargs():
     return kwargs
 
 
-def run_cmd(command, log):
+def run_cmd(command, log, env=None):
     with log.open('ab') as out:
         subprocess.run(
             [str(v) for v in command],
             cwd=ROOT,
+            env=env,
             stdout=out,
             stderr=out,
             check=True,
@@ -321,32 +317,28 @@ def analyze(job_id, demo=False, separate_guitar=True):
                 media = 'media.wav'
 
             analysis_audio = directory / 'audio.wav'
-            if separate_guitar and HAS_SEPARATION_ENV:
+            if separate_guitar:
+                save_state(job_id, progress=36, message='전체 음원에서 기타 트랙 분리 중')
                 try:
-                    save_state(job_id, progress=36, message='전체 음원에서 기타 트랙 분리 중')
-                    run_cmd(
-                        [
-                            SEPARATION_PYTHON,
-                            ENGINE_DIR / 'run_local_separation.py',
-                            '--input', analysis_audio,
-                            '--model', 'htdemucs_6s',
-                            '--stem', 'guitar',
-                            '--output', directory / 'separation',
-                        ],
-                        log,
-                    )
+                    run_cmd(separation_command(analysis_audio, directory / 'separation'),
+                            log, env=worker_environment())
+                    manifest_path = directory / 'separation/separation_manifest.json'
+                    manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
                     separated_wav = directory / 'separation/htdemucs_6s/audio/guitar.wav'
-                    if separated_wav.exists():
-                        shutil.copyfile(separated_wav, directory / 'guitar.wav')
-                        analysis_audio = directory / 'guitar.wav'
-                        extra['guitar_audio_url'] = f'/media/{job_id}/guitar.wav'
-                        extra['separation_status'] = 'separated_htdemucs_6s'
-                    else:
-                        extra['separation_status'] = 'fallback_original_audio'
+                    if manifest.get('status') != 'completed' or not separated_wav.is_file():
+                        raise ValueError('분리 결과 파일이 생성되지 않았습니다.')
+                    if hashlib.sha256(separated_wav.read_bytes()).hexdigest() != manifest.get('output_sha256'):
+                        raise ValueError('분리 결과 검증에 실패했습니다.')
+                    shutil.copyfile(separated_wav, directory / 'guitar.wav')
+                    analysis_audio = directory / 'guitar.wav'
+                    extra['guitar_audio_url'] = f'/media/{job_id}/guitar.wav'
+                    extra['separation_status'] = 'separated_htdemucs_6s'
+                    extra['separation_runtime'] = manifest.get('runtime')
                 except Exception as sep_err:
+                    save_state(job_id, separation_status='failed')
                     with log.open('a', encoding='utf-8') as f:
-                        f.write('\nSeparation fallback: ' + repr(sep_err))
-                    extra['separation_status'] = 'fallback_original_audio'
+                        f.write('\nSeparation failed: ' + repr(sep_err))
+                    raise ValueError('기타 분리에 실패했습니다. 배포본의 workers 폴더와 분석 로그를 확인해 주세요. 원음 분석은 기타 분리 옵션을 꺼서 실행할 수 있습니다.') from sep_err
             else:
                 extra['separation_status'] = 'original_audio_mode'
 
@@ -529,6 +521,11 @@ def range_bounds(value, size):
 
 
 class HandlerV2(BaseHTTPRequestHandler):
+    def log_message(self, fmt, *args):
+        # Windowed PyInstaller builds have no console stderr.
+        if sys.stderr is not None:
+            super().log_message(fmt, *args)
+
     def allowed(self):
         host = self.headers.get('Host', '')
         origin = self.headers.get('Origin')

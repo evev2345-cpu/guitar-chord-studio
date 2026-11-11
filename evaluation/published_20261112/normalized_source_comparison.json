@@ -1,0 +1,127 @@
+{
+  "engine/attach_web_vision.py": {
+    "github": "387a91481bf2c4aeebf7f9f6d9ddb0ea4967d954b3850942e6e9d122ffcbdefa",
+    "working": "387a91481bf2c4aeebf7f9f6d9ddb0ea4967d954b3850942e6e9d122ffcbdefa",
+    "same": true
+  },
+  "engine/basic_pitch_adapter.py": {
+    "github": "3c19a4d8b18904d3e98ed58b053c3d42da683f4d1bc8ee5812665421cafbcb18",
+    "working": "3c19a4d8b18904d3e98ed58b053c3d42da683f4d1bc8ee5812665421cafbcb18",
+    "same": true
+  },
+  "engine/basic_pitch_clock.py": {
+    "github": "a99298b157da930aa65bdc0e3f428e973859648c48b414fdf962c86b691a0556",
+    "working": "a99298b157da930aa65bdc0e3f428e973859648c48b414fdf962c86b691a0556",
+    "same": true
+  },
+  "engine/basic_pitch_worker.py": {
+    "github": "01e7bc0c3d0dde5227913396d5bc088df0471357eeebfdd484b884458ef0437b",
+    "working": "01e7bc0c3d0dde5227913396d5bc088df0471357eeebfdd484b884458ef0437b",
+    "same": true
+  },
+  "engine/beat_grid.py": {
+    "github": "7283a08caa16ad79d2e6b9f945045461a1b5bc082439328f4920491e17aa4d83",
+    "working": "7283a08caa16ad79d2e6b9f945045461a1b5bc082439328f4920491e17aa4d83",
+    "same": true
+  },
+  "engine/chord_display_cleanup.py": {
+    "github": "2460b685a7d96c47031d2083a0eb103fa7b765f80e34f39d300c7df90806a881",
+    "working": "2460b685a7d96c47031d2083a0eb103fa7b765f80e34f39d300c7df90806a881",
+    "same": true
+  },
+  "engine/chord_presentation.py": {
+    "github": "2a347592b0d821a84e321a2287465145b747d3f4f4ac4615230baf9f23978cab",
+    "working": "2a347592b0d821a84e321a2287465145b747d3f4f4ac4615230baf9f23978cab",
+    "same": true
+  },
+  "engine/chord_web_analysis.py": {
+    "github": "8ba037e54dbb3cc06400be049373f6a76bb47f6da0aa3c075b967ce7779ce9a5",
+    "working": "8ba037e54dbb3cc06400be049373f6a76bb47f6da0aa3c075b967ce7779ce9a5",
+    "same": true
+  },
+  "engine/fingertip_probability.py": {
+    "github": "4c8dee3863c899695925ef387801c83df1e1cac273b56e51ef152fa362013ed4",
+    "working": "4c8dee3863c899695925ef387801c83df1e1cac273b56e51ef152fa362013ed4",
+    "same": true
+  },
+  "engine/fretboard_frame_identity.py": {
+    "github": "da33c69b91f801df80934ae3a2e3cfacf9b2dd4a37368bdc5e243b938bb72895",
+    "working": "da33c69b91f801df80934ae3a2e3cfacf9b2dd4a37368bdc5e243b938bb72895",
+    "same": true
+  },
+  "engine/fretting_hand_skeleton.py": {
+    "github": "d63239378ca20e643660b97eb97ea615931247ac9bc67086c11f072c6c0e10f9",
+    "working": "d63239378ca20e643660b97eb97ea615931247ac9bc67086c11f072c6c0e10f9",
+    "same": true
+  },
+  "engine/global_fretting_hand.py": {
+    "github": "f43c42c1dd19cceb52df4bc3334dd8388695b70bedf5fea717ef9cf26e66e516",
+    "working": "f43c42c1dd19cceb52df4bc3334dd8388695b70bedf5fea717ef9cf26e66e516",
+    "same": true
+  },
+  "engine/hand_cell_distribution.py": {
+    "github": "6ace18d1f84e8681269f14d2b1ef0f3ae86ed775b848a894ea107bb19d065126",
+    "working": "6ace18d1f84e8681269f14d2b1ef0f3ae86ed775b848a894ea107bb19d065126",
+    "same": true
+  },
+  "engine/hand_fret_tracker.py": {
+    "github": "6546cea6b807bba0bac828c1d2f3b377bbf16d88e5420b83884ef525de31a854",
+    "working": "6546cea6b807bba0bac828c1d2f3b377bbf16d88e5420b83884ef525de31a854",
+    "same": true
+  },
+  "engine/harmonic_context.py": {
+    "github": "c1001445ffe6dc929bc5ee8b6a472c75cc6d292c5523455842fd962b73846446",
+    "working": "c1001445ffe6dc929bc5ee8b6a472c75cc6d292c5523455842fd962b73846446",
+    "same": true
+  },
+  "engine/harmony_engine.py": {
+    "github": "e326b207e2156bfce8ee6d502ba192102122ec284c329de12a52a14aedf8c606",
+    "working": "e326b207e2156bfce8ee6d502ba192102122ec284c329de12a52a14aedf8c606",
+    "same": true
+  },
+  "engine/improve_hand_skeleton.py": {
+    "github": "d8c4da64b6816e16a8c7c4ce7b3999f82f6498211d2aaa48f7086589e4e4e8c7",
+    "working": "d8c4da64b6816e16a8c7c4ce7b3999f82f6498211d2aaa48f7086589e4e4e8c7",
+    "same": true
+  },
+  "engine/low_string_root_prior.py": {
+    "github": "955a45bab69b7b2df20a81fb232ff72038e35f51ee6de6398fdf9ab4e64c57e8",
+    "working": "955a45bab69b7b2df20a81fb232ff72038e35f51ee6de6398fdf9ab4e64c57e8",
+    "same": true
+  },
+  "engine/onset_transition.py": {
+    "github": "06d0893c88886741ffc4de36db24bdf663d36ce9c7e0b3b6c06e72006d038b7e",
+    "working": "06d0893c88886741ffc4de36db24bdf663d36ce9c7e0b3b6c06e72006d038b7e",
+    "same": true
+  },
+  "engine/run_local_separation.py": {
+    "github": "65e26323a79cbcb43ae1490fffc99deb840b57c34bde494a88a96fa3c8de1eaf",
+    "working": "81f3f4063163a361860f77c9228e31d49fc447e343c2011971c8272ce404bcbc",
+    "same": false
+  },
+  "engine/virtual_string_grid.py": {
+    "github": "8fbb568e4c2334d716ef6ffa5e3e51172d64bc9f28da2b91755cc5ad59200a77",
+    "working": "8fbb568e4c2334d716ef6ffa5e3e51172d64bc9f28da2b91755cc5ad59200a77",
+    "same": true
+  },
+  "engine/vision_context.py": {
+    "github": "f13a52421d508644e56365a88a97091fc1366fe98743786874d594652ffd3475",
+    "working": "f13a52421d508644e56365a88a97091fc1366fe98743786874d594652ffd3475",
+    "same": true
+  },
+  "engine/visual_root_tiebreak.py": {
+    "github": "bf80f16923527fb82e7fb9b1d02f5ed03221e01a1a58922dd550029163b95db1",
+    "working": "bf80f16923527fb82e7fb9b1d02f5ed03221e01a1a58922dd550029163b95db1",
+    "same": true
+  },
+  "engine/web_vision_worker.py": {
+    "github": "194c4150268e3080a792ae29d65cf2e19e861a928a46c7c356d26ab163f07d6e",
+    "working": "194c4150268e3080a792ae29d65cf2e19e861a928a46c7c356d26ab163f07d6e",
+    "same": true
+  },
+  "engine/__init__.py": {
+    "github": "d6318e358ca20f37541ac6b579d0862dc5531dddc9c2df247b7d1818b8d7b7cd",
+    "working": "d6318e358ca20f37541ac6b579d0862dc5531dddc9c2df247b7d1818b8d7b7cd",
+    "same": true
+  }
+}

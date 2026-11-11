@@ -1,0 +1,5901 @@
+{
+  "groups": {
+    "harmonic_ablation_20261105_v1/peak_legacy/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 567,
+        "root": 2264,
+        "quality": 630,
+        "abstain": 896,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 303,
+          "root": 1550,
+          "quality": 340,
+          "abstain": 595,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 137,
+          "root": 430,
+          "quality": 144,
+          "abstain": 198,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 81,
+          "root": 183,
+          "quality": 95,
+          "abstain": 68,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 46,
+          "root": 101,
+          "quality": 51,
+          "abstain": 35,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.11604584527220631,
+        "root": 0.46336471551371267,
+        "quality": 0.12893982808022922
+      }
+    },
+    "harmonic_ablation_20261105_v1/peak_legacy/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 652,
+        "root": 2264,
+        "quality": 713,
+        "abstain": 896,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 364,
+          "quality": 0,
+          "abstain": 199,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 102,
+          "root": 127,
+          "quality": 129,
+          "abstain": 37,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 257,
+          "root": 1027,
+          "quality": 268,
+          "abstain": 299,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 38,
+          "root": 69,
+          "quality": 40,
+          "abstain": 27,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 119,
+          "root": 281,
+          "quality": 123,
+          "abstain": 86,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 5,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 84,
+          "root": 151,
+          "quality": 92,
+          "abstain": 28,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 4,
+          "root": 126,
+          "quality": 4,
+          "abstain": 165,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 21,
+          "root": 37,
+          "quality": 23,
+          "abstain": 8,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 9,
+          "root": 34,
+          "quality": 10,
+          "abstain": 23,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 12,
+          "root": 22,
+          "quality": 12,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 5,
+          "root": 23,
+          "quality": 8,
+          "abstain": 6,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 1,
+          "root": 3,
+          "quality": 4,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.13344248874334835,
+        "root": 0.46336471551371267,
+        "quality": 0.145927138763815
+      }
+    },
+    "harmonic_ablation_20261105_v1/peak_cosine/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 792,
+        "root": 2794,
+        "quality": 886,
+        "abstain": 225,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 577,
+          "root": 1894,
+          "quality": 645,
+          "abstain": 152,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 143,
+          "root": 602,
+          "quality": 162,
+          "abstain": 40,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 40,
+          "root": 190,
+          "quality": 46,
+          "abstain": 21,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 32,
+          "root": 108,
+          "quality": 33,
+          "abstain": 12,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.16209578387228818,
+        "root": 0.5718379042161277,
+        "quality": 0.18133442488743348
+      }
+    },
+    "harmonic_ablation_20261105_v1/peak_cosine/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 969,
+        "root": 2794,
+        "quality": 1047,
+        "abstain": 225,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 406,
+          "quality": 0,
+          "abstain": 63,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 36,
+          "root": 109,
+          "quality": 52,
+          "abstain": 16,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 493,
+          "root": 1255,
+          "quality": 512,
+          "abstain": 65,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 19,
+          "root": 72,
+          "quality": 20,
+          "abstain": 8,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 115,
+          "root": 373,
+          "quality": 125,
+          "abstain": 13,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 3,
+          "quality": 0,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 35,
+          "root": 145,
+          "quality": 39,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 245,
+          "root": 287,
+          "quality": 269,
+          "abstain": 30,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 16,
+          "root": 36,
+          "quality": 16,
+          "abstain": 4,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 4,
+          "root": 41,
+          "quality": 4,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 4,
+          "root": 30,
+          "quality": 4,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 1,
+          "root": 24,
+          "quality": 3,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 1,
+          "root": 13,
+          "quality": 3,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.19832173557101923,
+        "root": 0.5718379042161277,
+        "quality": 0.21428571428571427
+      }
+    },
+    "harmonic_ablation_20261105_v1/harmonic_legacy/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 470,
+        "root": 2407,
+        "quality": 501,
+        "abstain": 82,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 242,
+          "root": 1703,
+          "quality": 252,
+          "abstain": 58,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 98,
+          "root": 405,
+          "quality": 99,
+          "abstain": 19,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 86,
+          "root": 193,
+          "quality": 99,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 44,
+          "root": 106,
+          "quality": 51,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.09619320507572657,
+        "root": 0.4926320098239869,
+        "quality": 0.10253786328284896
+      }
+    },
+    "harmonic_ablation_20261105_v1/harmonic_legacy/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 616,
+        "root": 2407,
+        "quality": 657,
+        "abstain": 82,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 380,
+          "quality": 0,
+          "abstain": 22,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 148,
+          "root": 173,
+          "quality": 174,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 210,
+          "root": 1055,
+          "quality": 211,
+          "abstain": 31,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 30,
+          "root": 70,
+          "quality": 34,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 79,
+          "root": 215,
+          "quality": 79,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 1,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 98,
+          "root": 161,
+          "quality": 103,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 0,
+          "root": 232,
+          "quality": 0,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 25,
+          "root": 33,
+          "quality": 25,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 13,
+          "root": 36,
+          "quality": 13,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 8,
+          "root": 24,
+          "quality": 8,
+          "abstain": 4,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 5,
+          "root": 22,
+          "quality": 9,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 0,
+          "root": 6,
+          "quality": 0,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.12607449856733524,
+        "root": 0.4926320098239869,
+        "quality": 0.13446582071223906
+      }
+    },
+    "harmonic_ablation_20261105_v1/harmonic_cosine/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 867,
+        "root": 2743,
+        "quality": 913,
+        "abstain": 11,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 612,
+          "root": 1866,
+          "quality": 644,
+          "abstain": 7,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 164,
+          "root": 568,
+          "quality": 172,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 57,
+          "root": 202,
+          "quality": 60,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 34,
+          "root": 107,
+          "quality": 37,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.1774457634056488,
+        "root": 0.5613999181334425,
+        "quality": 0.1868604175194433
+      }
+    },
+    "harmonic_ablation_20261105_v1/harmonic_cosine/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 1057,
+        "root": 2743,
+        "quality": 1121,
+        "abstain": 11,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 373,
+          "quality": 0,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 103,
+          "root": 149,
+          "quality": 121,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 517,
+          "root": 1224,
+          "quality": 527,
+          "abstain": 6,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 20,
+          "root": 66,
+          "quality": 22,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 131,
+          "root": 356,
+          "quality": 132,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 2,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 55,
+          "root": 150,
+          "quality": 56,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 201,
+          "root": 279,
+          "quality": 233,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 19,
+          "root": 34,
+          "quality": 19,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 5,
+          "root": 38,
+          "quality": 5,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 3,
+          "root": 33,
+          "quality": 3,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 3,
+          "root": 26,
+          "quality": 3,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 0,
+          "root": 13,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.2163323782234957,
+        "root": 0.5613999181334425,
+        "quality": 0.22943102742529678
+      }
+    },
+    "harmonic_ablation_20261105_v1/peak_legacy/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 727,
+        "root": 1039,
+        "quality": 781,
+        "abstain": 248,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 53,
+          "root": 182,
+          "quality": 53,
+          "abstain": 52,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 73,
+          "root": 146,
+          "quality": 73,
+          "abstain": 42,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 199,
+          "root": 226,
+          "quality": 199,
+          "abstain": 5,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 133,
+          "root": 156,
+          "quality": 133,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 25,
+          "quality": 0,
+          "abstain": 109,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 196,
+          "root": 209,
+          "quality": 196,
+          "abstain": 9,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 73,
+          "root": 95,
+          "quality": 127,
+          "abstain": 21,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.4438339438339438,
+        "root": 0.6343101343101343,
+        "quality": 0.47680097680097683
+      }
+    },
+    "harmonic_ablation_20261105_v1/peak_cosine/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 591,
+        "root": 1243,
+        "quality": 764,
+        "abstain": 9,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 61,
+          "root": 232,
+          "quality": 61,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 97,
+          "root": 210,
+          "quality": 97,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 126,
+          "root": 228,
+          "quality": 126,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 83,
+          "root": 187,
+          "quality": 83,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 65,
+          "root": 69,
+          "quality": 197,
+          "abstain": 6,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 101,
+          "root": 221,
+          "quality": 101,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 58,
+          "root": 96,
+          "quality": 99,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.3608058608058608,
+        "root": 0.7588522588522588,
+        "quality": 0.46642246642246643
+      }
+    },
+    "harmonic_ablation_20261105_v1/harmonic_legacy/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 919,
+        "root": 1120,
+        "quality": 979,
+        "abstain": 65,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 89,
+          "root": 201,
+          "quality": 89,
+          "abstain": 8,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 117,
+          "root": 143,
+          "quality": 117,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 226,
+          "root": 230,
+          "quality": 226,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 159,
+          "root": 161,
+          "quality": 159,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 1,
+          "root": 42,
+          "quality": 2,
+          "abstain": 55,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 221,
+          "root": 232,
+          "quality": 221,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 106,
+          "root": 111,
+          "quality": 165,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.561050061050061,
+        "root": 0.6837606837606838,
+        "quality": 0.5976800976800977
+      }
+    },
+    "harmonic_ablation_20261105_v1/harmonic_cosine/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 823,
+        "root": 1287,
+        "quality": 1034,
+        "abstain": 2,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 87,
+          "root": 229,
+          "quality": 87,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 132,
+          "root": 228,
+          "quality": 132,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 150,
+          "root": 229,
+          "quality": 150,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 124,
+          "root": 176,
+          "quality": 124,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 76,
+          "root": 77,
+          "quality": 229,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 154,
+          "root": 229,
+          "quality": 154,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 100,
+          "root": 119,
+          "quality": 158,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.5024420024420024,
+        "root": 0.7857142857142857,
+        "quality": 0.6312576312576312
+      }
+    },
+    "cut_audio_features_20261105_v1/peak/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 577,
+        "root": 2285,
+        "quality": 637,
+        "abstain": 860,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 311,
+          "root": 1563,
+          "quality": 346,
+          "abstain": 573,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 140,
+          "root": 437,
+          "quality": 146,
+          "abstain": 193,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 81,
+          "root": 185,
+          "quality": 95,
+          "abstain": 62,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 45,
+          "root": 100,
+          "quality": 50,
+          "abstain": 32,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.11809250920998772,
+        "root": 0.46766270978305363,
+        "quality": 0.1303724928366762
+      }
+    },
+    "cut_audio_features_20261105_v1/peak/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 669,
+        "root": 2285,
+        "quality": 727,
+        "abstain": 860,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 371,
+          "quality": 0,
+          "abstain": 185,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 105,
+          "root": 131,
+          "quality": 132,
+          "abstain": 34,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 265,
+          "root": 1031,
+          "quality": 275,
+          "abstain": 291,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 39,
+          "root": 71,
+          "quality": 42,
+          "abstain": 26,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 121,
+          "root": 281,
+          "quality": 125,
+          "abstain": 84,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 4,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 85,
+          "root": 152,
+          "quality": 91,
+          "abstain": 29,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 4,
+          "root": 126,
+          "quality": 4,
+          "abstain": 161,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 21,
+          "root": 37,
+          "quality": 23,
+          "abstain": 8,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 10,
+          "root": 36,
+          "quality": 10,
+          "abstain": 20,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 12,
+          "root": 22,
+          "quality": 12,
+          "abstain": 11,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 6,
+          "root": 24,
+          "quality": 9,
+          "abstain": 4,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 1,
+          "root": 3,
+          "quality": 4,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.13692181743757675,
+        "root": 0.46766270978305363,
+        "quality": 0.14879246827670897
+      }
+    },
+    "cut_audio_features_20261105_v1/harmonic/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 475,
+        "root": 2457,
+        "quality": 509,
+        "abstain": 107,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 253,
+          "root": 1728,
+          "quality": 272,
+          "abstain": 83,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 100,
+          "root": 426,
+          "quality": 100,
+          "abstain": 20,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 79,
+          "root": 194,
+          "quality": 90,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 43,
+          "root": 109,
+          "quality": 47,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.09721653704461727,
+        "root": 0.502865329512894,
+        "quality": 0.10417519443307409
+      }
+    },
+    "cut_audio_features_20261105_v1/harmonic/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 621,
+        "root": 2457,
+        "quality": 670,
+        "abstain": 107,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 374,
+          "quality": 0,
+          "abstain": 23,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 141,
+          "root": 159,
+          "quality": 173,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 219,
+          "root": 1097,
+          "quality": 222,
+          "abstain": 39,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 27,
+          "root": 58,
+          "quality": 31,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 88,
+          "root": 244,
+          "quality": 88,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 1,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 96,
+          "root": 164,
+          "quality": 103,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 3,
+          "root": 238,
+          "quality": 3,
+          "abstain": 9,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 23,
+          "root": 32,
+          "quality": 23,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 13,
+          "root": 39,
+          "quality": 13,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 5,
+          "root": 22,
+          "quality": 5,
+          "abstain": 4,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 6,
+          "root": 23,
+          "quality": 8,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 0,
+          "root": 7,
+          "quality": 0,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.12709783053622595,
+        "root": 0.502865329512894,
+        "quality": 0.1371264838313549
+      }
+    },
+    "cut_audio_features_20261105_v1/supported/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 749,
+        "root": 1873,
+        "quality": 825,
+        "abstain": 1456,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 478,
+          "root": 1280,
+          "quality": 534,
+          "abstain": 964,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 163,
+          "root": 351,
+          "quality": 169,
+          "abstain": 328,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 72,
+          "root": 158,
+          "quality": 81,
+          "abstain": 96,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 36,
+          "root": 84,
+          "quality": 41,
+          "abstain": 68,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.15329512893982808,
+        "root": 0.3833401555464593,
+        "quality": 0.16884977486696684
+      }
+    },
+    "cut_audio_features_20261105_v1/supported/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 776,
+        "root": 1873,
+        "quality": 817,
+        "abstain": 1456,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 312,
+          "quality": 0,
+          "abstain": 294,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 75,
+          "root": 99,
+          "quality": 92,
+          "abstain": 72,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 411,
+          "root": 868,
+          "quality": 422,
+          "abstain": 510,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 23,
+          "root": 54,
+          "quality": 23,
+          "abstain": 50,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 144,
+          "root": 239,
+          "quality": 147,
+          "abstain": 145,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 4,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 77,
+          "root": 122,
+          "quality": 84,
+          "abstain": 60,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 7,
+          "root": 88,
+          "quality": 8,
+          "abstain": 235,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 19,
+          "root": 28,
+          "quality": 20,
+          "abstain": 23,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 7,
+          "root": 26,
+          "quality": 7,
+          "abstain": 29,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 6,
+          "root": 15,
+          "quality": 6,
+          "abstain": 18,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 6,
+          "root": 20,
+          "quality": 7,
+          "abstain": 8,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 1,
+          "root": 2,
+          "quality": 1,
+          "abstain": 8,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.1588211215718379,
+        "root": 0.3833401555464593,
+        "quality": 0.1672124437167417
+      }
+    },
+    "cut_audio_features_20261105_v1/peak/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 756,
+        "root": 1048,
+        "quality": 809,
+        "abstain": 248,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 55,
+          "root": 184,
+          "quality": 55,
+          "abstain": 50,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 79,
+          "root": 150,
+          "quality": 79,
+          "abstain": 42,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 206,
+          "root": 227,
+          "quality": 206,
+          "abstain": 5,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 137,
+          "root": 158,
+          "quality": 137,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 23,
+          "quality": 0,
+          "abstain": 111,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 202,
+          "root": 211,
+          "quality": 202,
+          "abstain": 9,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 77,
+          "root": 95,
+          "quality": 130,
+          "abstain": 21,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.46153846153846156,
+        "root": 0.6398046398046398,
+        "quality": 0.4938949938949939
+      }
+    },
+    "cut_audio_features_20261105_v1/harmonic/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 872,
+        "root": 1157,
+        "quality": 932,
+        "abstain": 42,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 75,
+          "root": 224,
+          "quality": 75,
+          "abstain": 4,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 113,
+          "root": 163,
+          "quality": 113,
+          "abstain": 1,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 213,
+          "root": 230,
+          "quality": 213,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 152,
+          "root": 156,
+          "quality": 152,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 46,
+          "quality": 1,
+          "abstain": 35,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 213,
+          "root": 226,
+          "quality": 213,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 106,
+          "root": 112,
+          "quality": 165,
+          "abstain": 0,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.5323565323565324,
+        "root": 0.7063492063492064,
+        "quality": 0.568986568986569
+      }
+    },
+    "cut_audio_features_20261105_v1/supported/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 814,
+        "root": 1020,
+        "quality": 872,
+        "abstain": 317,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 93,
+          "root": 176,
+          "quality": 93,
+          "abstain": 58,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 120,
+          "root": 157,
+          "quality": 120,
+          "abstain": 43,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 177,
+          "root": 208,
+          "quality": 177,
+          "abstain": 23,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 130,
+          "root": 153,
+          "quality": 130,
+          "abstain": 13,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 20,
+          "quality": 0,
+          "abstain": 148,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 202,
+          "root": 209,
+          "quality": 202,
+          "abstain": 11,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 92,
+          "root": 97,
+          "quality": 150,
+          "abstain": 21,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.49694749694749696,
+        "root": 0.6227106227106227,
+        "quality": 0.5323565323565324
+      }
+    },
+    "basic_pitch_20261105_v2/raw_frames/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 1292,
+        "root": 1728,
+        "quality": 1311,
+        "abstain": 2698,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 928,
+          "root": 1206,
+          "quality": 941,
+          "abstain": 1717,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 253,
+          "root": 332,
+          "quality": 258,
+          "abstain": 596,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 78,
+          "root": 126,
+          "quality": 79,
+          "abstain": 258,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 33,
+          "root": 64,
+          "quality": 33,
+          "abstain": 127,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.264428980761359,
+        "root": 0.35366352844862875,
+        "quality": 0.2683176422431437
+      }
+    },
+    "basic_pitch_20261105_v2/raw_frames/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 1313,
+        "root": 1728,
+        "quality": 1324,
+        "abstain": 2698,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 250,
+          "quality": 0,
+          "abstain": 686,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 96,
+          "root": 106,
+          "quality": 97,
+          "abstain": 135,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 828,
+          "root": 857,
+          "quality": 833,
+          "abstain": 812,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 34,
+          "root": 52,
+          "quality": 34,
+          "abstain": 109,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 227,
+          "root": 234,
+          "quality": 229,
+          "abstain": 271,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 10,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 85,
+          "root": 122,
+          "quality": 87,
+          "abstain": 139,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 1,
+          "root": 22,
+          "quality": 1,
+          "abstain": 381,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 19,
+          "root": 27,
+          "quality": 19,
+          "abstain": 47,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 7,
+          "root": 21,
+          "quality": 7,
+          "abstain": 48,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 11,
+          "root": 16,
+          "quality": 11,
+          "abstain": 23,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 5,
+          "root": 19,
+          "quality": 6,
+          "abstain": 18,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 0,
+          "root": 2,
+          "quality": 0,
+          "abstain": 17,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.2687269750307,
+        "root": 0.35366352844862875,
+        "quality": 0.27097830536225953
+      }
+    },
+    "basic_pitch_20261105_v2/raw_events/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 1287,
+        "root": 1673,
+        "quality": 1300,
+        "abstain": 2810,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 933,
+          "root": 1163,
+          "quality": 944,
+          "abstain": 1790,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 250,
+          "root": 322,
+          "quality": 252,
+          "abstain": 629,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 70,
+          "root": 123,
+          "quality": 70,
+          "abstain": 262,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 34,
+          "root": 65,
+          "quality": 34,
+          "abstain": 129,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.26340564879246825,
+        "root": 0.3424068767908309,
+        "quality": 0.26606631191158414
+      }
+    },
+    "basic_pitch_20261105_v2/raw_events/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 1273,
+        "root": 1673,
+        "quality": 1279,
+        "abstain": 2810,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 236,
+          "quality": 0,
+          "abstain": 725,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 81,
+          "root": 104,
+          "quality": 81,
+          "abstain": 143,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 819,
+          "root": 840,
+          "quality": 822,
+          "abstain": 836,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 34,
+          "root": 54,
+          "quality": 34,
+          "abstain": 116,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 219,
+          "root": 224,
+          "quality": 219,
+          "abstain": 287,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 11,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 83,
+          "root": 120,
+          "quality": 85,
+          "abstain": 143,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 0,
+          "root": 12,
+          "quality": 0,
+          "abstain": 393,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 20,
+          "root": 30,
+          "quality": 20,
+          "abstain": 44,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 5,
+          "root": 20,
+          "quality": 5,
+          "abstain": 48,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 9,
+          "root": 14,
+          "quality": 9,
+          "abstain": 25,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 3,
+          "root": 17,
+          "quality": 4,
+          "abstain": 20,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 0,
+          "root": 2,
+          "quality": 0,
+          "abstain": 17,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.2605403192795743,
+        "root": 0.3424068767908309,
+        "quality": 0.2617683176422431
+      }
+    },
+    "basic_pitch_20261105_v2/cut_frames/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 867,
+        "root": 1200,
+        "quality": 877,
+        "abstain": 3339,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 641,
+          "root": 852,
+          "quality": 649,
+          "abstain": 2133,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 171,
+          "root": 235,
+          "quality": 173,
+          "abstain": 730,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 42,
+          "root": 78,
+          "quality": 42,
+          "abstain": 315,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 13,
+          "root": 35,
+          "quality": 13,
+          "abstain": 161,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.1774457634056488,
+        "root": 0.24559967253376996,
+        "quality": 0.1794924273434302
+      }
+    },
+    "basic_pitch_20261105_v2/cut_frames/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 878,
+        "root": 1200,
+        "quality": 884,
+        "abstain": 3339,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 168,
+          "quality": 0,
+          "abstain": 848,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 74,
+          "root": 82,
+          "quality": 76,
+          "abstain": 169,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 571,
+          "root": 600,
+          "quality": 573,
+          "abstain": 1065,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 17,
+          "root": 37,
+          "quality": 17,
+          "abstain": 136,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 148,
+          "root": 171,
+          "quality": 149,
+          "abstain": 332,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 12,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 50,
+          "root": 84,
+          "quality": 50,
+          "abstain": 183,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 0,
+          "root": 14,
+          "quality": 0,
+          "abstain": 389,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 6,
+          "root": 13,
+          "quality": 6,
+          "abstain": 63,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 3,
+          "root": 6,
+          "quality": 3,
+          "abstain": 67,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 8,
+          "root": 12,
+          "quality": 8,
+          "abstain": 28,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 1,
+          "root": 11,
+          "quality": 2,
+          "abstain": 26,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 0,
+          "root": 2,
+          "quality": 0,
+          "abstain": 19,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.17969709373720835,
+        "root": 0.24559967253376996,
+        "quality": 0.1809250920998772
+      }
+    },
+    "basic_pitch_20261105_v2/cut_events/guitarset/nominal": {
+      "counts": {
+        "n": 4886,
+        "exact": 871,
+        "root": 1163,
+        "quality": 877,
+        "abstain": 3427,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 3164,
+          "exact": 643,
+          "root": 825,
+          "quality": 649,
+          "abstain": 2190,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 1068,
+          "exact": 170,
+          "root": 224,
+          "quality": 170,
+          "abstain": 755,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 426,
+          "exact": 45,
+          "root": 77,
+          "quality": 45,
+          "abstain": 316,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 228,
+          "exact": 13,
+          "root": 37,
+          "quality": 13,
+          "abstain": 166,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.17826442898076136,
+        "root": 0.2380270159639787,
+        "quality": 0.1794924273434302
+      }
+    },
+    "basic_pitch_20261105_v2/cut_events/guitarset/performed": {
+      "counts": {
+        "n": 4886,
+        "exact": 869,
+        "root": 1163,
+        "quality": 872,
+        "abstain": 3427,
+        "ambiguous": 0,
+        "oov": 1190
+      },
+      "qualities": {
+        "OOV": {
+          "n": 1190,
+          "exact": 0,
+          "root": 155,
+          "quality": 0,
+          "abstain": 880,
+          "ambiguous": 0,
+          "oov": 1190
+        },
+        "maj7": {
+          "n": 272,
+          "exact": 68,
+          "root": 77,
+          "quality": 68,
+          "abstain": 179,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "major": {
+          "n": 1693,
+          "exact": 567,
+          "root": 591,
+          "quality": 569,
+          "abstain": 1082,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 221,
+          "exact": 15,
+          "root": 30,
+          "quality": 15,
+          "abstain": 146,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 516,
+          "exact": 152,
+          "root": 172,
+          "quality": 152,
+          "abstain": 340,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m6": {
+          "n": 16,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 13,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 294,
+          "exact": 53,
+          "root": 87,
+          "quality": 53,
+          "abstain": 184,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 407,
+          "exact": 0,
+          "root": 9,
+          "quality": 0,
+          "abstain": 397,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 88,
+          "exact": 5,
+          "root": 14,
+          "quality": 5,
+          "abstain": 63,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "6": {
+          "n": 76,
+          "exact": 3,
+          "root": 5,
+          "quality": 3,
+          "abstain": 67,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus2": {
+          "n": 49,
+          "exact": 6,
+          "root": 9,
+          "quality": 6,
+          "abstain": 30,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "add9": {
+          "n": 38,
+          "exact": 0,
+          "root": 12,
+          "quality": 1,
+          "abstain": 25,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "sus4": {
+          "n": 24,
+          "exact": 0,
+          "root": 2,
+          "quality": 0,
+          "abstain": 19,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "dim7": {
+          "n": 2,
+          "exact": 0,
+          "root": 0,
+          "quality": 0,
+          "abstain": 2,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 178,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.17785509619320508,
+        "root": 0.2380270159639787,
+        "quality": 0.1784690953745395
+      }
+    },
+    "basic_pitch_20261105_v2/raw_frames/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 1067,
+        "root": 1150,
+        "quality": 1121,
+        "abstain": 304,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 205,
+          "root": 209,
+          "quality": 205,
+          "abstain": 25,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 213,
+          "root": 214,
+          "quality": 213,
+          "abstain": 18,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 194,
+          "root": 231,
+          "quality": 194,
+          "abstain": 3,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 150,
+          "root": 173,
+          "quality": 150,
+          "abstain": 6,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 1,
+          "quality": 0,
+          "abstain": 228,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 207,
+          "root": 219,
+          "quality": 207,
+          "abstain": 11,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 98,
+          "root": 103,
+          "quality": 152,
+          "abstain": 13,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.6514041514041514,
+        "root": 0.702075702075702,
+        "quality": 0.6843711843711844
+      }
+    },
+    "basic_pitch_20261105_v2/raw_events/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 1077,
+        "root": 1158,
+        "quality": 1135,
+        "abstain": 298,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 204,
+          "root": 209,
+          "quality": 204,
+          "abstain": 25,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 217,
+          "root": 218,
+          "quality": 217,
+          "abstain": 15,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 188,
+          "root": 229,
+          "quality": 188,
+          "abstain": 5,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 150,
+          "root": 171,
+          "quality": 150,
+          "abstain": 5,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 1,
+          "quality": 0,
+          "abstain": 230,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 216,
+          "root": 224,
+          "quality": 216,
+          "abstain": 7,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 102,
+          "root": 106,
+          "quality": 160,
+          "abstain": 11,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.6575091575091575,
+        "root": 0.706959706959707,
+        "quality": 0.6929181929181929
+      }
+    },
+    "basic_pitch_20261105_v2/cut_frames/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 753,
+        "root": 878,
+        "quality": 790,
+        "abstain": 570,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 131,
+          "root": 135,
+          "quality": 131,
+          "abstain": 95,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 155,
+          "root": 166,
+          "quality": 155,
+          "abstain": 61,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 134,
+          "root": 200,
+          "quality": 134,
+          "abstain": 34,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 113,
+          "root": 141,
+          "quality": 113,
+          "abstain": 41,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 1,
+          "quality": 0,
+          "abstain": 225,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 135,
+          "root": 146,
+          "quality": 135,
+          "abstain": 68,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 85,
+          "root": 89,
+          "quality": 122,
+          "abstain": 46,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.4597069597069597,
+        "root": 0.536019536019536,
+        "quality": 0.4822954822954823
+      }
+    },
+    "basic_pitch_20261105_v2/cut_events/idmt/nominal": {
+      "counts": {
+        "n": 1638,
+        "exact": 740,
+        "root": 877,
+        "quality": 776,
+        "abstain": 568,
+        "ambiguous": 0,
+        "oov": 0
+      },
+      "qualities": {
+        "major": {
+          "n": 234,
+          "exact": 133,
+          "root": 135,
+          "quality": 133,
+          "abstain": 95,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "minor": {
+          "n": 234,
+          "exact": 152,
+          "root": 166,
+          "quality": 152,
+          "abstain": 59,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "maj7": {
+          "n": 234,
+          "exact": 120,
+          "root": 199,
+          "quality": 120,
+          "abstain": 34,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7": {
+          "n": 234,
+          "exact": 114,
+          "root": 141,
+          "quality": 114,
+          "abstain": 39,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "5": {
+          "n": 234,
+          "exact": 0,
+          "root": 1,
+          "quality": 0,
+          "abstain": 225,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "7": {
+          "n": 234,
+          "exact": 135,
+          "root": 145,
+          "quality": 135,
+          "abstain": 69,
+          "ambiguous": 0,
+          "oov": 0
+        },
+        "m7b5": {
+          "n": 234,
+          "exact": 86,
+          "root": 90,
+          "quality": 122,
+          "abstain": 47,
+          "ambiguous": 0,
+          "oov": 0
+        }
+      },
+      "files": 6,
+      "source": "archived2026-11-05_predictions_rescored_no_new_inference",
+      "rates": {
+        "exact": 0.4517704517704518,
+        "root": 0.5354090354090354,
+        "quality": 0.47374847374847373
+      }
+    }
+  },
+  "source_records": [
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_BN1-129-Eb_comp",
+      "sha256": "589739b64f3741267513d94f08c4a4d8b17ba2ef352314619a0c504750a3b7a4"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_BN1-147-Gb_comp",
+      "sha256": "c53ef3e5f6ba65f7d9eb1d0e626a6bcf57112ebe719a4d63528fa1f8842595a9"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_BN2-131-B_comp",
+      "sha256": "bec50a1685d31346ab7e58a4a36a45bcacb1201570e4a6ad49861c7ee6436d18"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_BN2-166-Ab_comp",
+      "sha256": "3ae71f12bdef3d839a8b6b40743eeee9f73e3ca6b73a24ae6437ee8cd8512b75"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_BN3-119-G_comp",
+      "sha256": "268c1ba49f3dc6c7271114db3354af3f601e4dc2e804254e83d45dd653f87b84"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_BN3-154-E_comp",
+      "sha256": "9049d2523b31662c39be5a10ee04e52c64ba1758c1501d1143286d0d8a2d3e7e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Funk1-114-Ab_comp",
+      "sha256": "17f3e4d8160786af0fe85da46b61936a3939c6673ca4960c56ab8872e3731555"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Funk1-97-C_comp",
+      "sha256": "4842ef81f74840417722b8f7b348f957af40bc074379bfe3dde5d92d388a15c6"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Funk2-108-Eb_comp",
+      "sha256": "74f06a65acd31efe1dfb11e5f7a99bb4218921e4f156910685f4ab50132faa20"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Funk2-119-G_comp",
+      "sha256": "a6cd176d7913b9bcf564a4d46162f2de895de021d66098d1ada0460c4c1a08ec"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Funk3-112-C#_comp",
+      "sha256": "2dec1a178395a9f6f3284fa25485699c280ebd7844392b87150fb45f68063174"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Funk3-98-A_comp",
+      "sha256": "efa3966b5e77e97e7c044d66e66c587d471544c831a0e99d0bc69979375284d7"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Jazz1-130-D_comp",
+      "sha256": "f27674b822705fadca5ee8ee0a58061c1b69611154d04c68e237271996fde277"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Jazz1-200-B_comp",
+      "sha256": "f8e6b04aec7881d78c7ff20c2bf8cc7f7c0b86ee8772ee1be53634c60e138fcc"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Jazz2-110-Bb_comp",
+      "sha256": "d3238758c014ed414229c1652479e945dd58d1e97300bfefd06fd4e06ca638dd"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Jazz2-187-F#_comp",
+      "sha256": "c1fac59a229a57ba368b6a5846cb949096aeb8967161847b7124de5a201f29af"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Jazz3-137-Eb_comp",
+      "sha256": "0eb3af4efc02e7c28cbcab761d124e6dc54b9d25ac1cfc2a26333d10d1b60347"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Jazz3-150-C_comp",
+      "sha256": "77d75b1556ecba38a0494fed5efbbf881020cf88426b92a7cb75a5b44ce042a1"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Rock1-130-A_comp",
+      "sha256": "3afe51b5d86870fccc5610e99676c6d0b6b8a24eceb6356d2ff9773d9e13ede0"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Rock1-90-C#_comp",
+      "sha256": "729a4c2ccc9a68a3b81dc5a89bd9a2ac1f5791e8c02eb614e4f45c9b6b55c222"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Rock2-142-D_comp",
+      "sha256": "2b8b408990b745461595004d691b24ba7346ca83fdb4c1c9a0bdbc5f35e61816"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Rock2-85-F_comp",
+      "sha256": "c402aa6eade67ee46022aa27633b4f2835351173cf7563fcb54d1517fd4896ef"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Rock3-117-Bb_comp",
+      "sha256": "e55d4c37353476bfce21bc6fc4d1f26ec605129e41f789b5e0d87f67ef98d177"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_Rock3-148-C_comp",
+      "sha256": "ed6e247f15f476e7652d106319e2a6ef10ce5feae50ec12df296785b03811dfb"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_SS1-100-C#_comp",
+      "sha256": "2ecd022daa1ba157f9d234331c25c7be0d520de338220ec5d047dc77928a86bb"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_SS1-68-E_comp",
+      "sha256": "70e35c3f912f7c8833f36646908e23a127929be1f7c531cd1a10cc505247b644"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_SS2-107-Ab_comp",
+      "sha256": "de491c730542fc30b27dcb497c2c9fe283f8ac804f54b90f8d634f49c92778f2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_SS2-88-F_comp",
+      "sha256": "3bba57221995f5321738e4d1f11815f64a97de448bbb6cbd32450a97b7af9930"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_SS3-84-Bb_comp",
+      "sha256": "8510b978380856a26ace030ba7ef6932a4cf6b5318e015c20a8cfa8edf70736d"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "00_SS3-98-C_comp",
+      "sha256": "52eaca8f2d54f7917fdf84d83e5223805a3b5ccf2efb388ea4561a4291d99766"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_BN1-129-Eb_comp",
+      "sha256": "1ffdd5853cf6b865db734ad9d95e78a928fd9e42755e5a439987b104d5b75f7e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_BN1-147-Gb_comp",
+      "sha256": "8ddca6f5008eac4ea6c6095211c331843503607093a93ffa58dbd09a1a3cbf3e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_BN2-131-B_comp",
+      "sha256": "7759b14b9d00da2cae64eadc4c8477fe6ab98ab8f79caef5a228d7a9197f87d2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_BN2-166-Ab_comp",
+      "sha256": "cb4712971c4f9cfffdfcf00f490fe50cb5d32f596f60bf119839b2abf29bd6ad"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_BN3-119-G_comp",
+      "sha256": "ca5bfc0d04059bad84226f17860fc123a38b99430b9fefb4769d84da2afbcfed"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_BN3-154-E_comp",
+      "sha256": "b10bdd8ef517773f5a78e605341554f0e6e77046f797036d276658e89db5a0d2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Funk1-114-Ab_comp",
+      "sha256": "b95b9b15cc2e651a403aa394aec1247dd8b9ebe20bbb75513a45188348be5851"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Funk1-97-C_comp",
+      "sha256": "23114cdf102bf568f0ea5b195683870450d4dcb4f46de84aa075c27b6bb6c462"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Funk2-108-Eb_comp",
+      "sha256": "b0f8810831b92b08ac7c7caa2cb3a07fbf36591252c50922689df29ced86253d"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Funk2-119-G_comp",
+      "sha256": "2e628e3fd6ac965c89c3872fdd462d7a0d746c11e4feec28c897466f868815b8"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Funk3-112-C#_comp",
+      "sha256": "ef45b823538c5ff1813be27e0988d66b44ccda58546ecc24d513770f55afb4cf"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Funk3-98-A_comp",
+      "sha256": "a0a1c75b6426925d22850bffd398188051ac761214c2aa0e9de69b92d939412a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Jazz1-130-D_comp",
+      "sha256": "3a02ed3ff98823d42248b976230f9865e6801b719aeea6b70e1587792b36722c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Jazz1-200-B_comp",
+      "sha256": "1e8fcfca6d3981d345a7028abbb0bd4c3eefd591a9924a1840e67ca70129cf1d"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Jazz2-110-Bb_comp",
+      "sha256": "36a52eefe49cbc22f0e3c7156ed7965be7c6dbf04e07312ff277a18f97b93d9b"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Jazz2-187-F#_comp",
+      "sha256": "ee65636d8298c80571ef02855dc5f71958bf11bbbdf4b2051bfa139816b19a8f"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Jazz3-137-Eb_comp",
+      "sha256": "644ff0f8d7a622830fe810adab61bc0efe77f1fefe93f17ecab2fa5e1f29241e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Jazz3-150-C_comp",
+      "sha256": "34a04da9761f6ea529676d251b9a0df0891a70e01621b0562eeeb418cdbcd093"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Rock1-130-A_comp",
+      "sha256": "78e103a66ff2a8d2d7100b91053e722013937b0767cf7f3b23bbc7f268c6bb11"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Rock1-90-C#_comp",
+      "sha256": "defb3f23734acd49c3d319ad8b1c2e5592b22bf9ab7ed4a5bbdf270f02b1b8bd"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Rock2-142-D_comp",
+      "sha256": "3fcc90b7bf4062da5d81a46f18bec8fef36f830565cc1a493bd55f221db3b7c2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Rock2-85-F_comp",
+      "sha256": "015ede5a88fbb367cfb5feb61e667ef2274d827fd1717091c2bffeeaae3629cb"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Rock3-117-Bb_comp",
+      "sha256": "58b1ad94a2e40bd42095c952f03777f061ed982411de35acdb904cc022bdcdab"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_Rock3-148-C_comp",
+      "sha256": "6b7d89bb98e124d512820fe984e3c11151c816bfdc398896e313c5142f8edc36"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_SS1-100-C#_comp",
+      "sha256": "8eaadad62d64feeae23fe6dc8dcf7a85d09fbee8ff81aff928a4f7da9f868739"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_SS1-68-E_comp",
+      "sha256": "37d21590408c5789cf391e4e334c2df3e154c80d7c0182535513a4901825b0fb"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_SS2-107-Ab_comp",
+      "sha256": "d42c3a77019a323686cb5646f182a04b293ec3a23998d1a269297c8f1a78943f"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_SS2-88-F_comp",
+      "sha256": "dc8f3ea418b46b7cce06755b25cc4c8e3afd51e8d3048f51aeee199163b3c6d7"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_SS3-84-Bb_comp",
+      "sha256": "ddbd71154bc93a33ae54370c4c594324525f9de3aa963f825c3a64e72328fded"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "01_SS3-98-C_comp",
+      "sha256": "82b6d591a9c167738f71fef5ccce30e7456d9f36cb236715cfbe0f7108d3bd4b"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_BN1-129-Eb_comp",
+      "sha256": "67b60e4dfbd3f3277087c61f6d2f9cb298a2c86295f148405c02baf98024185e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_BN1-147-Gb_comp",
+      "sha256": "986a25a687567191efcc876b1ad0212e7c4b32488bdee088055432814cc24052"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_BN2-131-B_comp",
+      "sha256": "7e2e2195e8ed7fafbb45d694e7f1296b1efbf5d544be076b35cc921371a37c11"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_BN2-166-Ab_comp",
+      "sha256": "e9e4e26a86c34ca40dafe897075073c9a1802f6682248b52d361f90186876877"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_BN3-119-G_comp",
+      "sha256": "045a18a5aa06c391a56ba2ecadaeb2d3b00aab779852a00e2173054a620e706e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_BN3-154-E_comp",
+      "sha256": "ac78727d730b461442dd5063f95904604877e867c36e3589f42d0561a82c4ac8"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Funk1-114-Ab_comp",
+      "sha256": "fda7784e83dd104eca6c8294c2ea3421c5199a2031de7c116c37e7470805497c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Funk1-97-C_comp",
+      "sha256": "19bf0cea37bc118e59f58035fc0c441c553a3daf936c720bcb7e10f25205b750"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Funk2-108-Eb_comp",
+      "sha256": "1b1a4a8abbc024d47048619d8b6308fa515b8ebc111f660720a0cf3b677810c8"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Funk2-119-G_comp",
+      "sha256": "3f2103bdce78e06ea75bdc7aa64c5886c8e2fbba757d04e154dc175021ac1745"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Funk3-112-C#_comp",
+      "sha256": "21ebcd5a841c56b0c059ed28b8fa8813ff44e61f15c5a8429fb1d0110edd7ea5"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Funk3-98-A_comp",
+      "sha256": "6c3737f6c0cf7f779643e77bc4dee870b46824a0f9c27ffa74dac865ba883f73"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Jazz1-130-D_comp",
+      "sha256": "d1f05542522d9b267d089c07d91d76d007c23eafc01786d074983a8972b3c7bd"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Jazz1-200-B_comp",
+      "sha256": "ff66a678ff226e80a116b9c95abf6b020c18ae6f3bee0954042a9c136fbae8ce"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Jazz2-110-Bb_comp",
+      "sha256": "8fd3f8ad29888a5a92c6775ed4ba7d3aaaf4bd95c82f19631951a09aaf880b64"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Jazz2-187-F#_comp",
+      "sha256": "39df0f9eac140b39d595f1be357280379146df9445f510fcb5f65c001a353c27"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Jazz3-137-Eb_comp",
+      "sha256": "8ac72c510f5848e3e24a3607d3ec6e62b2d626550d779a03abaa00ec982cf603"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Jazz3-150-C_comp",
+      "sha256": "513132eec70dd2d5a757ed5c7c503797baba61aa288f5ebe9aeee90673136c35"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Rock1-130-A_comp",
+      "sha256": "f401f56cc9a59bc2bdaf54053bd8659fc0b3828fd3d98c58a1d8793a9d0a336c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Rock1-90-C#_comp",
+      "sha256": "c598cb6a78fe0948d55744d5c2bf8c458261d340f26aca256458cc4e5a869165"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Rock2-142-D_comp",
+      "sha256": "22c9b89a6afb10fc87b5a22b129f6dc1771227d436b570069d47efc138c98b2a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Rock2-85-F_comp",
+      "sha256": "46c346afa5bf1e30c30507796c4cf40d6ab9fc09b51aa4995f337bd899543545"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Rock3-117-Bb_comp",
+      "sha256": "39e15ea79788e6b686dc1fc30b16ec71d44f5b0aa9359e3cce2ded308fda33cf"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_Rock3-148-C_comp",
+      "sha256": "32cb220c2ef72d67d30ce92af4903afb335a741e5c270cca8c314588dee9347a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_SS1-100-C#_comp",
+      "sha256": "883997f66bea85411edf4b860bfb1232c31081e2d1df8dc70d9f1fbae925afc4"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_SS1-68-E_comp",
+      "sha256": "88088c18d6933c238af3619b9222055b5723625c326a204304c4ca6985de5f26"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_SS2-107-Ab_comp",
+      "sha256": "d5b68a5771eeaf1e3a1728a75bbd575e3b33eb84ea08500bbd04526b29f803ec"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_SS2-88-F_comp",
+      "sha256": "ab804670cab8d4d185841277605ae4bd30aed4bfda7896427d2301815e951796"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_SS3-84-Bb_comp",
+      "sha256": "e7ad6bd414acf4400ca52620d68bdcd3be153a0d0de57e84e695049bbc2ad423"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "02_SS3-98-C_comp",
+      "sha256": "e579a97760aeb25e726339df058efeb504694d4da52c9102dc238edff4d4c59f"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_BN1-129-Eb_comp",
+      "sha256": "ccac5fcac0c75ac332fce0501a27156f111dfd6b487d01dc47659cd9c09fd41c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_BN1-147-Gb_comp",
+      "sha256": "db5e2eedeb78c61701e2ed030420d352c443b9bd1dbea5bc826dbd3453c0a57e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_BN2-131-B_comp",
+      "sha256": "a596a4089067e85137f3b65162ab1e12f2ce8d581cc23c8480e7c955b8922351"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_BN2-166-Ab_comp",
+      "sha256": "ca4f88ae9a2d7536488062daf9a43691419994e7b127629d220dd92daee6adee"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_BN3-119-G_comp",
+      "sha256": "09be82dfe2e12b257a69888435f7edebd0c3f26e44cbda4304b99448ade2f97a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_BN3-154-E_comp",
+      "sha256": "e6b2de5b637ebfe89dabb904dfd0ea36386725dc1372d30baea88c18b96a9f1b"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Funk1-114-Ab_comp",
+      "sha256": "c075344087894b545ae658de8e5ce96b0bc20d1bc3478a66154d311bf8499e3a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Funk1-97-C_comp",
+      "sha256": "d315dd5a2539ac7f29eb1ecabbfa1c7aa040a2967cf8ebefea15493de64caf49"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Funk2-108-Eb_comp",
+      "sha256": "ab8ba91f4b775f1d929407a02064fed1fad2619679135c4eaa0324b4c054d093"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Funk2-119-G_comp",
+      "sha256": "4523d6d56448adf43cca4dc8d788e942166a10aa38f106b537503a1ede09c869"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Funk3-112-C#_comp",
+      "sha256": "0b2da48f11f2ae58ad00eb924972d8f3eefafb14a3e32a51ce1e5072d6dafea2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Funk3-98-A_comp",
+      "sha256": "c0d97b07258b7a075127b9675e9e8b7abc483f07480938d665a2b00305fea7c3"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Jazz1-130-D_comp",
+      "sha256": "5ede34409a4a97ac1916db10e44f83aa2ae3041af2f68068a173eeeb76c143aa"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Jazz1-200-B_comp",
+      "sha256": "a98c37cda07d6622b8a040a546189b45a89d634aee295984686bfc3b31336121"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Jazz2-110-Bb_comp",
+      "sha256": "8dc6b1d1eaafbb56e968eb8ff3159a49936e6c5a36f198e51ac312d80a750ecd"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Jazz2-187-F#_comp",
+      "sha256": "abb02323bfa3724640c7954f3a5d4e8cfcfe095e14e38e3dc5a89258794b749d"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Jazz3-137-Eb_comp",
+      "sha256": "a57ab7702a96efda2434bbfcc2f7c9039b958f14e2f675784631ff58db967bf6"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Jazz3-150-C_comp",
+      "sha256": "89c82af30823d580e5306edfae65c6f2e0a688b43886adb3a56f8735d6e7bd45"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Rock1-130-A_comp",
+      "sha256": "f970a45861c7e87b59dd197aeb356b9bffb24dc8752fb620b784332f195b8534"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Rock1-90-C#_comp",
+      "sha256": "3d556c9c099ad622a957ba76737642bb7df7a808b1f68906b23b33961a6de0d8"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Rock2-142-D_comp",
+      "sha256": "54c2e3effe4878ceb74b0ee097ee8dfa2ea2eb356ca6a61d216df8be3c8b0961"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Rock2-85-F_comp",
+      "sha256": "e1b6ac4eb338df32db290869dc65d02a1e1aab20f48aa1d3a4be29553e1d63ed"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Rock3-117-Bb_comp",
+      "sha256": "f90417aa1fc32b5779b53638f92cc577bd5e1402469eb326224e724f0e69a2e6"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_Rock3-148-C_comp",
+      "sha256": "dd25a2b323fc2f7da08c30083f6b5adc76d27b0286c6849ea96c73f12317f900"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_SS1-100-C#_comp",
+      "sha256": "b989d12c715ca8c3c8e1410896e005ee2bc73ad6aea7a4ba8fdb1a04ae851ebb"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_SS1-68-E_comp",
+      "sha256": "2cf809004ed39468effc91b4d370508c1da4ec9efb20a28128009d527818a045"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_SS2-107-Ab_comp",
+      "sha256": "9221e8a73741832d6d13d1b289505615854acb95ed395d3ea2cf37c7bff8c586"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_SS2-88-F_comp",
+      "sha256": "aa66f690c021fb0cb98aa7ca19a070ff9bf77ee649bfb4345dd65216ee2b6461"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_SS3-84-Bb_comp",
+      "sha256": "335c43ac87970ba42954b8124fe1f355e25c969279ae2251787570104016e551"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "03_SS3-98-C_comp",
+      "sha256": "27a5243d630d7e2024f75d956dfec42d2cae5e84baa00e193f01723ac7c6d4ef"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_BN1-129-Eb_comp",
+      "sha256": "df8c1770145e7e60346acf82f0cf034c3f6ad993b2aac2217da906f99aa98d34"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_BN1-147-Gb_comp",
+      "sha256": "90b7d0f523ab4ea108c370b32a8113ec5565a567d94fecccad87b66d425c0373"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_BN2-131-B_comp",
+      "sha256": "7ec50ff35e2ec67c6e75e5b24efc8ac4f5a89105d8947ff043dce535b9eb5dd9"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_BN2-166-Ab_comp",
+      "sha256": "7af43ac611efea8d7dfb2a074a214cd5409a36ce155abd8ba8fb23e626485a54"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_BN3-119-G_comp",
+      "sha256": "d2296968db98c133980a170c8794c78ccfc869ab7959916a5cb715ba06e8916d"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Funk1-114-Ab_comp",
+      "sha256": "1337a393fb0154f518c1170f0608ba3eff67cae8ad073d46451bf5e42b1c1691"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Funk1-97-C_comp",
+      "sha256": "cd392b8c75b5d8f70af80c0fa68e28858148bffe5ac0cb20a1c5cdc1866126c2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Funk2-108-Eb_comp",
+      "sha256": "ffd41982ed5419a993ba2229ef06df326c00252eb1aa7fe39d21a57eaba0ec6e"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Funk2-119-G_comp",
+      "sha256": "effd4f62bde7d7d2c143409866163c5680840b156de3367c7afb6c8b5d3da6f5"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Funk3-112-C#_comp",
+      "sha256": "5cff8085e2dcd6ee306ec2ddb4a1c8a286cc49a79aa858a0864900de2101c02c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Funk3-98-A_comp",
+      "sha256": "e64459f5cd861e8153775bf4a5b938a81c8a61981223cd7e00c2322f9640e737"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Jazz1-130-D_comp",
+      "sha256": "4d1fa6d67bea0c39ef7f92a46b26da9a50fa5d94def9a4a0c75fcb997961efdc"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Jazz2-110-Bb_comp",
+      "sha256": "a431e7105d1d3273419290459913487313095f384968787dbdba12cbbbc0f3be"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Jazz2-187-F#_comp",
+      "sha256": "7c75162295fb80b202f933ea7a75ce95e1a177cceebdd3c3dec8ade34551bc80"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Jazz3-137-Eb_comp",
+      "sha256": "cc3685252c08058b937c15648cf38d8ce37adcf588495c9452a1a2881a5c6247"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Jazz3-150-C_comp",
+      "sha256": "9a9bd9faadec74091ec3c8d36d409407d2bb77870bb217aa3647d793b5127c25"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Rock1-130-A_comp",
+      "sha256": "9a5aa11f4f6ebf50e65d4e3d82f76bd683ee61676cf91d32e1289783b6a086c2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Rock1-90-C#_comp",
+      "sha256": "e2af7cf0e96393eceb0dd6ffea7a198a3d844b6e43abdc1fc76956c7044e68ba"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Rock2-142-D_comp",
+      "sha256": "ede9b059483b648aaa7a84d7b318baaee7974d2d533abbca8ccdb6b62b1f37ef"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Rock2-85-F_comp",
+      "sha256": "ae2c51c14c3ecbca309cbcae269816da12473170926d54a91c5430404d17bc3d"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Rock3-117-Bb_comp",
+      "sha256": "a548d9fb0b1edc278a7776dcd7c88fd071eab6733706ae1bac99c2df2e657d06"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_Rock3-148-C_comp",
+      "sha256": "20122b7d5644b0687e8ab03d9358771a785c5375015848832f5d3ce3941773ac"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_SS1-100-C#_comp",
+      "sha256": "d78898d05c8028911ba827e789d5e1ee502881e76a0db48b63d4cbf16bc67df1"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_SS1-68-E_comp",
+      "sha256": "c46612f99980ffb6b1f38fd42471c5425c7aecd4625c282fde7398aa0142238b"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_SS2-107-Ab_comp",
+      "sha256": "2088e31bdfdb5662d8130b405702fb323185e5a3d0142fa4e990dbbcd32f26b5"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_SS2-88-F_comp",
+      "sha256": "39fe8586f1e374cdc360e1cf988e463398d4d1ee85bdbcd00a1d57cc1c886086"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_SS3-84-Bb_comp",
+      "sha256": "781fdd38257360e00fdb5d337f96462aba616ed89a832a49c0d0caab9b458080"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "04_SS3-98-C_comp",
+      "sha256": "d6474c67bd1c134a2d67feea11851b68b265643611b9266853731ddf077a53f7"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_BN1-129-Eb_comp",
+      "sha256": "c5f3117b2190177bf13d2e9236874e3d5d3cc2b103f1abdd61f6f9e79b49f2bc"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_BN1-147-Gb_comp",
+      "sha256": "b6f3d0fa51f8a7ed20b7f9476a606e4ae3c841531c98e35b525f5f0a56bd1202"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_BN2-131-B_comp",
+      "sha256": "bb26ffe2200e396714cc7cf504d268fd721d0612bc78e50f346fa96223044a64"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_BN2-166-Ab_comp",
+      "sha256": "03020173a7ce7324dc822204ddff63f37bb31ca855371a0759804a3e6ec31ed0"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_BN3-119-G_comp",
+      "sha256": "1c3e7e08a84f04bb6a60141f7be4fcc5d41066d04652793a82c8f51584e6b876"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_BN3-154-E_comp",
+      "sha256": "5b9b86fa07ed32c59d515cf5913623c6056df9df84ab57732e1a8407558e24a8"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Funk1-114-Ab_comp",
+      "sha256": "479301e09c076ee8b08fa9d1cd772eb40ec2eed046d5726cc19a3b841840a744"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Funk1-97-C_comp",
+      "sha256": "2dc10da2a0b78cca3931785c37336c00cfe2597f82e32e48ff24ffbb1011239a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Funk2-108-Eb_comp",
+      "sha256": "d65098ad2370a57ea2428b362b455f2a034ca96f7f792c0b223e277027ea58dd"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Funk2-119-G_comp",
+      "sha256": "c0a1eec875249e9a63f7b2e21d1e94de0a7587e7605f003a960682f627837ab9"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Funk3-112-C#_comp",
+      "sha256": "a8c5cb771919e4d57fe4810b52bf255789d8374753aef7c74c25d155e54b1cd2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Funk3-98-A_comp",
+      "sha256": "5c3fff892c3bdd8d380367b423886050499040330aac9d3e8b9a60339f45cc0c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Jazz1-130-D_comp",
+      "sha256": "a19b8cf2bfa757117617423f74fbdf1046e3887401a0c0b6318b901ef18bbd7f"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Jazz1-200-B_comp",
+      "sha256": "c435156a3031fb1862edb7db82b85d95a648d11c0f7fda9aad79b68a949099f2"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Jazz2-110-Bb_comp",
+      "sha256": "f8f043d988960fce410ee3c8fc3288d427d9108e1ca8cac0445667138bb950c9"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Jazz2-187-F#_comp",
+      "sha256": "94903c92a52e0760896e693a8981c880f08d79d5a20ebc337bb0b309e8457e25"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Jazz3-137-Eb_comp",
+      "sha256": "0aec146f388171102e4fff9af07c74bfe439b08cd34013450efe60ceedfe61d3"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Jazz3-150-C_comp",
+      "sha256": "95e2f86a410e8f2172c411df8abbdb75a52de51004a4d974b23a526a494dcedb"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Rock1-130-A_comp",
+      "sha256": "fdcec5419cfd307947bd4882213383e2cd0c4ee99ad1744703b6dbd9540fa55c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Rock1-90-C#_comp",
+      "sha256": "09eedb65429f9bf55befe93e49eec6a1f2e1a06c4ff73eccbea0b927bbaa3ed6"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Rock2-142-D_comp",
+      "sha256": "d95a1da4b254b1847c1e10693316ad331d725d643e3a180a954f621a522db866"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Rock2-85-F_comp",
+      "sha256": "5d9a6c9c00b770602ff7aaa758a5b29d9f5d4b08dbf1ae935454952a0d9501c8"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Rock3-117-Bb_comp",
+      "sha256": "fb7ee93a08c47c6380756e48757f2ab336bc1871019a0cc4a0926e6a600bf67c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_Rock3-148-C_comp",
+      "sha256": "621e62b178a8cda6c370d52b64ce6d49afc2e1f0a48f9bdce399562f86aa278a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_SS1-100-C#_comp",
+      "sha256": "2dd49a4c5dad4ee1556cfefb1325967a2a197554eebf9338f4edf4d9c2ae506c"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_SS1-68-E_comp",
+      "sha256": "019fcb5bac40233bea5a5c49bc0c633fe5f2493751d337f1d61b878197fb24e8"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_SS2-107-Ab_comp",
+      "sha256": "aeb9bc8a741df2f20f94512208d6c0307bb9c3e405938d11847616658ec5c87f"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_SS2-88-F_comp",
+      "sha256": "0325e17d33727f9dde29fac02f2b840612b7592247a3cf420c1bebf570e3ed73"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_SS3-84-Bb_comp",
+      "sha256": "ee10d828f860ae760ffe57059a362fea4cdbb5a92fbbb05c69784fec85306b10"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "05_SS3-98-C_comp",
+      "sha256": "786625d4033b190420b3367c7fa2daa1c8d1dd26ad321c050bd251c61c7152a7"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "ableton_live_guitar_Campfire",
+      "sha256": "3e7a25a72a8eea38849c8ff3419e8f824997ae1dc206f96505e57948772952bc"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "ableton_live_guitar_Guitar_Open",
+      "sha256": "0b04476111c5aa73a89a448381ba4f2eff2f3c2df677e3db373471929ae9ecb3"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "ableton_live_guitar_Nylon_Concerto_Guitar",
+      "sha256": "13d3b5e749c36fc289c2f6f6b39f885f53a07cd65c4e8ebf822422dec60f4b2a"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "garageband_guitar_Acoustic_Guitar",
+      "sha256": "e081cd5a77436b38ba3b392247023505f89320c8923840a7210026115af8e0cd"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "garageband_guitar_Classic_Clean",
+      "sha256": "9b19a4cb1e322a8ae7e1c3638e1158ef8f104d14234af5c2041a672b2afc8057"
+    },
+    {
+      "folder": "harmonic_ablation_20261105_v1",
+      "id": "garageband_guitar_Hard_Rock",
+      "sha256": "1e8572fd1a6cde3b4443af68509d5438e2992709f282d2dac3c3bf9c091b3456"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_BN1-129-Eb_comp",
+      "sha256": "6fb05445f4d007a5d6d8f5ee80f4ad442053e94dd49f7d6b58c5d98c82580b77"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_BN1-147-Gb_comp",
+      "sha256": "df6e045a90e9f7f4d9d70779913146778f60b65f0f4ccb366192c96b12c6b9d8"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_BN2-131-B_comp",
+      "sha256": "1ab1913c68e77c0909c7cdda85e4c91a2f764e5680d328b1ab5f8dd0d03e532c"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_BN2-166-Ab_comp",
+      "sha256": "ab89ec6c77ab00b33932e172700b39bd65ac6b3d05e1b978e40747f2fe51622d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_BN3-119-G_comp",
+      "sha256": "0af3eb7933cf1f1f19ea874db74df8652bd7e00e2aa7e344eebb51cfb2e758b7"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_BN3-154-E_comp",
+      "sha256": "3f1a01c5bf6292ce92ef150de03cc0e5e613332de6084b37d5885a45382b8254"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Funk1-114-Ab_comp",
+      "sha256": "9f4c2f267cdefceca86bdce98c26b5f00279cf9c45ac266fc1921a504603dd6f"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Funk1-97-C_comp",
+      "sha256": "42afe504036d216935632afbc80a14f41d3e24521b2a65e09cf9b7e81a426082"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Funk2-108-Eb_comp",
+      "sha256": "669e575f7ae25c25e5f4ba6212829e69a2f0cabc998f75fb7c8776fd85957c1b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Funk2-119-G_comp",
+      "sha256": "6aa72f585aac28102fd3a3c08a441159f82ede1d5e5899f6310f9a9c82542e55"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Funk3-112-C#_comp",
+      "sha256": "8bed9dd71365e7fbc6db05307eac91eb2a41f4b2b9cd80ad47b6a0e3b3447d4e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Funk3-98-A_comp",
+      "sha256": "94556509d6225f91a833910a5d1060dadda8feb353313db5761cdfb2d570752b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Jazz1-130-D_comp",
+      "sha256": "ae4dda22c0689fcff647a73a48008f6f9638d3fa43c61b73c03d7494532d0722"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Jazz1-200-B_comp",
+      "sha256": "d149a78f4e4db3f2002e601ecb81391f46a88a0a33289d3800c78f2379960783"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Jazz2-110-Bb_comp",
+      "sha256": "c5c50d83f64ad8500c12163168308f8be467e08936ea2b04601d4d41ca3b24f3"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Jazz2-187-F#_comp",
+      "sha256": "fb2e84a5734399975ace1f712cc5fd1b819d371ca5915acea57b874010ae4543"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Jazz3-137-Eb_comp",
+      "sha256": "dadef29c5b5cbe83cea1b500564c551e06840effecf2422b031af5b40a91b0f8"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Jazz3-150-C_comp",
+      "sha256": "c07027a08953b1a3160b4c64e4c1b28deac955cf1af3834860740309800c68db"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Rock1-130-A_comp",
+      "sha256": "09f3959918de001bc5ad695bb68c6fc9fdfd7c6466e6bd0364eba68d4ef36360"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Rock1-90-C#_comp",
+      "sha256": "38428df1f8e1c0f91ed44f410794a6ae74c6ecadd2a3eb607af467e8a40be238"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Rock2-142-D_comp",
+      "sha256": "e5f1b14eb12dfa7c97bcc56343241ca404239b54efa9605205962d8789a48004"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Rock2-85-F_comp",
+      "sha256": "17039cb957f4984571d3b6e61ace6215bf86fc5256a2e94574c54ce614db414e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Rock3-117-Bb_comp",
+      "sha256": "74093666cc061183f921d381517e01ec8a22b7f3475a062848238ff0c32820db"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_Rock3-148-C_comp",
+      "sha256": "917c700039a4eb499797ba17b42f6deaf858ee7233d964af845aae1ba8821abf"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_SS1-100-C#_comp",
+      "sha256": "68e17c9e05346431ada02ee7d55152cc8cbda8c5fcfac8945015608b372f8f51"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_SS1-68-E_comp",
+      "sha256": "1219ef8dc99fa68df84f31eea0387b690bd05c2d3896e2a9ea1a6fdb9fb50a32"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_SS2-107-Ab_comp",
+      "sha256": "b09930aaeef9111d27bd90dd77796e7fd8857e1d0ea1aa646bae661c47010483"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_SS2-88-F_comp",
+      "sha256": "fa7cc0c556eaa9f9cbb8c75269d28c33a201e7ba8178d44ae69dc8c585b58a65"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_SS3-84-Bb_comp",
+      "sha256": "61806fd657b6847e2999ef24d241f8704179af0b92525f9671fcc9884f281530"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "00_SS3-98-C_comp",
+      "sha256": "62ec440e875170ec1bd540ec433cfb5f5dd4d0f1c570f309037972854d0aabb7"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_BN1-129-Eb_comp",
+      "sha256": "fa932ea4e36ee40e0d0b96ab93d3f1a7231a72ac6bae2859b6e02f66a1696dc8"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_BN1-147-Gb_comp",
+      "sha256": "67e059fe503f0cb6dbf93a444b7c2718e44f6e918743853a97e0d1a832805c53"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_BN2-131-B_comp",
+      "sha256": "20a3b33e01a13e373c24be340d7a9226e0b70b54bf01ac02c2903e6367da961a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_BN2-166-Ab_comp",
+      "sha256": "4b3e41633c0329541f3edc2f0497429e57836c42a226a33b4890ef8cffb06667"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_BN3-119-G_comp",
+      "sha256": "9f2c1ef88fe92db98bfe2e4366be70341266aa973ee783794b492bdcfc9404e2"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_BN3-154-E_comp",
+      "sha256": "c97e996f07c3d48d1f693c0b522849e97d565b2acfaa8199c0129e6e8280826a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Funk1-114-Ab_comp",
+      "sha256": "c2a3d1f21fa8bc0389889ad20c2b94160ac02070cd5e23443161c8d0fc50dee5"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Funk1-97-C_comp",
+      "sha256": "1bd5528f59dc53761802f0f2854d4945f79f1c450eca97149686058cbc9f3101"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Funk2-108-Eb_comp",
+      "sha256": "b6e798857b0ccbcfc235db987f3164628a7fb919e559d026f85ee82001a8b6c0"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Funk2-119-G_comp",
+      "sha256": "2ba105b82b6c9d481748f78cc1cd9aa08e2e1f529c1ff359070e30698aad50dc"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Funk3-112-C#_comp",
+      "sha256": "887da879c663d013edbdd7fa81d84a080bc1a79e42113554a9a896941648dc19"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Funk3-98-A_comp",
+      "sha256": "5509444afc3dba069cca411362abba03dbb6470e955b5db8248a2c44bca4ae51"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Jazz1-130-D_comp",
+      "sha256": "9f147cbe2de7e36bf7dff7da624395f1f2e677fa618981e053bb8b113a590688"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Jazz1-200-B_comp",
+      "sha256": "fe906e88af1e79c9e3f965df0ceb483ac3e1fe7bbeb41a844d4d5da02857c02b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Jazz2-110-Bb_comp",
+      "sha256": "7c6e934a0709d529c8a6455735e7c6c8d905804613bdf435fde07f3b1519241d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Jazz2-187-F#_comp",
+      "sha256": "ef8690cc335ae924067681326496681167521c8f4e3d50561e6da7db415d4d9e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Jazz3-137-Eb_comp",
+      "sha256": "3e3bcf4f3b754151721bf058ee21cc11fa5970a43f25c5371b459f1ce2130c6d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Jazz3-150-C_comp",
+      "sha256": "93d614129235662a37e294c4575154a33f7795528dd44c8cb55ef77dd03ca67b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Rock1-130-A_comp",
+      "sha256": "4504cb37db9be95147e3a4a42224fa72fd2f5ae97f9ed4c2af8d74cd2151e335"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Rock1-90-C#_comp",
+      "sha256": "f9e9cf9da4fa32a92d1d246ed0fa0d2d9f3bd3c8093247ab0e6819b3e88a5232"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Rock2-142-D_comp",
+      "sha256": "976646e854550509037f92b8f0ae12500d70d5c466a55d97f950b8094b796a78"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Rock2-85-F_comp",
+      "sha256": "7f2e39ef4aa7abc34a9c66a2f15524284d65055049d77d5415ef7ed7a17dae37"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Rock3-117-Bb_comp",
+      "sha256": "7006b1cc032f2bbec58ec8cba6d7883a9b72a361a5fdd973b49985db8bd545fc"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_Rock3-148-C_comp",
+      "sha256": "7a069481ad4e6dd6308f2fb6933188831eacc8006792bf61873f4cd0e4f5c04f"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_SS1-100-C#_comp",
+      "sha256": "484f88e61728ddee58dcb506e50d7cff408f899e166b99ef786a7fe425e010c1"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_SS1-68-E_comp",
+      "sha256": "f4a785030597cd6e01653a06472a9ca18db92daca0bb8231135a909bdd37198a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_SS2-107-Ab_comp",
+      "sha256": "210d8ef8a9fd1422817b366236b50b0d621d17ed1462667cddf5901719ffb656"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_SS2-88-F_comp",
+      "sha256": "bfc34ce7368ceb96bdcf1bc225fcd68e1f9e647bf86932846cb290999619ac20"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_SS3-84-Bb_comp",
+      "sha256": "d9e220b87326876b1e9b6804b58d3ac0e2716e72540610000781d9e32406562c"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "01_SS3-98-C_comp",
+      "sha256": "20fa8a2e413f776338600857176501847b7ee546ccd9327b81e782ff7389ad5c"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_BN1-129-Eb_comp",
+      "sha256": "07a4bf46e8759dad6c55fb3fb9f5cb073924f72886b4cb7b2a699a096d46fee9"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_BN1-147-Gb_comp",
+      "sha256": "e2a020fc976867ab278d474428eadc48d95286c6bf36e39af9cb90301babaf90"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_BN2-131-B_comp",
+      "sha256": "66df583b5f1dd0b69a42913977aa08fa96666d5a175450a1da803f6b946420cd"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_BN2-166-Ab_comp",
+      "sha256": "4dca2071f5a23e25308492a25328867928545d47512564ddd2499b1995dcdd9d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_BN3-119-G_comp",
+      "sha256": "4dbdd60c2898e4c90664461938794a7813a6cb8240b9a62a62128e5244ec19ea"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_BN3-154-E_comp",
+      "sha256": "6b0628c7889f9106340f3a19093246beed682b0b95325363e687547d1d734160"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Funk1-114-Ab_comp",
+      "sha256": "9e4ed7390536475b1c7a8cf49e90fe48fff45b3d5e41d896b6a96449bf4c443f"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Funk1-97-C_comp",
+      "sha256": "ba62d5ba0cf6d002e14028ebb235263a6b099c35d9a589a47b16988be207acb9"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Funk2-108-Eb_comp",
+      "sha256": "90ea7d149a727c87f385a98980a82066f581949e13a34eab6d1e7f92c23ff6e5"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Funk2-119-G_comp",
+      "sha256": "0d69281e1ab61245aeb2ade816dc268dde4bbf0f21aba5f136c8dc4e9555a05e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Funk3-112-C#_comp",
+      "sha256": "40cd057c8edecc5ae93a4877fafe686db1b7ef5a60894c5f6deaaebaae48bf58"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Funk3-98-A_comp",
+      "sha256": "7e0e08054cdb8269fef6badd572ff89f5deca91bfbf43b40e994a7b37ac10233"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Jazz1-130-D_comp",
+      "sha256": "87b818fbc157396e20e3666e982cb2ba443038ea7daecb766907bba617196479"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Jazz1-200-B_comp",
+      "sha256": "c8f9736853bc9d85666af4c5ac5c210cca93e1efa725ca26e118e3ee0d28615d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Jazz2-110-Bb_comp",
+      "sha256": "57f7621b8c4202c3c3c117df556a4e8975579f6010ef2e35afd22092009349d4"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Jazz2-187-F#_comp",
+      "sha256": "bee29ca665a87e11e2afac24bfb17e7291ece05512045ab105a31c42e3785b9e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Jazz3-137-Eb_comp",
+      "sha256": "fcf003847b878b3900f5bf454042ccdf679774078532985ae57057bea4de70e7"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Jazz3-150-C_comp",
+      "sha256": "965a1e8a8344822cd353dcbf3ff41f21103b8f2d3a1d5f54760c373d19f77b3a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Rock1-130-A_comp",
+      "sha256": "927109601626992267a7a6b9f2c89f7b806e8155f70cafc0f5b59669527b3c00"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Rock1-90-C#_comp",
+      "sha256": "6a2741ce0189639aca3cc610bd53151e66479b2c869df3c786e85c81e100a6cd"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Rock2-142-D_comp",
+      "sha256": "662aaf23d894c6acb0deec99ec465a875e0f4a85d3d47d31d3b16dccd66309db"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Rock2-85-F_comp",
+      "sha256": "10348a456213f3fb177da3905011d19c7955884bf483ab6f3cc6a662cc8554bc"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Rock3-117-Bb_comp",
+      "sha256": "c2be4a516828de039758a01b29e96310353f5949dc0bfc594f1fa3eb793c4fcf"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_Rock3-148-C_comp",
+      "sha256": "4116ce99f9b752aa57dfacd6a5a03a4c96d2f24b97d4498f1bd348afd11fd1ba"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_SS1-100-C#_comp",
+      "sha256": "8ffa1e377b3afacc65a1a2738b0a613173b2498a78642b39f0fee57359f45da0"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_SS1-68-E_comp",
+      "sha256": "9fe78b97acc5ae201aaf05531f0ad016e84156d4edfca8b2f670ffe9f4963dda"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_SS2-107-Ab_comp",
+      "sha256": "b3b0dda7d2f2bcd800ed594af61f886a1454aec47a24d745f78f86b6ee9d0572"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_SS2-88-F_comp",
+      "sha256": "a5c83d2fd14cb0d79f57943104b30b1b86ad420844de834ee083074fcaf92a5b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_SS3-84-Bb_comp",
+      "sha256": "b049b296e5425e32b07451792fbd130a01ae1c81e19b1fe8b2ee80d16d1b5711"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "02_SS3-98-C_comp",
+      "sha256": "719880dcd401694835bc625c469cd81f69ee2d8301b184d5e84190f467aa472f"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_BN1-129-Eb_comp",
+      "sha256": "b6b198f3b94df5543f7428fe689d16423da55791f87b13accc2a030b87f49516"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_BN1-147-Gb_comp",
+      "sha256": "a084a0b3834adee8c73099fa04cbbf1582b2ed6c814caef83bb72d99cd5822ab"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_BN2-131-B_comp",
+      "sha256": "3c4208e10f42bf7946eb8c2e21d30da7be05d53366b19f9a21c2ac244142d321"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_BN2-166-Ab_comp",
+      "sha256": "8b5af7c41e6df10eac0ebddf092775f5aad717aa025b3301c5cd19e970523c6a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_BN3-119-G_comp",
+      "sha256": "4ecb5de2efa801cafef816a47c77802dbd81337bc799383021da83753e7ddfe2"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_BN3-154-E_comp",
+      "sha256": "cb47428c3fdf2b2ab78858050e6fddce7d679e1e1bc8811bfe50bf11934b9ea1"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Funk1-114-Ab_comp",
+      "sha256": "4d36c9b088552387aafd54d37ceaaca54e0fa81dbff03afbbbacebc5873a56f4"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Funk1-97-C_comp",
+      "sha256": "41c78f577894eed1b865cb3956b4ecd0b2a664303d8afddcf1d604b372ce662d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Funk2-108-Eb_comp",
+      "sha256": "4ab08a1c7113fe161c5f66326f0cf0827b563fef7fff3103fe34ea68d1c9c0d7"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Funk2-119-G_comp",
+      "sha256": "98c003b96995f1607fa331a926d6cdbf25b589ff04f080d6e55518e6bfd725b9"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Funk3-112-C#_comp",
+      "sha256": "e3ee99308019830c4db142daeb1684da1f61440fb5bfedd8990f021750fd9c5d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Funk3-98-A_comp",
+      "sha256": "5c14f029116e3fdfcbcb612f72d0575b96c22dce2bdc42dc1adb3874019f4412"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Jazz1-130-D_comp",
+      "sha256": "a0cde39d4493149fb8bf98a2ed9bff9aa2f0fbc7fd18d8092557c422c5d5aa0d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Jazz1-200-B_comp",
+      "sha256": "f21c44b6b8d0a9978a8f3108903559430b31df9c4752917f22f889b1fb3c9b47"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Jazz2-110-Bb_comp",
+      "sha256": "03178d67db01903f23a0a730cecd23e58a99276b25f3e3f01f5c1a8916ebe46c"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Jazz2-187-F#_comp",
+      "sha256": "56272c92240e66f57d4af0f20792aa65d0f8594860c8f30fa6c2052eefb43eb5"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Jazz3-137-Eb_comp",
+      "sha256": "ef0a8ada6a5e61da7e0cefbe9eb9034b354b3aed13328fa8d4e85286289d9c09"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Jazz3-150-C_comp",
+      "sha256": "389cc30ae8b7c62e303f2bb7e6e6a75fcd32fe4c1ed008859116f62f9720dacb"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Rock1-130-A_comp",
+      "sha256": "df9f0e6bbd075ee82de03bd6336056478bc4ad03a29adb265f4a978396e230a6"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Rock1-90-C#_comp",
+      "sha256": "07eab4adbf1bc7cf713207bce5fb018f8f08cfff7a7c8eb8b2cfaae8f149e98f"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Rock2-142-D_comp",
+      "sha256": "d5da9c70c97fab7ae3aa041db6ce806d622d01d42a240e643b412d95fae9777a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Rock2-85-F_comp",
+      "sha256": "831ef7dc8ec9be8a0896825d790f838ed920d3227f9d6d882f9254a7c4de9871"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Rock3-117-Bb_comp",
+      "sha256": "dceb822872dc0cbd6cf50af51b17042e686ae4f67cc72b9d3517ccea5df2df6e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_Rock3-148-C_comp",
+      "sha256": "8cdb9b836e494fc83a8e30c1dcb885acf736b27d817f0e0eacf6820c87e34278"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_SS1-100-C#_comp",
+      "sha256": "e821e435b3549e236e5a3bbabc6e1963cc4c901dfa28e777a32629305edab6ea"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_SS1-68-E_comp",
+      "sha256": "16de5ab4cd599f6d73e932f53f68c1b0f84da96dcbcd73a998c503bcc9601184"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_SS2-107-Ab_comp",
+      "sha256": "6a5cffb8a0597ab4f98dd8f1663ef5234887e612406c1ff4b831694963cdaf75"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_SS2-88-F_comp",
+      "sha256": "0ebd1e531dd0fa04ac0b21a20d02335b5de04126b10cb2bc8376468108418ca2"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_SS3-84-Bb_comp",
+      "sha256": "bb2b47b9a47ab1326694ff7c362a4b5184afd2af00f5561b088e9d354302a770"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "03_SS3-98-C_comp",
+      "sha256": "87c9a67c4b3edb1a3d1d8dacbe25ead1946226429022ad9b959b3485683b525a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_BN1-129-Eb_comp",
+      "sha256": "ba46f774f9667720856007a92fad82f774bbcb4fb572b7accc89bdb8ef3d4438"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_BN1-147-Gb_comp",
+      "sha256": "b9a01d05c7bc61ce5ab5125b2036975431537be74157fbb2af1ac078b97ffee4"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_BN2-131-B_comp",
+      "sha256": "af7efd27d859922448d86d2fd6d346640f3088d17d75848b1a57f617b7c2b1eb"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_BN2-166-Ab_comp",
+      "sha256": "905fcb07c1df0237695430264e80646a40a203bca90366ae382055f1fc9a87aa"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_BN3-119-G_comp",
+      "sha256": "ad794fb160fb6f2facaf3651e510fa49e24d56b40c45fcd5e04ceec35c73c51e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Funk1-114-Ab_comp",
+      "sha256": "a76b1bf5e88bff9a86541bc748096983ab9d01e7fdc45e51a97d2c219363ffb9"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Funk1-97-C_comp",
+      "sha256": "93ea1163fc5ce25f2d5128a9438c822e33798057eda4b91236f3c7f5261bc31a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Funk2-108-Eb_comp",
+      "sha256": "e641d932bafa51d1f6321faeac561eb31460302dcd1837f9111a0359f45f9b09"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Funk2-119-G_comp",
+      "sha256": "b7bbf645525f4931f2af630544d89177a33abd5530e4dc4f8c978d783b6c2150"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Funk3-112-C#_comp",
+      "sha256": "1af1b452085f1d1b68c7c1953e58165e2bd020f41f430838decf61f5dd705b20"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Funk3-98-A_comp",
+      "sha256": "d1a8f3d447a52acadd0b4be63394aace6db65276fc5ced7ec981ca852d89e2d5"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Jazz1-130-D_comp",
+      "sha256": "97f8c2e4ae660cdb5eed32ffff66f47f579f6f292c59dd30bd14f15948c16c50"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Jazz2-110-Bb_comp",
+      "sha256": "dbfbe9cc1283d3d33a8c39d79e0604af9c0d69203dc6a4a5c47fdcbd2cb325fe"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Jazz2-187-F#_comp",
+      "sha256": "d25659a1939e782e7947c6656c86d7cbe7b060b5df9677e11d34cb9caf98b1a2"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Jazz3-137-Eb_comp",
+      "sha256": "a09c08c70969aa45d1f36079481069e91b2fe162f2355066bb58883315bc5a03"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Jazz3-150-C_comp",
+      "sha256": "0cdbdd8e68f65ad28a1a9bee5650ce71d654367127f85367411e0eb78331ed6e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Rock1-130-A_comp",
+      "sha256": "8a2df8077e30d918aa75727393c6b619a068c28e0b4a31630016dbb484335ff3"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Rock1-90-C#_comp",
+      "sha256": "0bba3ce2b2d4103cd287ae1cc9ed22138a82712b71b5108e2d5d7a77e05ca5e5"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Rock2-142-D_comp",
+      "sha256": "ca15b08c49d034e7ef3f03261fda963b8037643a37b23dfc8fb3ad337603e314"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Rock2-85-F_comp",
+      "sha256": "170233637039bf16e3938d956382d0f2bb3caa6a2424d1eb040f05c82d5f8035"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Rock3-117-Bb_comp",
+      "sha256": "94b29954db22f5bbe7b15054c7dac2c75e1a47f6ca8532c277ae60a01350fc14"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_Rock3-148-C_comp",
+      "sha256": "7524b305ae6b84fc2d82ab2478f691a26048a17ed1067bfbca08f7dbea4752fe"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_SS1-100-C#_comp",
+      "sha256": "431906c4b7abcee26225dff1d20f63be0c91d05d78e3fed6ebc5fee5bf5b71b5"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_SS1-68-E_comp",
+      "sha256": "f5f174e3bc4be920de7106ae4bc08aced0888aea7643ee7358de0e7bbbbc8a0b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_SS2-107-Ab_comp",
+      "sha256": "b15eba8a62e3f7741e5b5eef27f4db4bce7d479768438535ff2e70e96fcff0ea"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_SS2-88-F_comp",
+      "sha256": "1e03695a254a23cc95584177e65fd706668b3c4bacf2f6295b39d13242ee70eb"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_SS3-84-Bb_comp",
+      "sha256": "1e2527292c2a9c8c901ccd209a1859879eec1f1f8dfb0a6e0dafa1053187d5d3"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "04_SS3-98-C_comp",
+      "sha256": "0479ed4e31c5c9ceb624a0629f532ac7f74b338e043172cb2f2a9a4546f60aea"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_BN1-129-Eb_comp",
+      "sha256": "0d5f6124c8f6b38472f9c1d69c423d73a27097c7fdca210e1acff2bebc0ead02"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_BN1-147-Gb_comp",
+      "sha256": "a5c92ba9d359ef3879534ecb1cd0c7b096d54b2b9097d32d6fd7609b60e238a2"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_BN2-131-B_comp",
+      "sha256": "2b95c856cdaa1544e866c029b31c3a5209807a4dc594c876afee9272c5acf446"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_BN2-166-Ab_comp",
+      "sha256": "a4367634483ffa230fe4d8d3728b7c91b950a596866833da5b29fe4124be0a57"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_BN3-119-G_comp",
+      "sha256": "0f3eb66293289c43156ef385240cf8833f9e1ab53972de348d5ae288c4f5810c"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_BN3-154-E_comp",
+      "sha256": "7c14d388a957c01a810e43e6cb9857be07a44e812be0a0be83e46e21bad9887b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Funk1-114-Ab_comp",
+      "sha256": "0785efa45eeb9a21abe0d2be744ae6fe21a260b340918ba98ad2bee74d356f9c"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Funk1-97-C_comp",
+      "sha256": "7685e94ff6cd9514fd9ef5674e376e581e114ce9c4af26caf096b8cc28094a1a"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Funk2-108-Eb_comp",
+      "sha256": "a0d55890dbcd0947dc15a2a11bad7dd1510212e3e4c9a0700d96d70656892619"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Funk2-119-G_comp",
+      "sha256": "646ca0cae4dce30859a8df5d0a03ef4edd3d35edf2f8cc9a7c196fef6e160e29"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Funk3-112-C#_comp",
+      "sha256": "98df94861be3bc1dc5b35fe64305c32a62f8dc256d8a5ec1f134f612347fa350"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Funk3-98-A_comp",
+      "sha256": "de60fab316b433b398eba12031aab5abd14af20a1871817230a02d0528a097c6"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Jazz1-130-D_comp",
+      "sha256": "b3563d2555e61769d8ae2574e690bbb0893342a970727eff5d7ddce81e60a432"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Jazz1-200-B_comp",
+      "sha256": "6962ee0f6cff67f81228be1cc1175c5e93b33d8fb8d2c4895ac236b923f1da7e"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Jazz2-110-Bb_comp",
+      "sha256": "c4a43a4ecd931f1a5143247a340f76ed84505204f1183a7ea6e62ed42dda19db"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Jazz2-187-F#_comp",
+      "sha256": "ac1d1770c01e4fc08cd1628429d2e624456374d9689ee7cd5c43328e24c7fdb4"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Jazz3-137-Eb_comp",
+      "sha256": "5f1ee036c9f4ec55ce17c80e0b486e32e32764166671c1846c43f93ab37b5c50"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Jazz3-150-C_comp",
+      "sha256": "d9c1abcdae843eab7ef5defee8b13202631fb6e0620b098e01b78e3a14909cd4"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Rock1-130-A_comp",
+      "sha256": "034be83941b6e93b9ee7c1e098c2e1170ea754cd79dcb7e84ad80175382bad48"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Rock1-90-C#_comp",
+      "sha256": "feae582335acff45274c2aa13c517a39bb4fe2f22e53ba6eaf0fbbc03a1ea74d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Rock2-142-D_comp",
+      "sha256": "55d5b8c8d6c42206e8c74ccfcbd5c6ae7120f0b07e8a965b2413da2417035d1b"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Rock2-85-F_comp",
+      "sha256": "924f5debe1ad089aa8abd39d189c6dfb0ed9283da64496f023f5dc20f257d21d"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Rock3-117-Bb_comp",
+      "sha256": "16a8d80609382d1dd876be61694367e75dd53b05942cb5e8c917b99683c0757f"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_Rock3-148-C_comp",
+      "sha256": "de8643b71993358d688a33f4591f6d787ed7f6b62ef401bdc55f1b873d8a18a1"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_SS1-100-C#_comp",
+      "sha256": "ec23a82ac5a6d33733442812b5ede03e34a1dfdbaec8881ec9a6411982e0b6e4"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_SS1-68-E_comp",
+      "sha256": "c73c334264c6b348ee525e63a204f698fe3447e3cf0d9d6f7661fdc55490ed43"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_SS2-107-Ab_comp",
+      "sha256": "56c70f46bed6e5312f5397b9a307c1a1dc5fc380c75753900536d8544463ed97"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_SS2-88-F_comp",
+      "sha256": "edd4c99066f3a8eb01b2d80e06cc4999e6b269af2e540186bffbffe8e6f340d5"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_SS3-84-Bb_comp",
+      "sha256": "c79173ee0d5c7ed85f15b4e2b958da97f5a1b1287f75ee3eabedcd3961effe42"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "05_SS3-98-C_comp",
+      "sha256": "abfb19d059a532b691d49e9fc6d618b248a02d42c6deb61509fe35f8f64eedc0"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "ableton_live_guitar_Campfire",
+      "sha256": "26208c1c9841154e7daf2ddbd2df85e673f039dc1df390dd1c81680dc5db10c0"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "ableton_live_guitar_Guitar_Open",
+      "sha256": "73d58c9468a46109178bc89b5c20e4aa794f9e546e2a229d15b153a647d43401"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "ableton_live_guitar_Nylon_Concerto_Guitar",
+      "sha256": "a896cbbd903b490aa3044c228f409d6e884087b59dc0b84407f42bd8c17ceecf"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "garageband_guitar_Acoustic_Guitar",
+      "sha256": "d3637cfe912704a6bbc43114eb24a9eac69f30782f067054ad07a39de9f657a1"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "garageband_guitar_Classic_Clean",
+      "sha256": "167e70e6f3424f3d22463223157bd790452e5d67b7ae04f3cdccfa8d76385350"
+    },
+    {
+      "folder": "cut_audio_features_20261105_v1",
+      "id": "garageband_guitar_Hard_Rock",
+      "sha256": "f1e68f1500903324181e893c8c520e6b69e4c2e7b895bb6df9b9e3bac9bb046c"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_BN1-129-Eb_comp",
+      "sha256": "f2701a62fd80da85d7f23c3d03da2a6093698e370f0ca86ebb6a5bab3620ab69"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_BN1-147-Gb_comp",
+      "sha256": "72d61e95c3d7abdd7c6938c73b2a93c43a0007eb86b218aebeee724b0897eecc"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_BN2-131-B_comp",
+      "sha256": "d60df370ded80901dbb1c92907b9fbd698606c97faa52561de1567ef05c58206"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_BN2-166-Ab_comp",
+      "sha256": "40da44ca4055027e839867729d7027aa7ea5396f506ac91d7243e102d1e02b6e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_BN3-119-G_comp",
+      "sha256": "19cd994087220653616459cfdb3b21e3645006931a88ec5e45a927c804ff6191"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_BN3-154-E_comp",
+      "sha256": "c2221c038feea8e6799f667b9528becb746859ec235b9424acdb9efc2a6bc640"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Funk1-114-Ab_comp",
+      "sha256": "9c69bdb5f677d4c26c2858014361bb19842eed78273138e7e7712460dfdc28a6"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Funk1-97-C_comp",
+      "sha256": "6915e158280da54db1241d2b85d8ffe7fe5617588f63f38f1ea87154084aac8f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Funk2-108-Eb_comp",
+      "sha256": "f614fe41a79d6b681ecdf354f3e3db4264109c6bef91da56c3496b7658a8a6d4"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Funk2-119-G_comp",
+      "sha256": "7b2b71d12047ce42c69e30527f04b901a0a961358e794d45aa8d4ab3aec2fc6e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Funk3-112-C#_comp",
+      "sha256": "9279488d4f10c2a0b8511fae98da7919b2f4ef2387f46e3b4badd6d99d89aaf2"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Funk3-98-A_comp",
+      "sha256": "fdcd8be35785f06c87ea77d44290f7f05167a34d02e66a665528203264812e3a"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Jazz1-130-D_comp",
+      "sha256": "fd28f208c3f50a93adccb9578c1537c4b521c3c8a46319bd540c946ba4b69786"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Jazz1-200-B_comp",
+      "sha256": "f90398dc018464c6a6a0bb10f47683e6cc8233844e3bf3805d884050daf82543"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Jazz2-110-Bb_comp",
+      "sha256": "5fc0787eba8f625d83bcfeb6721f23ae964dcdb91950a2e43ff5ae1fbb8bebc5"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Jazz2-187-F#_comp",
+      "sha256": "f167f38659227667cbc369329cffe765e5637ab5c16d18452c2972b5a02514d2"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Jazz3-137-Eb_comp",
+      "sha256": "c750060ac8c2db7004c1073cb75317cdb2cb9381db1cc98dc163d9980046fce9"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Jazz3-150-C_comp",
+      "sha256": "a86520456cec899c45570faf260bca467141703fd95cba63f777a965349deff4"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Rock1-130-A_comp",
+      "sha256": "4f120a3b57847a3968fdd35f59e8c4a0201d945c000575169c515b7e1c247b05"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Rock1-90-C#_comp",
+      "sha256": "8497a7284d4f65fe44ecb44882a0bdc547eaad0f3fdff3a12712ee40baea8bcb"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Rock2-142-D_comp",
+      "sha256": "74c046be3339bd8195c5a6073bb982733d498ab815ed34bbd146407dea1dd003"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Rock2-85-F_comp",
+      "sha256": "2a88dda038f80a464af88b07cf775f04f13a7b87cf3e12be7e5c30f12bf61e0c"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Rock3-117-Bb_comp",
+      "sha256": "c0a4da73c998f4046ea9398c82559324902c6571eacf8d5062bdb7b85e4c81d0"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_Rock3-148-C_comp",
+      "sha256": "09e76959217a3f966b5970d6a01014b05378c4e528ce89a15a71cbc8f384c7c0"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_SS1-100-C#_comp",
+      "sha256": "1e91923a9a75e24f924e9424a91f9352abcdeaf3b97e74c230fbdfd09982fb55"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_SS1-68-E_comp",
+      "sha256": "3c5982061f6b119958a7b1a46dc80dfcf7cdfce1f25ef40cb3b3590ad358db30"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_SS2-107-Ab_comp",
+      "sha256": "e028839bc3969d982bd3dfd9232f095476d376d8593da4ba294423a5177c9df1"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_SS2-88-F_comp",
+      "sha256": "39dfb9043dede4429af4304f70f24535a417262f2f03a5bc6af10e81a26d0d38"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_SS3-84-Bb_comp",
+      "sha256": "462975314c20ffc3175de28ab6aee199a4f27f7818f95d5a9f4b723a9020cbd5"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "00_SS3-98-C_comp",
+      "sha256": "e04b8ad7f7c0ef453dfa91aebb2a8c163323307bafa56bdb34811c59c1c5e14d"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_BN1-129-Eb_comp",
+      "sha256": "eabcf91baaba43bbb80c106d75a9c6651fce08236b1b013af50349ef515fb060"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_BN1-147-Gb_comp",
+      "sha256": "9a303b59223aa898e2764d71e9962156fe106e88372825723a4b617acc71fb2f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_BN2-131-B_comp",
+      "sha256": "b08a4cc1dae3b03f0bac661f2c10e04def917f2275e78b38a3e3b7871bf8b628"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_BN2-166-Ab_comp",
+      "sha256": "f5ed7039455f573d8c112fac377a65b0792cf899407b29c8a78c03be4dd16787"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_BN3-119-G_comp",
+      "sha256": "47166a2529fde16d6256d84c6531fa4bf4314e86104288e24e31b3bb722ba0e0"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_BN3-154-E_comp",
+      "sha256": "be9ee694db9e0b792d5ccd501dd0b879b4400b96f64c773c791133d58a501a3a"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Funk1-114-Ab_comp",
+      "sha256": "dbc51714d8ae430ba73a3b017f9693f0b974a37c1150ad31822478b1731922b9"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Funk1-97-C_comp",
+      "sha256": "6e0ae3df394931aac0cf0996954b8dfc0baa283510d779bef04b8fe251e25e8e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Funk2-108-Eb_comp",
+      "sha256": "98822142ac9497a3f9865bdaa0ede6b91f2a0a99738a21adcc8b22e6d92cacda"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Funk2-119-G_comp",
+      "sha256": "3a790b0d1293737bc295f5b3f66076b64518d785fdd77b28a37aea7dffe4d313"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Funk3-112-C#_comp",
+      "sha256": "b78a03e1e10b0649022093379f236fef52dcce73eac11faa668dae9ed619de7c"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Funk3-98-A_comp",
+      "sha256": "4b6d66f662fc9e0ed42484b9ebbf23e52904f020b4d5b0aeace681eaa66dd2e4"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Jazz1-130-D_comp",
+      "sha256": "d42c1f62449996cfa5cdd0e19418cdd344dd6f40ef035ed4298d6c28983b535f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Jazz1-200-B_comp",
+      "sha256": "8c2601d76ec5cf4b77ae65b0f2ca57fa12e2cb50f0fb1b93f31b1667ea23f678"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Jazz2-110-Bb_comp",
+      "sha256": "4540e7418dff448eaf52ff786c9484b8988e94ff349260ad328bc930f9625281"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Jazz2-187-F#_comp",
+      "sha256": "2c5c7f2f0cc9c19df8f7a95ab8a27ff2a48b85bb58830b34f57fcf090d8d0d18"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Jazz3-137-Eb_comp",
+      "sha256": "fc13477ca67edadcc58f9ae1a9123b343fbd484ddc8e596ae5089c34cb30c309"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Jazz3-150-C_comp",
+      "sha256": "4375e427cbcdad69fe227e796fbfa1e851682f178e41735fd5558f75c9d8c433"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Rock1-130-A_comp",
+      "sha256": "3faf6220ca2c6355e3334e9d3e83f3f028aa6e3de65d8af9ee41ef02316c644f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Rock1-90-C#_comp",
+      "sha256": "371faef956c5b351738c56fabe6f6a6b5c30e4223f85ed893eff3b6d3b824a26"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Rock2-142-D_comp",
+      "sha256": "de9ed7fe91b0fc8ce896fd1618c15ae9967fd7e00ef378b0fb9939d82aaf1854"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Rock2-85-F_comp",
+      "sha256": "f956134f893b18ef876a9094474a843891c66f90766b8f2acd89964023d2405e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Rock3-117-Bb_comp",
+      "sha256": "02b92890be3a195f89c6b2a40a38596a62633d93d96912203145384575c95bf6"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_Rock3-148-C_comp",
+      "sha256": "d7ebd8f780efedd239bafe9597a04e16c53e2c7c6803c4da92ad1487d65ffcae"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_SS1-100-C#_comp",
+      "sha256": "bcb80b615c0869d5a31fcfbace4502b5ed01cbca5fa82f17bc657fb9fa9d099e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_SS1-68-E_comp",
+      "sha256": "e014dc03367b494794805ed47840eaa7914c4ca1c05d5dae7f16229e087b1f56"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_SS2-107-Ab_comp",
+      "sha256": "cd4393ae52a4d2e31aa6e994a183703e2d479ab30861fc9e26aa61c5a0d19b3e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_SS2-88-F_comp",
+      "sha256": "c6750dd5b8ac3efb034de6d0e093edc103533c21106e4601ef8a4f3a9f371deb"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_SS3-84-Bb_comp",
+      "sha256": "9ff0d549b8eeceea0e8c7c4eb7f84e53eec76b3ef78fba27b4d1552de89ebfe6"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "01_SS3-98-C_comp",
+      "sha256": "b2cd525128a7e35f21584253656fcde8f89b001b2fbb29d526d3b542536323ed"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_BN1-129-Eb_comp",
+      "sha256": "21b77afedeedfe71b1654bcf0783953a17aff2ef73670d9a5fea8717c9b1f5a1"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_BN1-147-Gb_comp",
+      "sha256": "5b6eb9fe059d246315b43b47ffb5723c8c2bc2685a72d8a93d2963b28a46af80"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_BN2-131-B_comp",
+      "sha256": "4b06a9b3a0ba880de2512a8dec4dc276e744d8f5a44cdde84b3192d6c322459b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_BN2-166-Ab_comp",
+      "sha256": "4a066c539db789ee4e433254c50f96fa344e90fdac958cee4dc93ee01afcf650"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_BN3-119-G_comp",
+      "sha256": "ad16ae1622681b6b23b753989f8aa3ab051020a2553702e926d4da17e68ce99f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_BN3-154-E_comp",
+      "sha256": "c19a1ad2cb456d735cecadda23c20aa4fa244598eff5fb39199520ac4e06026b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Funk1-114-Ab_comp",
+      "sha256": "0fcec93826ed0ad3231e919c3c0df4416a221029872ec7038737cfdb4dc749f5"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Funk1-97-C_comp",
+      "sha256": "aebda399542912a43f11e1d4679784b4456ca70214c4b2b220c1caca70c3e6be"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Funk2-108-Eb_comp",
+      "sha256": "64484f44a63ce9f1722b090b1d2bba3b67ba6f6c7b47aba318bd77032b521696"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Funk2-119-G_comp",
+      "sha256": "f29569c33189ffbff0d9a15aeeab26ee7b6814bf20a608ec1da6ea5056dde175"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Funk3-112-C#_comp",
+      "sha256": "e102f4be2819c02e16b1608780a0d0b0dcacd2c6c94a47a92797c65ae80199f8"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Funk3-98-A_comp",
+      "sha256": "3cc9c28c666fd31a2a4ff3602ba5e9d4e1a92b4b1690ef65c2ee2fc93e0f113e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Jazz1-130-D_comp",
+      "sha256": "cb902ad267e5a293e03de825fcadb1e499b7e903016cfb590fb103d65edbee14"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Jazz1-200-B_comp",
+      "sha256": "7c8bff04b3823b4b8d578af963789b41614bc2da54f18cffcf4f23d4f1cb3199"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Jazz2-110-Bb_comp",
+      "sha256": "3f897ac5b3e08c340999712a0f40ca45b73483c04201d5a8876b3427e3406ad2"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Jazz2-187-F#_comp",
+      "sha256": "26c8ffe935ae7adc6b1a72c6429f681b56df87444655fb46f4ed384fb921f080"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Jazz3-137-Eb_comp",
+      "sha256": "217fbfc76d631e548d8639b903a2cb26d2d4291d1c4ac1402bcfa65c602f488e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Jazz3-150-C_comp",
+      "sha256": "698edac8232ca9b945e5da6783dbcf1fef5866c66f6875bfe835994825ad7818"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Rock1-130-A_comp",
+      "sha256": "50fca19521b97139e3e0f3ffd73dcd108b3f986f78750dd799e1938da45ab1c0"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Rock1-90-C#_comp",
+      "sha256": "36b4c858671edd80c408bf9e3627ab14c6c5828e0507a193f053fdf34a602cae"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Rock2-142-D_comp",
+      "sha256": "4407f09920b70d1ef8562d69db80452ce66eb45b6494d5120e1ada81f4dc53a9"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Rock2-85-F_comp",
+      "sha256": "47a5c740a1460879963916bbd9c70d6fd4d496132ee8dbb9a104c9ec270d79a2"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Rock3-117-Bb_comp",
+      "sha256": "209fe0e33fd522b72e359c5dfede69b7757450df599523eff425acc5be750dc9"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_Rock3-148-C_comp",
+      "sha256": "0d0cc8faadd4cf921320b12922413de4644a615e24882c0c4f3d2253e2f12ccc"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_SS1-100-C#_comp",
+      "sha256": "8cf7c25465eb7e95eb40a0bc38365bee3c82849fcf80824c93296acaf56673cd"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_SS1-68-E_comp",
+      "sha256": "9578f96b07e482e6a19c2beb3b24090c18669a303a5225073c66994de70b0355"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_SS2-107-Ab_comp",
+      "sha256": "a3b3f22d05a9e969855d623389ac0637d6847fabd21ce42d394bf284fe43cd5d"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_SS2-88-F_comp",
+      "sha256": "3ba6d11f8b67418ceb1713d9485f43f6ac5a542663ef3d1059f73d629138e2a7"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_SS3-84-Bb_comp",
+      "sha256": "30c9cffdacb37db30367e3895fe49b788d7ff2b2cdaa46cfb33a9461622cb9a1"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "02_SS3-98-C_comp",
+      "sha256": "5e486aab18cdbb3965285ea5867f39c8fc56cdf2164b25721c0b45661abfed48"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_BN1-129-Eb_comp",
+      "sha256": "1ef2152a363012c9e4116bbb6f58998dd464e04ed6c52fe409f19e393341e0f3"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_BN1-147-Gb_comp",
+      "sha256": "f98daed6fea2a5b8a921928c277e06468abc6d4d68ee5ca0e507edc6d3934caa"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_BN2-131-B_comp",
+      "sha256": "af29da5b6291d3dcbfc437d76093968d0861bbf7569003cc84d5d2dc42a4b51a"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_BN2-166-Ab_comp",
+      "sha256": "9354e0c96d4ceb9c8042e0df5e02b9a9c37d787d2f0248a2374b305c7a08720b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_BN3-119-G_comp",
+      "sha256": "493bd258adde5af6ccee5463bcc42438d266e0f4e2e4024cfd3688f1b752ad25"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_BN3-154-E_comp",
+      "sha256": "bdbbe72b0844b691df98de661f9314afa341c4e933e5fc276cb794ef601d61f7"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Funk1-114-Ab_comp",
+      "sha256": "6e93d78beaa0273175a39d4dd26f09b926ffd7e88f980382ac31c13ab48f7683"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Funk1-97-C_comp",
+      "sha256": "3338f7d8962593d54b18ccffd2f329eeb172749e4d9bde3d16d72f4f21362e63"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Funk2-108-Eb_comp",
+      "sha256": "788cb370e8cf28a60065f2eb7c56581049db915ce50105eb16d5f0889d22297d"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Funk2-119-G_comp",
+      "sha256": "fec7879e8458542e7c46b912bdaefccc11d80f128b70ff51283c14bd8efc480c"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Funk3-112-C#_comp",
+      "sha256": "9aeb07d5d26ef83d9465e8c7f6d453483d742066e238231c5bb99322f2e14cbe"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Funk3-98-A_comp",
+      "sha256": "23cea771ab60db318870d9a02ca3882a13b184f93d861b642c2feac09b9e44e2"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Jazz1-130-D_comp",
+      "sha256": "e45456815ae97e1fd626258dc84c48c84ed7d80b10d24f48808a8339d92caaad"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Jazz1-200-B_comp",
+      "sha256": "900e3a119a982f954426c1dcbd27d2af47419bdc9848227c6bf8de88a6536dda"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Jazz2-110-Bb_comp",
+      "sha256": "4a0e73c2cab7d838c017e486d561b47455a6aceed26d87f53c396a7bb4184a98"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Jazz2-187-F#_comp",
+      "sha256": "e231b0e7b44880740e4fbd74df185592fe0404dd468b65b95aeecc8f0710f6e3"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Jazz3-137-Eb_comp",
+      "sha256": "bac6da4ea0543753b48e9ca4115e2792decb8661fdbeea4d165388738f1029ec"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Jazz3-150-C_comp",
+      "sha256": "22968bb00355a21a61264c7a309cdf207219731b7a87ab8157deba1b6ffc4886"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Rock1-130-A_comp",
+      "sha256": "856c65f1dfe8f6b62e9d4dda0f2fd1fe65ab5900b6509c8160a129303ac16199"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Rock1-90-C#_comp",
+      "sha256": "2140c950654d0108dc1da7a8247d9097dc74a46cdf77e0eb40d2e77fc78b4227"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Rock2-142-D_comp",
+      "sha256": "ea3202bb5c2ec1127dd2a045d1a94432a1a85b66787801948979f926b2194805"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Rock2-85-F_comp",
+      "sha256": "dde96f05a527613d56ab51d7a1ecaf9ccecf7d3dc65b4bb150de01029a2bed87"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Rock3-117-Bb_comp",
+      "sha256": "0c5bb8a8f3e480ae4e9e682a573de0524c8b93eaada7ac2cdc2e1a8b9d081d3b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_Rock3-148-C_comp",
+      "sha256": "d672de691b112b9c51b06d26554f9fb82bbdb7685bb8e5dd5017f71814f19ce6"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_SS1-100-C#_comp",
+      "sha256": "b57509e506a7c3b253aa55ec5c9dc42cbef46d448b8724d8423eed112ab10c94"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_SS1-68-E_comp",
+      "sha256": "1f6b2f65c7370676b7897dd4572ce9aeb966bb265a61e6e852562c57b3e878b2"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_SS2-107-Ab_comp",
+      "sha256": "9df726f57f159cef71638f81f5ebb41af35986dd8ba8b852b5342484f7e1aed8"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_SS2-88-F_comp",
+      "sha256": "ff861bd0cf2bccda8bcbf6fe1a875d275d82cb186f99a671cfe9d94a37b9bf51"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_SS3-84-Bb_comp",
+      "sha256": "4c4c85c01bb1a9b2a45c7fc2f81ad46ceab51deaa0e1c6897e60bf1153afde7b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "03_SS3-98-C_comp",
+      "sha256": "17ae4e997981edfa8fd905a7c549ffe26de6a2cc11ea0ba34cb67a7b52aa9d75"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_BN1-129-Eb_comp",
+      "sha256": "db5df9779d52698ff87ab29eedd988c72710a90f6b1c5ead095d209ada3baef1"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_BN1-147-Gb_comp",
+      "sha256": "98e0da122f69a1cbb300a1aab98375e858801b9336e0fd058324ba15e548e140"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_BN2-131-B_comp",
+      "sha256": "9f071e71545c7b970655fb2cbf0db0234452bd8958c884541f375918dc20e79f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_BN2-166-Ab_comp",
+      "sha256": "43f1f71b8b3af5c1dfae615b45fce944ea0db080cc34cc0c9dda380877a252ba"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_BN3-119-G_comp",
+      "sha256": "53d9889764bb80ffb07102abd7f593a2e919dc440f13e06e0098d5224be39a50"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Funk1-114-Ab_comp",
+      "sha256": "d9e4b357e3eabcf735ee43535041c4d151f5e876a6693b434a5b5933d4c9a2ab"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Funk1-97-C_comp",
+      "sha256": "533677a26ae5bb658589ea077fd9d52f104c2159608795e2bd6a3d406e07369d"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Funk2-108-Eb_comp",
+      "sha256": "03f20b9a9210e36d2c7fdc638a948b6c66b71df4d8c50b92667a6bd4ae7e0d55"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Funk2-119-G_comp",
+      "sha256": "e984144fbf70d56239ea814b79c86e2d0dbb9f514f8a45ae2c5a25caf0ed17d9"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Funk3-112-C#_comp",
+      "sha256": "56789402b5d9346345dc3048847eff6d68cc063e8a6ba58aad90f7fa02496f1b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Funk3-98-A_comp",
+      "sha256": "d4e169c99e078f6ed70c659f891f88dcbc43c12bf8fcf0f641c857d406930e9b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Jazz1-130-D_comp",
+      "sha256": "44bacd1f89ad41272ae1bea0ad2614bd2841df6b29416e3657f31a7e300920bf"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Jazz2-110-Bb_comp",
+      "sha256": "78772b2c039e824b01e29c0f1f9be843a8eda2440b638153ccc6003aaf6c94ab"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Jazz2-187-F#_comp",
+      "sha256": "a456e1f6fca04042eed7d9873e35685b66ed8427bca9586d4a4e2ca1cf51a6cb"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Jazz3-137-Eb_comp",
+      "sha256": "974e43b005dc062ce061fce9d2a69e3cc61e7e957742a729e4573593ed963736"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Jazz3-150-C_comp",
+      "sha256": "ba3d95bb597f63d8dc0a8a7fc52723f27b77913448fa2614293af3894768f47b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Rock1-130-A_comp",
+      "sha256": "ce6170fa31f999b71b53a2c8b059991bb39308e256da03429b98be01391a3f73"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Rock1-90-C#_comp",
+      "sha256": "09145cea032bea2f1c3bd09e45b49576f4503c7619d274c9c653dab27e2efbbe"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Rock2-142-D_comp",
+      "sha256": "024bd7fc762aad5678b214770ae5f31b6de8d23d0ffcb81b9b088566b3c163ee"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Rock2-85-F_comp",
+      "sha256": "0db8b33e033b53e72f66fc535be9b9d5980dd1f5d9ada68c813def6908750de5"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Rock3-117-Bb_comp",
+      "sha256": "5dca59bb473dce64ffa69913cd3233b22f157dfa5e16545a6c0451c600956cf8"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_Rock3-148-C_comp",
+      "sha256": "edd2ab28bef7653fe4dcead14ce2fc99052415ca8ba89cbded4753a64f41d8b5"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_SS1-100-C#_comp",
+      "sha256": "5be1a29b7cd0547e7b6809919642812963366760a92b331083ff121fee8aa08a"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_SS1-68-E_comp",
+      "sha256": "f021e9148a359540cb96bc71beef1791de22337cc65c6e543a3751cc2145df35"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_SS2-107-Ab_comp",
+      "sha256": "bd12266d8bf90bde86494fdd9ac34409f506b2aeaaa18fb4424df12641bdbffd"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_SS2-88-F_comp",
+      "sha256": "0f4367a894f6d09b7ffe86a0a730927353b39dc1ce897cc2554d817e50889f5d"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_SS3-84-Bb_comp",
+      "sha256": "70b7c1afeb26c0fef4d7269e907413487a7bffd03b9b35014e2c90fa3c6a0ecf"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "04_SS3-98-C_comp",
+      "sha256": "f42d12f54707669ecb0d1ea2700caf1494b9064d14f9ca26da09b6fff340382d"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_BN1-129-Eb_comp",
+      "sha256": "56d8651aa9dba00ea7c695b779cfc3d053af8b4ca3eca55b42123e5ab020a114"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_BN1-147-Gb_comp",
+      "sha256": "cbc999d843d082bf07053ca5f60abc10ab580529e0c6ed2ec27175486ad3ba7b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_BN2-131-B_comp",
+      "sha256": "61ba874589d6986c3f101b6bbfed7664fdc9006f85d8a02ae079f53da8aef2f3"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_BN2-166-Ab_comp",
+      "sha256": "84ad289044c9dcb7cf8a2c10866b46d5bf675617e38681dff1c24669211e991f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_BN3-119-G_comp",
+      "sha256": "4516207e3e9f6e5ea57b40ad06e2fd02bc98ae84310c85adec1121ef1be00c44"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_BN3-154-E_comp",
+      "sha256": "5b7cfdf19e662d212e26368be40be66c3acca306ae9532a2767be35dc4856a02"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Funk1-114-Ab_comp",
+      "sha256": "e070b423080d9b674baa9e508adf679e7aded2277c94200d2c8b9620dd9f55b6"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Funk1-97-C_comp",
+      "sha256": "b548a80f08fb6d7278b8d8ac50ec0425419a6ded706c1a8fc4a13c976a729e2e"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Funk2-108-Eb_comp",
+      "sha256": "b79a4b2afe36c8db88191338dac2e1b73d9da7352031f61777599fbe804ad723"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Funk2-119-G_comp",
+      "sha256": "7c564ffc718d5faf3a60266ca48848cc3f0f39b9200a16fd39c197b648d97dfa"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Funk3-112-C#_comp",
+      "sha256": "3c8957ae4e1bda4e3587850a75a53e6654ae7b75f0af5eca6d6c42815a1c4ffc"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Funk3-98-A_comp",
+      "sha256": "1260f253e51fac06105eb8b0a05e796ff00697bf6f2449805f0ada5877d23d56"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Jazz1-130-D_comp",
+      "sha256": "e6923e40c50ef0d5f24e8d366a1e641f718d7c90e082c01abdb6205964531b3b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Jazz1-200-B_comp",
+      "sha256": "b7419bdbd2984996a8d6c5fc67536253ef39987c34a747807999885569e2bcb2"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Jazz2-110-Bb_comp",
+      "sha256": "b52bd6a03a31363533230b713683cbeb0990e91df5f55b915c739fe1785883f8"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Jazz2-187-F#_comp",
+      "sha256": "839f808f20cae19e6368c5f517ffe53f459413f2a3e169fb5611883225a8204b"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Jazz3-137-Eb_comp",
+      "sha256": "23d62ab76928b81675d7934a13d2d64e0d66ef441e7391a0d2b8ceec5a157577"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Jazz3-150-C_comp",
+      "sha256": "246d17bc206640a24824c13fd66dae32cc1a098c7d9eb600f1bf8083188fc644"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Rock1-130-A_comp",
+      "sha256": "43e1ca4bf690d9f043b4af7482075d11f17a25616b52a461291f783055de0f29"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Rock1-90-C#_comp",
+      "sha256": "454e4c4ef005725b48ff4f9882afe736af19a10939206d0ae4d455e8cea78235"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Rock2-142-D_comp",
+      "sha256": "a7cb909ec5ad9ffb56df4378127ecbb96c076dd7dd05ba13d10e92d4c034d301"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Rock2-85-F_comp",
+      "sha256": "399346696025b66d91fee870e050d56c031be8a034634da70c72e3e474443464"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Rock3-117-Bb_comp",
+      "sha256": "fd3aabc7f964918a0279dd11885bf7e1eb8dc14a40dbe042e2191110319f59d0"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_Rock3-148-C_comp",
+      "sha256": "54fe88a94aafb124416797cb3107573bb2e955d7afa738050a25af1bbb8d6b45"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_SS1-100-C#_comp",
+      "sha256": "2c4afc1f0c225b788764f69cf99998660f2b0c494013151c5e108f921bd98487"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_SS1-68-E_comp",
+      "sha256": "fa42c0958ba2c621153dfc31e480a07fcb1d4bef3b35ef8771788aa86f0f2061"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_SS2-107-Ab_comp",
+      "sha256": "0446ee7488465ee36567de4ff1f044d2c826671c797981a12335923f2b91dcad"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_SS2-88-F_comp",
+      "sha256": "ae5a339d09d7a8120748d6384014799b6cfe793b4421bbf02fe353702635405f"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_SS3-84-Bb_comp",
+      "sha256": "faad17e03e724c78149a2bd90d9e48facf2eccbe062b1d8cb5cf12786054020a"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "05_SS3-98-C_comp",
+      "sha256": "b3b2381b7e959e1c9dc5ed96b4f4558d602b275e4897b5eb8a2e2840c1fa7582"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "ableton_live_guitar_Campfire",
+      "sha256": "e84aeaa66fd78d065f3a9a32f83f6109c1c90d5d4c24bc76b5c5b8b0dd6ee685"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "ableton_live_guitar_Guitar_Open",
+      "sha256": "ce1da83e4e910c76679f1a7cdfd7d46620e3cb2ff044dbe7a21f567e0eba0ffb"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "ableton_live_guitar_Nylon_Concerto_Guitar",
+      "sha256": "bb3d41fbcfd8d6e10667e9cfc6d89c3d1c8e3228b73301fc85e4d1e1a13dfe12"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "garageband_guitar_Acoustic_Guitar",
+      "sha256": "8ae9012c65739b81e9b081562547df576c9ae78f156138b2b647dd5978758de1"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "garageband_guitar_Classic_Clean",
+      "sha256": "1cff0f818717bf9cc98868332fbdf3881097d09dbe5fc37e44b988acaae1f75c"
+    },
+    {
+      "folder": "basic_pitch_20261105_v2",
+      "id": "garageband_guitar_Hard_Rock",
+      "sha256": "e1a61c2846f0d41cec7aca28f8371770bdcefccbca958d30a8677ccd87578597"
+    }
+  ]
+}

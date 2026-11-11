@@ -84,6 +84,21 @@ if __name__ == "__main__":
     import multiprocessing
     multiprocessing.freeze_support()
 
+    # Exercise the same packaged upload/analysis pipeline without opening a GUI.
+    # Useful for portable-release validation; never invokes a system interpreter.
+    if '--serve-only' in sys.argv:
+        import argparse
+        import server_v2
+        parser = argparse.ArgumentParser()
+        parser.add_argument('--serve-only', action='store_true')
+        parser.add_argument('--port', type=int, default=8766)
+        args = parser.parse_args()
+        server_v2.seed_existing_runs()
+        http = server_v2.ThreadingHTTPServer(('127.0.0.1', args.port), server_v2.HandlerV2)
+        http.allow_public = False
+        http.serve_forever()
+        sys.exit(0)
+
     if len(sys.argv) > 1 and sys.argv[1].endswith(".py"):
         script_file = Path(sys.argv[1])
         if script_file.exists():

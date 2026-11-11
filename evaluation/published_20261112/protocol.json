@@ -1,0 +1,33 @@
+{
+  "primary_target": "GitHub origin/main as committed, not the uncommitted separation fix",
+  "secondary_target": "Current locally corrected deployed pipeline; separately labelled",
+  "git_commit": "5c5396bc2c3ac8a667cd0fb42db66e09340742cd",
+  "primary_pool_width": ".2",
+  "secondary_pool_width": ".4",
+  "sampling": {
+    "guitarset": "exact archived 1s grid starting .5s; legacy 50ms+4096/44100 boundary margin; nominal/performed separately",
+    "idmt": "same six guitar timbres, all 273 midpoint samples each; no non_guitar included",
+    "transitions": "native24Hz output, separate from stable sampling"
+  },
+  "normalization": "verbatim legacy root+pitch-class set exact; inversion/octave not independently scored; N/X/unparsed excluded and counted; parsed OOV retained",
+  "quality": "relative pitch-class interval set equality regardless root; ref OOV retained in denominator",
+  "ambiguity": "A native stable raw top1; B ambiguous output is abstention for strict top1, not oracle credit",
+  "variants": {
+    "A": "native rows.top3[0], before cleanup/context/onset/presentation; model and max pooling unchanged",
+    "B": "native onset_presentation.display_candidates, default onset/context/grid enabled, no manual BPM/capo/edits/vision",
+    "U_context": "onset_context display before prepare; diagnostic only, already contains earlier cleanup",
+    "B_frame": "frame_display_candidates before final beat quantization; diagnostic only"
+  },
+  "causal_limit": "A/B is the complete postprocessing stack ablation, NOT isolated Look-Ahead. Context includes neighbors/keys/bass/arpeggio/dyad/mix rules. U/B_frame diagnostics separate late stages without reimplementing.",
+  "timing": "actual analyze wall and write_result timing for B; shared feature runtime + separately timed native raw predictions for A. Independent A full end-to-end is NOT executed; do not call a reconstructed sum a measured wall time.",
+  "workers": 1,
+  "selection": "all180 archived GuitarSet comp recordings processed; 2 known timing files excluded only from primary aggregation; all6 archived IDMT guitar files; no outcome-based selection",
+  "C": "not executed: these datasets have no synchronized video/vision labels",
+  "transitions_policy": "adjacent normalized distinct labelled events; detect old/new exact chord within 0.5s either side, clamped to intervals. Report all and stable>=0.5s; postprocessing losses are transitions detected at U_context but missed at B_frame/B, distinct from raw pitch errors.",
+  "short_run": "nonempty chord run <.2s at24Hz; report count independently from accuracy",
+  "failures": "record every file failure; evaluable samples of failed files count as incorrect/abstain; integrity mismatch separately marked",
+  "data_seen": "development datasets previously examined; no unseen-test or performer holdout claim; Basic Pitch training data may overlap GuitarSet",
+  "training": false,
+  "tuning": false,
+  "legacy_label_adapter_sha256": "8b0dc5643df62234d19f1f46151869048be9575ea587dea5918d4b9796788fd2"
+}

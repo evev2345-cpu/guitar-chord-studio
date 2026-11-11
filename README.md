@@ -88,3 +88,25 @@ node tests/test_chord_web_ui.js
 ## 라이선스
 
 프로젝트 라이선스는 저장소의 [LICENSE](LICENSE)를 확인하세요. 외부 모델·라이브러리·영상·음원에는 각 권리자의 별도 조건이 적용될 수 있습니다.
+
+
+## 2026-11-12 분리 경로 수정 및 실측 평가
+
+배포본에서도 별도 `GuitarSeparator` 워커로 CPU Demucs를 실행하도록 수정했다. 분리 결과와 해시를 확인한 뒤 Basic Pitch로 전달하며, 분리 실패 시 원음으로 조용히 대체하지 않고 오류를 표시한다.
+
+| 평가 대상 | GuitarSet A → B | IDMT-SMT-Chords A → B |
+|---|---:|---:|
+| 기존 Git `5c5396b` (분리 실패 후 원음 사용) | 37.72% → 53.85% | 69.60% → 78.94% |
+| 수정 경로 (실제 분리 + 전체 믹스 앵커) | 37.21% → 54.36% | 36.26% → 75.03% |
+
+GuitarSet performed 주석 4,886개 시점, IDMT 1,638개 시점의 근음+음고류 집합 일치율이다. A는 원시 후보, B는 기본 표시 후처리 전체이며 Look-Ahead만의 효과가 아니다. 두 데이터셋 간 절대 수치로 일반화 성능을 비교할 수 없다. 가상 비전 입력이나 추가 보정 모델은 사용하지 않았다.
+
+[평가 보고서](evaluation/CURRENT_SYSTEM_EVALUATION_2026-11-12.md) · [재현 방법](evaluation/current_20261111/README.md) · [상세 예측 및 집계](evaluation/published_20261112/)
+
+### 분리 워커 빌드
+
+`build_desktop_release.ps1`이 `GuitarChordStudio.spec`과 `GuitarSeparator.spec`으로 앱과 분리 워커를 각각 묶는다. 실행 환경 패키지 버전은 평가 결과 폴더의 두 `requirements.lock.txt`에 기록했다. 기존 `requirements-deploy.txt`만으로 두 빌드 환경 전체를 재현할 수는 없다.
+
+분리 모델은 [고정 Hugging Face 가중치](https://huggingface.co/adefossez/HTDemucs-6s/resolve/3c5ee475be622df764938de97e4281a7b07ffa58/5c90dfd2.safetensors)를 `models/htdemucs_6s.safetensors`에 배치한다. SHA-256: `d2a1745f0744721f6b8ca5bf469b67c651ea5ed1b52998cab033b2158609d411`.
+
+실제 배포 EXE에 6초 음원을 업로드해 새 기타 WAV 생성과 Basic Pitch 듀얼 트랙 처리를 확인했다. 같은 PC에서 PATH와 모델 캐시를 제한한 검사이며, 새 Windows PC 전체 호환성을 보장하는 검사는 아니다. 모델 가중치, 원본 음원, 사용자 분석 자료와 배포 ZIP은 소스 저장소에 포함하지 않는다.

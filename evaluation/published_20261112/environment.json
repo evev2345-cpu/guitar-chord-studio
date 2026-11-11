@@ -1,0 +1,30 @@
+{
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "<project>/.venv-audio-model/Scripts/python.exe",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "cpu": {
+    "Name": "AMD Ryzen 5 5600X 6-Core Processor             ",
+    "NumberOfCores": 6,
+    "NumberOfLogicalProcessors": 12
+  },
+  "memory": {
+    "TotalPhysicalMemory": 17101705216
+  },
+  "gpu": {
+    "Name": "NVIDIA GeForce RTX 3060"
+  },
+  "packages": {
+    "basic-pitch": "0.4.0",
+    "onnxruntime": "1.23.2",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "librosa": "0.11.0",
+    "resampy": "0.4.2",
+    "soundfile": "0.14.0"
+  },
+  "ffmpeg": "ffmpeg version 9.0.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "accelerator_used": "CPU only",
+  "basic_pitch_threads": 4,
+  "demucs_threads": 4,
+  "concurrent_recordings": 1
+}

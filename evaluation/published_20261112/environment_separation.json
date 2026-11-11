@@ -1,0 +1,7 @@
+{
+  "demucs": "4.1.0",
+  "torch": "2.14.1",
+  "torchaudio": "not installed; not used by current worker",
+  "safetensors": "0.8.0",
+  "soundfile": "0.13.1"
+}
