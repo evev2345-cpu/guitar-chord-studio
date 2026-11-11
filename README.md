@@ -1,131 +1,90 @@
-<div align="center">
+# Guitar Chord Studio
 
-<img src="app_icon.png" width="120" alt="Guitar Chord Studio Logo" />
+연주 영상과 음원을 분석하고, 코드 후보와 손 위치 정보를 함께 확인하는 기타 연습용 데스크톱 프로그램입니다. 오디오 분석 결과를 타임라인에 표시하고 사용자가 코드를 수정할 수 있습니다.
 
-# Guitar Chord Studio v2.0 🎸
+## 현재 구현 범위
 
-**AI 기반 6-Stem 기타 음원 분리 · 16박자 악보 전사 · MediaPipe C++ 손가락 비전 추적 · 무설치 단독 실행 데스크톱 솔루션**
+| 영역 | 구현 내용 | 해석 범위 |
+|---|---|---|
+| 음원 분리 | Demucs `htdemucs_6s`의 기타 추정 트랙 사용 | 다른 악기의 누출이나 기타 성분 누락이 가능 |
+| 음향 분석 | Basic Pitch ONNX 피치 정보, 화성 후보 계산 | 모델 출력 자체가 최종 코드 정답은 아님 |
+| 코드 표시 | 박자 격자 정렬, Look-Ahead v2 후처리 | 녹화 자료의 미래 문맥을 사용하는 오프라인 처리 |
+| 지판 보정 | 사용자가 지정한 4점과 OpenCV 투시 변환 | 지판 평면 근사이며 손의 높이·실제 접촉을 복원하지 않음 |
+| 손 위치 | MediaPipe 관절 추정과 지판 좌표 대응, 오버레이 | 운지 후보 정보이며 현 접촉·뮤트·발음의 확정 아님 |
+| 사용자 편집 | 코드 수정, 분석 결과 저장 및 다시 불러오기 | 자동 분석 오류는 사용자 검토가 필요 |
+| 데스크톱 실행 | PyWebView와 Windows WebView2 기반 창, PyInstaller 패키징 | 배포 기록과 모든 PC에서의 호환성 보장은 구분 |
 
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white)](https://github.com/evev2345-cpu/guitar-chord-studio)
-[![Architecture](https://img.shields.io/badge/Architecture-Standalone%20x64%20(405MB)-0D9488?style=flat-square)](https://github.com/evev2345-cpu/guitar-chord-studio)
-[![AI Engine](https://img.shields.io/badge/AI%20Audio-Demucs%206s%20%2B%20Basic%20Pitch-10B981?style=flat-square)](https://github.com/evev2345-cpu/guitar-chord-studio)
-[![Vision Engine](https://img.shields.io/badge/Vision-MediaPipe%20C%2B%2B%20DLL-8B5CF6?style=flat-square)](https://github.com/evev2345-cpu/guitar-chord-studio)
-[![UI Engine](https://img.shields.io/badge/UI-Edge%20WebView2%20(H.264)-0078D7?style=flat-square&logo=microsoftedge&logoColor=white)](https://github.com/evev2345-cpu/guitar-chord-studio)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-
-<br/>
-
-음원(MP3, WAV) 또는 연주 영상(MP4, AVI, MOV)을 업로드하면, AI 딥러닝 모델(`htdemucs_6s`, `Basic Pitch`)이 기타 음원을 고품질로 분리하여 16박자 단위 정밀 코드 악보를 생성하고, 화면 위 연주자의 손가락과 기타 지판을 3차원으로 실시간 추적해 주는 전문 기타 연습 및 채보 프로그램입니다.
-
-</div>
-
----
-
-## 🗺️ 전체 시스템 작동 파이프라인 (System Pipeline)
-
-<div align="center">
-  <img src="chord_studio_pipeline_white.png" width="100%" alt="Chord Studio System Architecture Pipeline" />
-</div>
-
-### 4단계 핵심 처리 흐름
-
-1. **STEP 1. 미디어 입력 (Input)**:
-   * **동영상(MP4, AVI, MOV)**: 오디오 트랙 자동 분리 추출 및 영상 프레임 캡처 대기 (음향 + 비전 융합 모드).
-   * **순수 음원(WAV, MP3, FLAC)**: 오디오 단독 분석 경로로 직행 (비전 연산 생략, 경량 고속 모드).
-2. **STEP 2. 듀얼 AI 백그라운드 분석 (Dual AI Engine)**:
-   * **음향 AI (Track A)**: `Demucs v4 6-Stem` 모델로 보컬·드럼·베이스를 제거하고 기타 단독 트랙(`guitar.wav`) 추출 → `Spotify Basic Pitch ONNX` 88건반 피치 활성도(Pitch Salience) 및 온셋 감지 → `Look-Ahead v2` 화성 엔진이 16박자 비트 격자(BPM) 정렬 및 0.25초 선확인(코드 깜빡임 -36.7%, `D/F#` 분수코드 복원).
-   * **컴퓨터 비전 AI (Track B, 동영상 전용)**: 사용자 4점 모서리(1·6번 줄 너트/브릿지) 지정으로 원근 투영 변환(Homography) 행렬 도출 → `Google MediaPipe Hand Landmarker` C++ 바이너리(`libmediapipe.dll`, 68MB)로 왼손 21개 관절 백그라운드 프레임별 추적 → 가상 지판 격자 정합 및 저음현 근음 우선 가점(B6 vs G#m7 동점 해결).
-3. **STEP 3. 인터랙티브 스튜디오 워크스페이스 (DAW Workspace)**:
-   * `Microsoft Edge WebView2` 엔진 기반 통합 데스크톱 창에서 16박자 스마트 악보(리드 시트 뷰), 동영상 위 실시간 가상 지판 & 손가락 스켈레톤 오버레이, 파형 스크롤러 및 재생 헤드 실시간 동기화.
-   * 악보 상의 특정 코드 블록을 클릭하여 즉각 교정(루트/퀄리티 변경) 가능.
-4. **STEP 4. 영구 보관함 (Persistence Storage)**:
-   * 모든 분석 결과, 분리 음원, 수정 내역, 비전 오버레이는 `_internal/chord_studio_v2/runs/<job_id>/`에 영구 보존.
-   * 프로그램을 껐다 켜거나 PC를 재부팅해도 **0.1초 만에 재분석 없이 즉시 복원**.
-   * 보관함 목록에 **`[✓ 음성 완료]`**와 **`[✓ 비전 완료]`** 배지 분리 제공.
-
----
-
-## ✨ 핵심 기능 (Key Features)
-
-| 기능 항목 | 기술 스펙 및 설명 |
-| :--- | :--- |
-| **완전 무설치 독립 실행** | **Python, FFMpeg, Visual C++ 재배포 패키지 설치 0%**. 순정 Windows PC에서 `GuitarChordStudio.exe` 더블 클릭만으로 즉시 구동 (단독 배포 ZIP 용량: **405 MB**). |
-| **무소음 백그라운드 프로세싱** | Windows 서브프로세스 파라미터(`CREATE_NO_WINDOW`, `SW_HIDE`) 전역 적용으로 `ffprobe`, `ffmpeg`, AI 워커 실행 시 콘솔 검은 창 깜빡임 0%. |
-| **AI 6-Stem 기타 음원 분리** | Meta `Demucs v4 (htdemucs_6s)` 딥러닝 분리 엔진 내장. 복잡한 밴드 믹스에서 기타 솔로 트랙만 격리하여 코드 판별 오차 극소화. |
-| **16박자 비트 격자 & Look-Ahead v2** | 자동 BPM 템포 및 첫박 오프셋 동기화. 0.25초 오프라인 선확인을 적용하여 초단기 코드 깜빡임을 36.7% 제거하고 물리적 저음 전위 분수코드(`D/F#` 등) 정밀 복원. |
-| **MediaPipe C++ 손가락 비전 추적** | Google `MediaPipe Hand Landmarker` C++ 네이티브 동적 라이브러리(`libmediapipe.dll`) 탑재. 프레임별 손가락 21개 관절 스켈레톤 실시간 백그라운드 추적 및 해부학적 유효성 검증. |
-| **실시간 지판 비전 인디케이터** | 상단 툴바에 백그라운드 비전 처리율(`⏳ 지판 비전 분석 중 (0%~100%)` → `✓ 지판 비전 활성`) 실시간 펄스 인디케이터 제공. |
-| **마우스 클릭 코드 즉각 교정** | 분석된 악보의 마디별 코드를 마우스로 클릭하여 원하는 코드(루트 및 Major, minor, 7, m7 등)로 즉시 변경 가능하며, 수정 즉시 영구 저장. |
-| **영구 보관함 (0.1초 즉시 복원)** | 디스크 기반 상태 동기화 구조로 프로그램 재시작 시 기존 분석했던 모든 곡과 비전 데이터를 0.1초 만에 그대로 로드. |
-
----
-
-## 📁 프로젝트 구조 (Clean Architecture)
+## 분석 구조
 
 ```text
-GUITAR/
-├── 🎸 desktop_chord_studio.py # 네이티브 데스크톱 실행 진입점 (PyWebView + Edge WebView2)
-├── 📦 GuitarChordStudio.spec  # PyInstaller 405MB 무설치 패키징 명세서
-├── 🖼️ chord_studio_pipeline_white.png # 시스템 전체 작동 파이프라인 인포그래픽
-├── 🎨 app_icon.png            # 1024x1024 초고해상도 벡터 투명 아이콘 에셋
-├── 🎨 app_icon.ico            # Windows 실행 파일 바이너리 아이콘
-├── chord_studio_v2/           # 모던 Chord Studio v2 애플리케이션
-│   ├── server_v2.py           # 고속 비동기 API 서버 (포트 8766)
-│   ├── static/                # 모던 스튜디오 UI (index.html, app.js, style.css)
-│   └── runs/                  # 영구 분석 보관함 디렉토리 (곡별 job, result, media 보존)
-├── engine/                    # 핵심 분석 & 인퍼런스 엔진 (19개 모듈)
-│   ├── harmony_engine.py      # 크로마 풀링, 코드 템플릿 매칭 & 스코어링
-│   ├── harmonic_context.py    # 조성 추정 및 전체 음원 앵커링 보정
-│   ├── chord_presentation.py  # Look-Ahead v2 코드 표시 안정화 & 분수코드 복원
-│   ├── beat_grid.py           # 16박자 템포 추정 및 비트 격자 정렬
-│   ├── onset_transition.py    # 온셋 전환 감지
-│   ├── run_local_separation.py# Demucs 6-stem 음원 분리 워커
-│   ├── basic_pitch_worker.py  # Spotify Basic Pitch ONNX 전사 워커
-│   ├── virtual_string_grid.py # 가상 6현 & 22프렛 지오메트리 그리드 생성
-│   ├── hand_fret_tracker.py   # 지판 위 손가락 프렛 추적기
-│   ├── improve_hand_skeleton.py # MediaPipe 관절 지터 완화 및 스켈레톤 보정
-│   └── low_string_root_prior.py # 저음현(6·5번현) 운지 근음 우선 가점
-├── models/                    # AI 모델 가중치 바이너리
-│   ├── nmp.onnx               # 음향 코드 판단 경량 ONNX 모델
-│   └── hand_landmarker.task   # MediaPipe 손가락 21개 관절 랜드마크 모델
-├── dataset/                   # 검증 및 튜토리얼 벤치마크 데이터
-├── tests/                     # 326개 전체 유닛 테스트 및 계약 테스트 모음
-├── requirements-deploy.txt    # 배포 및 개발용 의존성 패키지 목록
-└── LICENSE                    # MIT 라이선스
+영상 또는 음원
+  ├─ 오디오 → 기타 추정 트랙 → 피치 정보 → 화성 후보 → 시간적 표시 안정화
+  └─ 영상 → 지판 4점 지정 → 투시 변환 → 손 관절 추정 → 지판 위치 후보
+                                      ↓
+                   검증 상태를 확인한 보조 정보 / 불충분하면 보류
+                                      ↓
+                         코드 타임라인 · 수동 수정 · 저장
 ```
 
----
+### 지판과 손의 위치 정보
 
-## 🚀 빠른 시작 (Quick Start)
+- `engine/hand_fret_tracker.py`는 손 위치를 지판 좌표로 투영하고 프렛 후보를 구합니다. 평면 밖 손가락에는 투영 오차가 생길 수 있습니다.
+- `engine/virtual_string_grid.py`의 현 격자는 명시적 간격·방향 가정으로 생성하는 조건부 모델입니다. 가상 6현 생성은 실제 6현 검출 성공을 뜻하지 않습니다. `contact`와 `sounding`은 미확정으로 유지합니다.
+- `engine/low_string_root_prior.py`의 위치 기반 가점은 실제 저음현 접촉이나 발음 증거가 아닙니다.
+- `engine/visual_root_tiebreak.py`는 동일 음고류 집합·동일 오디오 점수의 후보에 한해, 별도 검증된 근음/보이싱 근거와 충분한 차이가 있을 때만 재정렬을 허용합니다. 근거가 없으면 동점을 유지합니다.
 
-### 1. 배포용 무설치 데스크톱 앱 (일반 사용자)
-1. 릴리즈 압축 파일 `GuitarChordStudio_v2.0_Windows.zip` (약 405 MB) 압축 해제
-2. 폴더 내 `GuitarChordStudio.exe` 더블 클릭하여 즉시 실행 (Python 설치 불필요)
-3. 함께 동봉된 `ChordStudio_v2.0_사용자_매뉴얼.docx`를 통해 조작법 확인
+C6와 Am7처럼 구성음이 같은 코드는 일반적인 구성음 일치 가점으로 구분할 수 없습니다. 실제 B6/G#m7 화면 사례에서도 검증된 비전 근거가 부족해 자동 확정을 보류했습니다. 비전이 이 문제를 이미 해결했다고 주장하지 않습니다.
 
-### 2. 개발자 로컬 개발 모드
+### 오프라인 표시 후처리
+
+`engine/chord_presentation.py`의 Look-Ahead v2는 0.25초 이상 유지되는 구간과 앞뒤 코드 후보를 확인해 짧은 흔들림을 정리합니다. 확정 코드 사이의 일시적 확장음이나 전환 구간을 조건부로 통합합니다. 미래 구간을 사용하므로 실시간 추론 지연 성능으로 해석하지 않습니다.
+
+분수코드에는 강하고 지속적인 저음 근거 또는 표준 튜닝 기반 저음역 조건 등을 사용합니다. `40 + ((root_pc - 40) % 12)`는 E2 이상에서 해당 근음 음고류가 처음 나타나는 기준값입니다. 실제 보이싱의 최저 근음을 관측한 값이 아니므로, 이 조건만으로 모든 분수코드의 진위를 판별할 수 없습니다. 드롭 튜닝 등 다른 조건에 대한 추가 검증이 필요합니다.
+
+## 소스 실행
+
+저장소 루트에서 실행합니다. 아래 명령은 소스의 진입점에 근거한 안내이며 이 문서 작성 환경에서 설치·앱 실행을 검증하지 않았습니다.
+
 ```powershell
-# 1. 의존성 패키지 설치
-pip install -r requirements-deploy.txt
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements-deploy.txt
 
-# 2. 데스크톱 앱 실행
-python desktop_chord_studio.py
-
-# 또는 웹 브라우저 모드로 단독 실행
+# 브라우저 UI
 python chord_studio_v2/server_v2.py --port 8766 --open
+
+# 데스크톱 UI (아래 추가 의존성 확인 후)
+python desktop_chord_studio.py
 ```
 
-### 3. 유닛 및 통합 테스트 실행
-```powershell
-# 파이썬 유닛 테스트 (326개 전체 테스트 통과)
-python -m unittest discover tests
+`requirements-deploy.txt`만으로 모든 선택 기능의 환경이 갖춰진다고 보장하지 않습니다. 현재 목록에는 `pywebview`, `mediapipe`, `demucs`와 그 실행 환경이 포함되어 있지 않으므로 사용할 경로에 맞게 별도로 준비해야 합니다. 데스크톱 경로는 Windows WebView2 런타임, 미디어 처리는 FFmpeg/FFprobe, 모델 추론은 해당 ONNX·MediaPipe·Demucs 모델 파일과 호환 라이브러리가 필요합니다. 모델 최초 확보 시 네트워크가 필요할 수 있습니다.
 
-# 프론트엔드 계약 검증 테스트
+2026-11-07 개발일지에 Windows 배포 ZIP 빌드 기록이 있습니다. 공개 릴리스의 제공 여부나 다른 PC에서의 무설치 실행을 이 문서에서 보증하지 않습니다.
+
+## 코드 구조
+
+```text
+desktop_chord_studio.py       # 데스크톱 실행 진입점
+chord_studio_v2/server_v2.py  # 로컬 HTTP 서버, 기본 포트 8766
+chord_studio_v2/static/       # 스튜디오 화면
+chord_studio_v2/runs/         # 실행·분석 결과
+engine/                      # 오디오·화성·기하·비전·표시 모듈
+models/                      # 추론 모델
+tests/                       # 회귀·계약 검사
+GuitarChordStudio.spec        # PyInstaller 설정
+```
+
+저장 결과는 실행 방식에 따른 앱 루트 아래 `chord_studio_v2/runs/`에 보존합니다. 복원 속도는 저장량과 환경에 따라 달라집니다.
+
+## 테스트
+
+```powershell
+python -m unittest discover tests
 node tests/test_chord_web_ui.js
 ```
 
----
+기존 README에는 326개 통과 기록이 있으나, 현재 체크아웃에서의 재실행 결과로 제시하지 않습니다. 테스트 통과는 실제 운지·현 접촉·모든 음악의 코드 정확도를 보증하지 않습니다.
 
-## 📄 라이선스 (License)
+## 라이선스
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+프로젝트 라이선스는 저장소의 [LICENSE](LICENSE)를 확인하세요. 외부 모델·라이브러리·영상·음원에는 각 권리자의 별도 조건이 적용될 수 있습니다.
