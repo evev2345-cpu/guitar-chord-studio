@@ -1,5 +1,9 @@
 # Guitar Chord Studio
 
+[Windows 배포본 v2.0.2 다운로드](https://github.com/evev2345-cpu/guitar-chord-studio/releases/tag/v2.0.2) · 2026-11-16
+
+ZIP 전체를 압축 해제한 뒤 `GuitarChordStudio.exe`를 실행하세요. v2.0.2는 dim·aug 수정 저장, 지판 재보정 시 수동 코드 유지, 재시작 시 중단 작업 복구를 수정했습니다. Python 테스트 29개·프런트엔드 계약 검사 26개 및 배포 EXE의 실제 기타 분리·분석 검증을 통과했습니다. 새 Windows 환경이나 GUI 전체 동작 검증을 의미하지는 않습니다.
+
 연주 영상과 음원을 분석하고, 코드 후보와 손 위치 정보를 함께 확인하는 기타 연습용 데스크톱 프로그램입니다. 오디오 분석 결과를 타임라인에 표시하고 사용자가 코드를 수정할 수 있습니다.
 
 ## 현재 구현 범위
