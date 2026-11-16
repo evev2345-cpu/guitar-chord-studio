@@ -33,4 +33,9 @@ element('#beat-grid').checked=true;
 assert.equal(evaluate("display({context:{display_candidates:[{symbol:'C'}]},presentation:{display_candidates:[{symbol:'G'}],frame_display_candidates:[{symbol:'Am'}]}})[0].symbol"),'G');
 assert.equal(evaluate("formatBeatPosition(0.10,120,0.10).text"),'1마디 · 1박 · 1칸 (120 BPM)');
 assert.equal(evaluate("formatBeatPosition(2.10,120,0.10).bar"),2);
-console.log('20 frontend contract checks passed (rendering unverified).');
+for(const q of ['diminished','augmented']){
+  assert.ok(evaluate(`QUALITY_SUFFIX['${q}']`));
+  assert.equal(evaluate(`QUALITY_PCS['${q}'].length`),3);
+  assert.ok(fs.readFileSync('chord_studio_v2/static/index.html','utf8').includes(`value="${q}"`));
+}
+console.log('26 frontend contract checks passed (rendering unverified).');

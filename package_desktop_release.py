@@ -1,5 +1,7 @@
 """Package portable binaries while excluding all user analyses and QA uploads."""
 from pathlib import Path
+import argparse
+import datetime
 import hashlib
 import json
 import zipfile
@@ -8,14 +10,20 @@ ROOT=Path(__file__).resolve().parent
 
 
 def main():
-    source=ROOT/'dist/GuitarChordStudio'
-    target=ROOT/'dist/GuitarChordStudio_v2.0.1_Windows.zip'
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--source',type=Path,default=ROOT/'dist/GuitarChordStudio')
+    parser.add_argument('--version',default='2.0.1')
+    parser.add_argument('--date',default=datetime.date.today().isoformat())
+    args=parser.parse_args()
+    source=args.source.resolve(strict=True)
+    target=ROOT/'dist'/f'GuitarChordStudio_v{args.version}_Windows.zip'
+    if target.exists():raise ValueError('Refusing to overwrite existing release: '+str(target))
     required=['GuitarChordStudio.exe','workers/GuitarSeparator/GuitarSeparator.exe',
               'workers/GuitarSeparator/_internal/models/htdemucs_6s.safetensors',
               '_internal/chord_studio_v2/server_v2.py','_internal/engine/run_local_separation.py']
     for name in required:
         if not (source/name).is_file():raise ValueError('Missing portable component: '+name)
-    metadata=dict(version='2.0.1',date='2026-11-11',separation='offline bundled CPU worker',
+    metadata=dict(version=args.version,date=args.date,separation='offline bundled CPU worker',
         files={name:hashlib.sha256((source/name).read_bytes()).hexdigest() for name in required})
     (source/'release.json').write_text(json.dumps(metadata,indent=2),encoding='utf-8')
     files=[p for p in source.rglob('*') if p.is_file() and
@@ -29,7 +37,9 @@ def main():
         if any('/runs/' in name for name in z.namelist()):raise ValueError('User analyses included')
     summary=dict(archive=str(target),bytes=target.stat().st_size,sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
                  file_count=len(files),user_analyses_included=False)
-    (ROOT/'.cache/separation_fix_20261111/package.json').write_text(json.dumps(summary,indent=2))
+    evidence=ROOT/'.cache'/f'release_{args.version}'
+    evidence.mkdir(parents=True,exist_ok=True)
+    (evidence/'package.json').write_text(json.dumps(summary,indent=2))
     print(json.dumps(summary,indent=2))
 
 

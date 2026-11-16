@@ -1,9 +1,9 @@
 'use strict';
 const $=s=>document.querySelector(s), player=$('#player');
 const names=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
-const QUALITY_SUFFIX={major:'',minor:'m',dim:'dim',aug:'aug',sus2:'sus2',sus4:'sus4','6':'6',m6:'m6','7':'7',maj7:'maj7',m7:'m7',m7b5:'m7b5',add9:'add9'};
-const QUALITY_PCS={major:[0,4,7],minor:[0,3,7],dim:[0,3,6],aug:[0,4,8],sus2:[0,2,7],sus4:[0,5,7],'6':[0,4,7,9],m6:[0,3,7,9],'7':[0,4,7,10],maj7:[0,4,7,11],m7:[0,3,7,10],m7b5:[0,3,6,10],add9:[0,4,7,2]};
-const QUALITY_PREF={major:3.0,minor:3.0,m7:2.7,'7':2.6,maj7:2.5,sus4:1.4,add9:1.0,sus2:0.8,'6':0.5,m6:0.5,dim:0.2,aug:0.2,m7b5:0.2};
+const QUALITY_SUFFIX={major:'',minor:'m',diminished:'dim',augmented:'aug',sus2:'sus2',sus4:'sus4','6':'6',m6:'m6','7':'7',maj7:'maj7',m7:'m7',m7b5:'m7b5',add9:'add9'};
+const QUALITY_PCS={major:[0,4,7],minor:[0,3,7],diminished:[0,3,6],augmented:[0,4,8],sus2:[0,2,7],sus4:[0,5,7],'6':[0,4,7,9],m6:[0,3,7,9],'7':[0,4,7,10],maj7:[0,4,7,11],m7:[0,3,7,10],m7b5:[0,3,6,10],add9:[0,4,7,2]};
+const QUALITY_PREF={major:3.0,minor:3.0,m7:2.7,'7':2.6,maj7:2.5,sus4:1.4,add9:1.0,sus2:0.8,'6':0.5,m6:0.5,diminished:0.2,augmented:0.2,m7b5:0.2};
 let result=null,currentJob=null,rows=[],segments=[],loading=false,selection=0,lastRendered=-1;
 let visionOverlay=[],timelinePxPerSec=56;
 let calibratingMode=false,calibPoints=[],userCalibratedCorners=null,usingGuitarStem=false;
@@ -120,7 +120,7 @@ function quantizeRowsToBeatGrid(targetRows,bpm,offsetS=0){
     const rawHits=fIdxs.filter(fi=>(targetRows[fi].top3||[]).some(c=>c.root_pc===c0.root_pc&&c.quality===c0.quality)).length;
     const rawRatio=fIdxs.length?rawHits/fIdxs.length:0,sc0=c0.score??0;
     if(nextEmpty){
-      if(['aug','dim','m7b5'].includes(c0.quality)||rawRatio<=0.65||sc0<0.78){for(let j=s;j<e;j++)slotCands[j]=[];}
+      if(['augmented','diminished','m7b5'].includes(c0.quality)||rawRatio<=0.65||sc0<0.78){for(let j=s;j<e;j++)slotCands[j]=[];}
     }else if(rawRatio<0.50||(sc0<0.75&&rawRatio<=0.65)){
       for(let j=s;j<e;j++)slotCands[j]=[];
     }
@@ -136,7 +136,7 @@ function quantizeRowsToBeatGrid(targetRows,bpm,offsetS=0){
       if(r+1<rlist.length&&(rlist[r+1][1]-rlist[r+1][0])>=3&&!slotLowInv.slice(rlist[r+1][0],rlist[r+1][1]).some(Boolean)&&sameRoots(slotCands[rlist[r+1][0]])){for(let j=s;j<e;j++)slotCands[j]=slotCands[rlist[r+1][0]];}
     }
   }
-  const modeFam=q=>['minor','m7','m6','m7b5'].includes(q)?1:['dim','dim7','diminished','aug'].includes(q)?2:0;
+  const modeFam=q=>['minor','m7','m6','m7b5'].includes(q)?1:['diminished','dim7','augmented'].includes(q)?2:0;
   const offsetSlot=Math.round(((Number(offsetS)||0)-origin)/sixteenthS);
   const metWeight=sIdx=>{const m=(((uniqueSlots[sIdx]-offsetSlot)%16)+16)%16;return m===0?4:m===8?3:(m===4||m===12)?2:(m%2===0)?1:0;};
   for(let pass=0;pass<2;pass++){
@@ -231,12 +231,12 @@ function quantizeRowsToBeatGrid(targetRows,bpm,offsetS=0){
     let dIdx=0;
     while(dIdx<rl.length){
       const [s0]=rl[dIdx];
-      if(!slotCands[s0].length||!['dim','dim7','diminished'].includes(slotCands[s0][0].quality)){dIdx++;continue;}
+      if(!slotCands[s0].length||!['diminished','dim7'].includes(slotCands[s0][0].quality)){dIdx++;continue;}
       const axis=slotCands[s0][0].root_pc%3;
       let endIdx=dIdx+1;
       while(endIdx<rl.length){
         const [sn]=rl[endIdx];
-        if(!slotCands[sn].length||!['dim','dim7','diminished'].includes(slotCands[sn][0].quality)||(slotCands[sn][0].root_pc%3)!==axis)break;
+        if(!slotCands[sn].length||!['diminished','dim7'].includes(slotCands[sn][0].quality)||(slotCands[sn][0].root_pc%3)!==axis)break;
         endIdx++;
       }
       if(endIdx-dIdx>=2){

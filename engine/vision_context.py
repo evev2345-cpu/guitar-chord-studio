@@ -61,7 +61,19 @@ def add_layer(result,observations,*,source_id,fps):
                 row[dest]=with_vision(row.get(source,row['context']),row,observations[j] if j is not None else None,
                     source_id=source_id,time_s=row['time_s'],max_delta=.5/fps)
                 working.append(dict(row,context=row[dest]))
-            for row,p in zip(rows,prepare(times,working,tempo=result.get('tempo'))):row[pres]=p
+            for row,p in zip(rows,prepare(times,working,tempo=result.get('tempo'))):
+                # User corrections take precedence over regenerated model layers.
+                edited = next((row[k] for k in (pres, 'onset_presentation', 'presentation')
+                               if isinstance(row.get(k), dict)
+                               and row[k].get('status') == 'user_edited_segment'), None)
+                if edited is not None:
+                    candidates = copy.deepcopy(edited['display_candidates'])
+                    p.update(display_candidates=candidates,
+                             frame_display_candidates=copy.deepcopy(candidates),
+                             status='user_edited_segment')
+                    row[dest].update(display_candidates=copy.deepcopy(candidates),
+                                     status='user_edited_segment')
+                row[pres]=p
     usable=sum(o['status']=='provisional_location_only' for o in observations)
     result['schema_version']='chord_web.v5';result['vision_connected']=bool(usable)
     result['analysis_mode']='audio_plus_provisional_vision' if usable else 'offline_audio_only'

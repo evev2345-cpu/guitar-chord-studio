@@ -763,7 +763,18 @@ def seed_existing_runs():
         for job_dir in RUNS.iterdir():
             if job_dir.is_dir() and (job_dir / 'job.json').exists():
                 try:
-                    JOBS[job_dir.name] = json.loads((job_dir / 'job.json').read_text(encoding='utf-8'))
+                    file = job_dir / 'job.json'
+                    job = json.loads(file.read_text(encoding='utf-8'))
+                    if job['status'] not in ('complete', 'error'):
+                        job.update(status='error', message='Server restarted. Please analyze again.')
+                        file.write_text(json.dumps(job, ensure_ascii=False), encoding='utf-8')
+                    cal_file = job_dir / 'user_calibration.json'
+                    if cal_file.exists() and 'user_calibration' not in job:
+                        try:
+                            job['user_calibration'] = json.loads(cal_file.read_text(encoding='utf-8'))
+                        except (ValueError, OSError):
+                            pass
+                    JOBS[job_dir.name] = job
                 except Exception:
                     pass
 
@@ -776,20 +787,6 @@ def main():
     parser.add_argument('--public', action='store_true')
     args = parser.parse_args()
     seed_existing_runs()
-    for file in RUNS.glob('*/job.json'):
-        try:
-            job = json.loads(file.read_text(encoding='utf-8'))
-            if job['status'] not in ('complete', 'error'):
-                job.update(status='error', message='서버가 재시작되었습니다. 다시 분석해 주세요.')
-            cal_file = file.parent / 'user_calibration.json'
-            if cal_file.exists() and 'user_calibration' not in job:
-                try:
-                    job['user_calibration'] = json.loads(cal_file.read_text(encoding='utf-8'))
-                except Exception:
-                    pass
-            JOBS[job['id']] = job
-        except (ValueError, KeyError):
-            pass
     server = ThreadingHTTPServer((args.host, args.port), HandlerV2)
     server.allow_public = args.public or args.host not in ('127.0.0.1', 'localhost')
     url = f'http://{args.host}:{server.server_port}'
